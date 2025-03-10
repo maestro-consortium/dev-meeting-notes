@@ -1,7 +1,119 @@
 # MAESTRO COREDEVS MEETING - Notes
 
 
+## 2025-03-10
 
+### News
+
+- [name=Pierre-Guillaume] Maestro to be presented at Agimus exploitation plan workshop (internal EU project presentation)
+- [name=Joris] Expected release for eigenpy, pinocchio
+
+### Technical discussions
+
+- [name=Etienne] While TSID not in the scope of Maestro but is used, should we handle release ? No pending changes currently (devel/master) but need to check conda packaging (synchronization with pinocchio) - redo for 3.13 (Joris)
+- [name=Wilson] What to do with the 2 Python bindings (boost and nanobind). What if both are loaded? Having both is not good practice. Split pyton bindings. Distribute separately. Legacy is Boost. Boost/nano 2 namespace differents. v2 -> coal-nanobind. Continue to distribute both (boost and nano) for some time to help other projects migrate. No new features on boost binding (all new dev on nano binding). Keep both for 1 year. Need to update find_python2/find_python3 (unified [FindPython](https://cmake.org/cmake/help/latest/module/FindPython.html) module in cmake since 3.12). Need to update jrl_cmakemodules. Release 1.0 by may. then 2.0 that does not supports ubuntu 20.04 (end-of-life)
+- [name=Wilson] dicsuss next week about eigen release
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#527 Hide qhullcpp symbol](https://github.com/coal-library/coal/pull/527)
+   - created 399 days ago, updated 3 days ago - **pr status to review**
+   - wait for end of life ubuntu 20.04 in may, then PR can be updated -> change to wip
+- [#658 add BUILD_ONLY_PYTHON_INTERFACE option](https://github.com/coal-library/coal/pull/658)
+   - created 25 days ago, updated 3 days ago - **pr status wip**
+- [#659 Introduce next-generation Python bindings using `nanobind`](https://github.com/coal-library/coal/pull/659)
+   - created 21 days ago, updated 3 days ago - **pr status wip**
+   - identify binding upstream (eigen), integration with automatic documentation, issue with some versions of doxygen that fail when parsing functions
+- [#660 Split python build into a specific sub project](https://github.com/coal-library/coal/pull/660)
+   - created 19 days ago, updated 3 days ago - **pr status wip**
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#370 example: custom numeric type](https://github.com/stack-of-tasks/eigenpy/pull/370)
+   - created 662 days ago, updated 3 days ago - **pr status wip**
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2411 Momentum regressor](https://github.com/stack-of-tasks/pinocchio/pull/2411)
+   - created 182 days ago, updated 3 days ago - **pr status to review**
+   - wait for topic_simulation
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - created 174 days ago, updated 3 days ago - **pr status to review**
+   - wait for topic_simulation
+- [#2476 Try to use pre compiled header to accelerate the build](https://github.com/stack-of-tasks/pinocchio/pull/2476)
+   - created 118 days ago, updated 3 days ago - **pr status wip**
+   - work on pause
+- [#2528 Add missing Python example for testing](https://github.com/stack-of-tasks/pinocchio/pull/2528)
+   - created 77 days ago, updated 3 days ago - **pr status to review**
+   - Justin to rebase, process
+- [#2551 Implement Eigen-like expression templates for spatial algebra computations](https://github.com/stack-of-tasks/pinocchio/pull/2551)
+   - created 60 days ago, updated 3 days ago - **pr status wip**
+   - wait for topic_simulation
+- [#2555 build(deps): bump ros-industrial/industrial_ci from 8d0620b3c43fc3bb2599b6ede6e0a261a2eced02 to 8c9b2a6657124a2abf96ef0137f354b0b02d1330](https://github.com/stack-of-tasks/pinocchio/pull/2555)
+   - created 49 days ago, updated 3 days ago - **pr status to review**
+   - to close, other PR include sha1
+- [#2572 New header convention](https://github.com/stack-of-tasks/pinocchio/pull/2572)
+   - created 27 days ago, updated 3 days ago - **pr status wip**
+   - wait for topic_simulation
+- [#2576 [cmake] Change formatting of listfiles to use gersemi, remove cmake-format](https://github.com/stack-of-tasks/pinocchio/pull/2576)
+   - created 26 days ago, updated 3 days ago - **pr status wip**
+   - wait for topic_simulation
+- [#2590 CI: update ROS](https://github.com/stack-of-tasks/pinocchio/pull/2590)
+   - created 18 days ago, updated 3 days ago - **pr status wip**
+   - wait for buildfarm ROS (crash due to RAM limit) - splitting the bindings will help
+- [#2607 Use google benchmark instead of our legacy benchmark system](https://github.com/stack-of-tasks/pinocchio/pull/2607)
+   - created 5 days ago, updated 3 days ago - **pr status wip**
+- [#2608 Enhacing casting support for multiple floating-point scalars and Casadi and CppAD types](https://github.com/stack-of-tasks/pinocchio/pull/2608)
+   - created 3 days ago, updated 3 days ago - **pr status to review**
+   - Issue with cast double to float (pinocchio prevents loss of precision) - need to update PR
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#243 Add memory allocator support for LQ subproblem types, merge `gar` into main aligator library, rename `LQRKnot` and `LQRProblem`, slight refactor of `DenseRiccatiSolver`](https://github.com/Simple-Robotics/aligator/pull/243)
+   - created 129 days ago, updated 3 days ago - **pr status to review**
+   - need to rebase, work on internal memory alloc, parallelisation, change to wip
+- [#272 Add MPC test/example.](https://github.com/Simple-Robotics/aligator/pull/272)
+   - created 13 days ago, updated 3 days ago - **pr status to review**
+   - ongoing review by Wilson
+- [#274 Allow customization of the initial solution.](https://github.com/Simple-Robotics/aligator/pull/274)
+   - created 5 days ago, updated 3 days ago - **pr status to review**
+   - ongoing review by Wilson
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#376 black -> ruff](https://github.com/Simple-Robotics/proxsuite/pull/376)
+   - created 27 days ago, updated 3 days ago - **pr status to review**
+   - Joris to check CI issues - can be merged
+
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#662 CI: update ros distros](https://github.com/coal-library/coal/pull/662)
+   - created 18 days ago - **no pr tag**
+- [#664 Fix typo in Readme section title](https://github.com/coal-library/coal/pull/664)
+   - created 6 days ago - **no pr tag**
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#536 flake.lock: Update](https://github.com/stack-of-tasks/eigenpy/pull/536)
+   - created 7 days ago - **no pr tag**
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2606 flake.lock: Update](https://github.com/stack-of-tasks/pinocchio/pull/2606)
+   - created 5 days ago - **no pr tag**
+- [#2591 CMake: fix for hpp-fcl/coal v3](https://github.com/stack-of-tasks/pinocchio/pull/2591)
+   - created 16 days ago - **no pr tag**
+
+#### SIMPLE-ROBOTICS/PROXSUITE-NLP
+
+- [#124 Update pixi lockfile](https://github.com/Simple-Robotics/proxsuite-nlp/pull/124)
+   - created 9 days ago - **no pr tag**
+    
 ## 2025-03-03
 
 ### News
