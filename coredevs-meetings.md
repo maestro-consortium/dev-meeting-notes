@@ -1,5 +1,127 @@
 # MAESTRO COREDEVS MEETING - Notes
 
+# 2025-03-17
+
+### News
+ - [name=Joris] [Proxsuite v0.7.2 released](https://github.com/Simple-Robotics/proxsuite/releases/tag/v0.7.2)
+
+### Technical discussions
+
+- [name=Joris] [Generating pip INSTALLER and METADADA file when installing a Python bindings with CMake](https://github.com/conda-forge/pinocchio-feedstock/issues/139)
+    - check with ongoing PR that allows to rely on system dependencies and not pip dependencies
+    - Guilhem will get in touch with Silvio
+- [name=Guilhem] Branches workflow
+    - Past issue with default clone policy (devel branch, often broken) - old way
+    - Currently better dev practices.
+    - Tools often use main/master by default, need additional config to change
+    - Current way, master/main for development, then people use eithers tags or package manager if they want stable version.
+    - Ease all our scripts (referring to master)
+    - Proposal
+        - go for a workflow main ? (instead of master/devel)
+        - using a staging branch to perform CI/build all, then automate merging in main ? (GitHub tools or Mergify)
+        - prepare a common announcement for all repos ?
+            - integrate in the RELEASE thru an issue
+            - setup channels for dev announcement?
+        - finalize discussions this week
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#527 Hide qhullcpp symbol](https://github.com/coal-library/coal/pull/527)
+   - created 406 days ago, updated 7 days ago, **pr status wip**
+- [#658 add BUILD_ONLY_PYTHON_INTERFACE option](https://github.com/coal-library/coal/pull/658)
+   - created 32 days ago, updated 10 days ago, **pr status wip**
+- [#659 Introduce next-generation Python bindings using `nanobind`](https://github.com/coal-library/coal/pull/659)
+   - created 28 days ago, updated 7 days ago, **pr status wip**
+- [#660 Split python build into a specific sub project](https://github.com/coal-library/coal/pull/660)
+   - created 26 days ago, updated 10 days ago, **pr status wip**
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#370 example: custom numeric type](https://github.com/stack-of-tasks/eigenpy/pull/370)
+   - created 669 days ago, updated 10 days ago, **pr status wip**
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2411 Momentum regressor](https://github.com/stack-of-tasks/pinocchio/pull/2411)
+   - created 189 days ago, updated 10 days ago, **pr status to review**
+   - await for Pinocchio-4 : back to wip, need to notify them about this
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - created 181 days ago, updated 10 days ago, **pr status wip**
+- [#2476 Try to use pre compiled header to accelerate the build](https://github.com/stack-of-tasks/pinocchio/pull/2476)
+   - created 125 days ago, updated 10 days ago, **pr status wip**
+   - close PR, negligible gains while increased complexity, no merge
+- [#2551 Implement Eigen-like expression templates for spatial algebra computations](https://github.com/stack-of-tasks/pinocchio/pull/2551)
+   - created 67 days ago, updated 10 days ago, **pr status wip**
+- [#2572 New header convention](https://github.com/stack-of-tasks/pinocchio/pull/2572)
+   - created 34 days ago, updated 10 days ago, **pr status wip**
+- [#2576 [cmake] Change formatting of listfiles to use gersemi, remove cmake-format](https://github.com/stack-of-tasks/pinocchio/pull/2576)
+   - created 33 days ago, updated 10 days ago, **pr status wip**
+- [#2590 CI: update ROS](https://github.com/stack-of-tasks/pinocchio/pull/2590)
+   - created 25 days ago, updated 10 days ago, **pr status wip**
+- [#2607 Use google benchmark instead of our legacy benchmark system](https://github.com/stack-of-tasks/pinocchio/pull/2607)
+   - created 12 days ago, updated 3 days ago, **pr status wip**
+- [#2617 Fix hpp-fcl dependency](https://github.com/stack-of-tasks/pinocchio/pull/2617)
+   - created 3 days ago, updated 3 days ago
+- [#2620 build(deps): bump ros-industrial/industrial_ci from 8d0620b3c43fc3bb2599b6ede6e0a261a2eced02 to 3e67ec54d63496e076267392148a26229740befc](https://github.com/stack-of-tasks/pinocchio/pull/2620)
+   - created 0 days ago, updated 0 days ago
+   - await for Guilhem's work (back to wip)
+- [#2621 build(deps): bump cachix/install-nix-action from 30 to 31](https://github.com/stack-of-tasks/pinocchio/pull/2621)
+   - created 0 days ago, updated 0 days ago
+   - merged
+- [#2622 build(deps): bump cachix/cachix-action from 15 to 16](https://github.com/stack-of-tasks/pinocchio/pull/2622)
+   - created 0 days ago, updated 0 days ago
+   - merged
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#243 Add memory allocator support for LQ subproblem types, merge `gar` into main aligator library, rename `LQRKnot` and `LQRProblem`, slight refactor of `DenseRiccatiSolver`](https://github.com/Simple-Robotics/aligator/pull/243)
+   - created 136 days ago, updated 3 days ago, **pr status wip**
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#386 [do not merge] Sync devel and master](https://github.com/Simple-Robotics/proxsuite/pull/386)
+   - created 5 days ago, updated 3 days ago, **pr status wip**
+
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#665 Float precision](https://github.com/coal-library/coal/pull/665)
+   - created 5 days ago
+   - Memory gain and possibly performance gain using float precision, while using some algorithms in double to preserve precision where needed
+- [#666 flake.lock: Update](https://github.com/coal-library/coal/pull/666)
+   - created 5 days ago
+- [#668 Add tracy profiling](https://github.com/coal-library/coal/pull/668)
+   - created 5 days ago
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2528 Add missing Python example for testing](https://github.com/stack-of-tasks/pinocchio/pull/2528)
+   - created 84 days ago
+- [#2608 Enhacing casting support for multiple floating-point scalars and Casadi and CppAD types](https://github.com/stack-of-tasks/pinocchio/pull/2608)
+   - created 10 days ago
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#272 Add MPC test/example.](https://github.com/Simple-Robotics/aligator/pull/272)
+   - created 20 days ago
+- [#274 Allow customization of the initial solution.](https://github.com/Simple-Robotics/aligator/pull/274)
+   - created 12 days ago
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#384 Fix Visual Studio 17.13 build](https://github.com/Simple-Robotics/proxsuite/pull/384)
+   - created 6 days ago
+- [#376 black -> ruff](https://github.com/Simple-Robotics/proxsuite/pull/376)
+   - created 34 days ago
+
+#### SIMPLE-ROBOTICS/PROXSUITE-NLP
+
+- [#125 Remove absolute path for boost library](https://github.com/Simple-Robotics/proxsuite-nlp/pull/125)
+   - created 7 days ago
 
 ## 2025-03-10
 
