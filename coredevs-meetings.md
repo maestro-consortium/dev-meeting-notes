@@ -1,6 +1,125 @@
 # MAESTRO COREDEVS MEETING - Notes
 
-# 2025-03-17
+
+## 2025-03-24
+
+### News
+
+ - [name=Guilhem] crocoddyl v3
+     - breaking change (remove dependency to boost shared pointers, now using stl ones)
+ - [name=Guilhem] PyPI: coal-library -> coal
+
+### Technical discussions
+
+ - [name=Joris] Branches workflow: How to apply it to pinocchio
+     - daily build only run only on default branch (master). Another argument to use devel as the default branch
+     - cache is taken from default branch. Again another argument!
+     - switch from master(default)/devel to master(stable)/devel(default)
+         - no renaming of master to main 
+     - announcement to do on all channels, do right away
+- [name=Joris] [With pixi, tests link to pinocchio in .pixi/envs folder #2615](https://github.com/stack-of-tasks/pinocchio/issues/2615)
+    - tests shoud remain linked to built libraries and not install (use CMake build rpath)
+
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#527 Hide qhullcpp symbol](https://github.com/coal-library/coal/pull/527)
+   - created 413 days ago, updated 14 days ago, **pr status wip**
+- [#658 add BUILD_ONLY_PYTHON_INTERFACE option](https://github.com/coal-library/coal/pull/658)
+   - created 39 days ago, updated 17 days ago, **pr status wip**
+- [#659 Introduce next-generation Python bindings using `nanobind`](https://github.com/coal-library/coal/pull/659)
+   - created 35 days ago, updated 14 days ago, **pr status wip**
+   - choose how to generate bindings (boostpython vs nanobind)
+   - difficulty to generate documentation too
+- [#660 Split python build into a specific sub project](https://github.com/coal-library/coal/pull/660)
+   - created 33 days ago, updated 3 days ago, **pr status wip**
+   - remaining issue related to some cache variables in jrl_cmakemodules that do not prefix with project name
+   - issue with generation of documentation
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#370 example: custom numeric type](https://github.com/stack-of-tasks/eigenpy/pull/370)
+   - created 676 days ago, updated 17 days ago, **pr status wip**
+- [#537 Update ROS CI](https://github.com/stack-of-tasks/eigenpy/pull/537)
+   - created 7 days ago, updated 7 days ago
+   - done and ready for review and merge
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2411 Momentum regressor](https://github.com/stack-of-tasks/pinocchio/pull/2411)
+   - created 196 days ago, updated 7 days ago, **pr status wip**
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - created 188 days ago, updated 17 days ago, **pr status to review**
+- [#2551 Implement Eigen-like expression templates for spatial algebra computations](https://github.com/stack-of-tasks/pinocchio/pull/2551)
+   - created 74 days ago, updated 17 days ago, **pr status wip**
+- [#2572 New header convention](https://github.com/stack-of-tasks/pinocchio/pull/2572)
+   - created 41 days ago, updated 17 days ago, **pr status wip**
+- [#2576 [cmake] Change formatting of listfiles to use gersemi, remove cmake-format](https://github.com/stack-of-tasks/pinocchio/pull/2576)
+   - created 40 days ago, updated 17 days ago, **pr status wip**
+- [#2590 CI: update ROS](https://github.com/stack-of-tasks/pinocchio/pull/2590)
+   - created 32 days ago, updated 17 days ago, **pr status wip**
+   - CI is failing
+- [#2617 Fix hpp-fcl dependency](https://github.com/stack-of-tasks/pinocchio/pull/2617)
+   - created 10 days ago, updated 6 days ago, **pr status wip**
+   - target pinocchio-default (interface library), which can or no link on a shared library (generated or not with the template instantiation)
+- [#2624 Fix ModelTpl::check() link](https://github.com/stack-of-tasks/pinocchio/pull/2624)
+   - created 4 days ago, updated 4 days ago
+   - CI fails due to pch, can be merged anyway
+- [#2627 Fix ccache cache key](https://github.com/stack-of-tasks/pinocchio/pull/2627)
+   - created 3 days ago, updated 3 days ago
+   - more to be fixed : cache GitHub Actions wrongly named, issue with pch
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#243 Add memory allocator support for LQ subproblem types, merge `gar` into main aligator library, rename `LQRKnot` and `LQRProblem`, slight refactor of `DenseRiccatiSolver`](https://github.com/Simple-Robotics/aligator/pull/243)
+   - created 143 days ago, updated 5 days ago, **pr status wip**
+- [#278 croco v3: boost -> std pointers](https://github.com/Simple-Robotics/aligator/pull/278)
+   - created 3 days ago, updated 3 days ago
+   - see technical discussions
+   - upgrade of dependencies + release v0.12
+
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#387 [WIP] OSQP](https://github.com/Simple-Robotics/proxsuite/pull/387)
+   - created 5 days ago, updated 3 days ago, **pr status wip**
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#674 Use double precision for GJK/EPA when coal is compiled in float](https://github.com/coal-library/coal/pull/674)
+   - created 6 days ago
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2623 Update ROS CI](https://github.com/stack-of-tasks/pinocchio/pull/2623)
+   - created 7 days ago
+- [#2476 Try to use pre compiled header to accelerate the build](https://github.com/stack-of-tasks/pinocchio/pull/2476)
+   - created 132 days ago
+- [#2607 Use google benchmark instead of our legacy benchmark system](https://github.com/stack-of-tasks/pinocchio/pull/2607)
+   - created 19 days ago
+- [#2626 Set back PINOCCHIO_DEFAULT_QUATERNION_NORM_TOLERANCE_VALUE definition](https://github.com/stack-of-tasks/pinocchio/pull/2626)
+   - created 4 days ago
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#277 Fix `HistoryCallback` initialization in examples](https://github.com/Simple-Robotics/aligator/pull/277)
+   - created 7 days ago
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#386 [do not merge] Sync devel and master](https://github.com/Simple-Robotics/proxsuite/pull/386)
+   - created 12 days ago
+- [#388 Fix pip wheels for windows](https://github.com/Simple-Robotics/proxsuite/pull/388)
+   - created 4 days ago
+
+
+
+
+## 2025-03-17
 
 ### News
  - [name=Joris] [Proxsuite v0.7.2 released](https://github.com/Simple-Robotics/proxsuite/releases/tag/v0.7.2)
