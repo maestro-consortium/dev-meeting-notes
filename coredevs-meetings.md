@@ -1,5 +1,120 @@
 # MAESTRO COREDEVS MEETING - Notes
 
+## 2025-03-31
+
+### News
+
+- [name=Joris] [Release d'aligator 0.12.0](https://github.com/Simple-Robotics/aligator/releases/tag/v0.12.0)
+    - Minor release for compatibility with crocodyl v3.0.1
+    - Possibly one of the last release ensuring this compatibility
+
+### Technical discussions
+
+- [name=Joris] Archivage de proxsuite-nlp et fusion avec aligator
+    - proxsuite-nlp contained the manifold, non-linear strategy of aligator. Constraint in proxsuite-nlp defined by a function + operators
+    - keeping proxsuite-nlp makes less sense due to interoperability
+    - fuse proxsuite-nlp with aligator (not as subproject to avoid adding complexity). Message in README, archive repository and fuse
+- [name=Guilhem] [keep-sorted](https://github.com/google/keep-sorted)
+    - ordering lines and block of codes
+    - could be used to handle large list of sources in CMake files
+    - not yet tested
+    - simplify the GH table of content in README
+- [name=Joris] Génération de TOC sur github
+    - Voir plutôt [mdBook](https://rust-lang.github.io/mdBook/)
+    - Sphinx ?
+
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#527 Hide qhullcpp symbol](https://github.com/coal-library/coal/pull/527)
+   - created 420 days ago, updated 21 days ago, **pr status wip**
+   - no progress yet
+- [#658 add BUILD_ONLY_PYTHON_INTERFACE option](https://github.com/coal-library/coal/pull/658)
+   - created 46 days ago, updated 24 days ago, **pr status wip**
+   - no progress yet
+- [#659 Introduce next-generation Python bindings using `nanobind`](https://github.com/coal-library/coal/pull/659)
+   - created 42 days ago, updated 7 days ago, **pr status wip**
+   - work on nanoeigenpy has been addressed first
+- [#660 Split python build into a specific sub project](https://github.com/coal-library/coal/pull/660)
+   - created 40 days ago, updated 5 days ago, **pr status wip**
+   - compile separately code / binding
+   - required plenty of small changes with regards to BUILD_ONLY_PYTHON_INTERFACE
+   - TODO : apply same structure on tests
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#370 example: custom numeric type](https://github.com/stack-of-tasks/eigenpy/pull/370)
+   - created 683 days ago, updated 24 days ago, **pr status wip**
+- [#538 Fix issue for sparse matrix conversions](https://github.com/stack-of-tasks/eigenpy/pull/538)
+   - created 5 days ago, updated 5 days ago
+   - Wilson noticed sparse matrices are not ordered
+   - Fixed since eigen-3.4.90 (fix indices)
+   - Status of the Eigen project maintenance raises questions
+   - Copy the scipy.sparse_matrix and sort the indicies
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2411 Momentum regressor](https://github.com/stack-of-tasks/pinocchio/pull/2411)
+   - created 203 days ago, updated 14 days ago, **pr status wip**
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - created 195 days ago, updated 24 days ago, **pr status to review**
+- [#2551 Implement Eigen-like expression templates for spatial algebra computations](https://github.com/stack-of-tasks/pinocchio/pull/2551)
+   - created 81 days ago, updated 24 days ago, **pr status wip**
+- [#2572 New header convention](https://github.com/stack-of-tasks/pinocchio/pull/2572)
+   - created 48 days ago, updated 24 days ago, **pr status wip**
+   - Required for pinocchio-v4
+- [#2576 [cmake] Change formatting of listfiles to use gersemi, remove cmake-format](https://github.com/stack-of-tasks/pinocchio/pull/2576)
+   - created 47 days ago, updated 24 days ago, **pr status wip**
+- [#2617 Fix hpp-fcl dependency](https://github.com/stack-of-tasks/pinocchio/pull/2617)
+   - created 17 days ago, updated 7 days ago, **pr status wip**
+   - check who leads on this one (Joris when he gets back)
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#243 Add memory allocator support for LQ subproblem types, merge `gar` into main aligator library, rename `LQRKnot` and `LQRProblem`, slight refactor of `DenseRiccatiSolver`](https://github.com/Simple-Robotics/aligator/pull/243)
+   - created 150 days ago, updated 4 days ago, **pr status wip**
+   - PR just rebased
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#387 [WIP] OSQP](https://github.com/Simple-Robotics/proxsuite/pull/387)
+   - created 12 days ago, updated 7 days ago, **pr status to review**
+   - Tests were failing, review would be needed now
+
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#675 PyPI: coal-library -> coal](https://github.com/coal-library/coal/pull/675)
+   - created 7 days ago
+- [#676 README/CHANGELOG: updates for hpp-fcl -> coal](https://github.com/coal-library/coal/pull/676)
+   - created 7 days ago
+- [#678 Fix doc parsing via doxygen scripts](https://github.com/coal-library/coal/pull/678)
+   - created 5 days ago
+   - versions doxygen was supposed to be < 1.13
+   - this PR should allow to remove the guard
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#537 Update ROS CI](https://github.com/stack-of-tasks/eigenpy/pull/537)
+   - created 14 days ago
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2624 Fix ModelTpl::check() link](https://github.com/stack-of-tasks/pinocchio/pull/2624)
+   - created 11 days ago
+- [#2627 Fix PCH and ccache build](https://github.com/stack-of-tasks/pinocchio/pull/2627)
+   - created 10 days ago
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#278 croco v3: boost -> std pointers](https://github.com/Simple-Robotics/aligator/pull/278)
+   - created 10 days ago
+
+
 
 ## 2025-03-24
 
