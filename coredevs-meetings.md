@@ -1,5 +1,128 @@
 # MAESTRO COREDEVS MEETING - Notes
 
+
+
+## 2025-04-14
+
+### News
+
+- [name=Pierre-Guillaume] In the context of TIRREX, completing a PUMA proposal for software development tasks (jrl-cmakemodules v2, integrating with gazebo/blender/..., POC for ProxSuite, POC for RTSan checks, QPBenchmarks)
+
+### Technical discussions
+
+- [name=Joris] disussion wrt managing PR for fork of fork (check Github documentation)
+
+- [name=Wilson] nanoeigenpy as a host dependency of Coal. We use headers from nanoeigenpy. When we will use Pixi build, need to handle more properly host, build and runtime dependencies. 
+  - Candlewick will have a new runtime (executable target `candlewick_visualizer`, WIP name). Exists because async renderer without IPC isn't possible with just threads (at least not on macOS which requires `SDL_Window` be launched/interacted with on main thread)
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#527 Hide qhullcpp symbol](https://github.com/coal-library/coal/pull/527)
+   - created 434 days ago, updated 35 days ago, **pr status wip**
+- [#658 add BUILD_ONLY_PYTHON_INTERFACE option](https://github.com/coal-library/coal/pull/658)
+   - created 60 days ago, updated 38 days ago, **pr status wip**
+- [#659 Introduce next-generation Python bindings using `nanobind`](https://github.com/coal-library/coal/pull/659)
+   - created 56 days ago, updated 6 days ago, **pr status wip**
+- [#660 Split python build into a specific sub project](https://github.com/coal-library/coal/pull/660)
+   - created 54 days ago, updated 19 days ago, **pr status wip**
+- [#682 Add support for Convex16 and Convex32](https://github.com/coal-library/coal/pull/682)
+   - created 14 days ago, updated 5 days ago, **pr status wip**
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#370 example: custom numeric type](https://github.com/stack-of-tasks/eigenpy/pull/370)
+   - created 697 days ago, updated 38 days ago, **pr status wip**
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2411 Momentum regressor](https://github.com/stack-of-tasks/pinocchio/pull/2411)
+   - created 217 days ago, updated 28 days ago, **pr status wip**
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - created 209 days ago, updated 7 days ago, **pr status to review**
+- [#2551 Implement Eigen-like expression templates for spatial algebra computations](https://github.com/stack-of-tasks/pinocchio/pull/2551)
+   - created 95 days ago, updated 38 days ago, **pr status wip**
+- [#2572 New header convention](https://github.com/stack-of-tasks/pinocchio/pull/2572)
+   - created 62 days ago, updated 38 days ago, **pr status wip**
+- [#2576 [cmake] Change formatting of listfiles to use gersemi, remove cmake-format](https://github.com/stack-of-tasks/pinocchio/pull/2576)
+   - created 61 days ago, updated 38 days ago, **pr status wip**
+- [#2646 build(deps): bump prefix-dev/setup-pixi from 0.8.4 to 0.8.5](https://github.com/stack-of-tasks/pinocchio/pull/2646)
+   - created 0 days ago, updated 0 days ago
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#243 Add memory allocator support for LQ subproblem types, merge `gar` into main aligator library, slight refactor of `DenseRiccatiSolver`](https://github.com/Simple-Robotics/aligator/pull/243)
+   - created 164 days ago, updated 11 days ago, **pr status wip**
+- [#286 [pre-commit.ci] pre-commit autoupdate](https://github.com/Simple-Robotics/aligator/pull/286)
+   - created 7 days ago, updated 7 days ago
+   - check with valgrind wrt Ubuntu/Python 3.9
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#387 [WIP] OSQP](https://github.com/Simple-Robotics/proxsuite/pull/387)
+   - created 26 days ago, updated 13 days ago, **pr status to review**
+
+#### SIMPLE-ROBOTICS/PROXSUITE-NLP
+
+- [#129 [pre-commit.ci] pre-commit autoupdate](https://github.com/Simple-Robotics/proxsuite-nlp/pull/129)
+   - created 7 days ago, updated 7 days ago
+   - check for putting automatically labels on PRv(wrt changelog)?
+
+#### SIMPLE-ROBOTICS/CANDLEWICK
+
+- [#37 Add Candlewick runtime (executable)](https://github.com/Simple-Robotics/candlewick/pull/37)
+   - created 4 days ago, updated 3 days ago
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#688 Remove useless #ifdef COAL_WITH_CXX11_SUPPORT](https://github.com/coal-library/coal/pull/688)
+   - created 8 days ago
+- [#690 [pre-commit.ci] pre-commit autoupdate](https://github.com/coal-library/coal/pull/690)
+   - created 7 days ago
+- [#689 Sync submodule CMake](https://github.com/coal-library/coal/pull/689)
+   - created 7 days ago
+- [#693 flake.lock: Update](https://github.com/coal-library/coal/pull/693)
+   - created 2 days ago
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#542 Fix issue on Eigen 3.4.90 + sync submodule CMake](https://github.com/stack-of-tasks/eigenpy/pull/542)
+   - created 10 days ago
+- [#543 [pre-commit.ci] pre-commit autoupdate](https://github.com/stack-of-tasks/eigenpy/pull/543)
+   - created 7 days ago
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2640 build(deps): bump actions/create-github-app-token from 1 to 2](https://github.com/stack-of-tasks/pinocchio/pull/2640)
+   - created 7 days ago
+- [#2644 [Model] Improve error message](https://github.com/stack-of-tasks/pinocchio/pull/2644)
+   - created 6 days ago
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#391 [pre-commit.ci] pre-commit autoupdate](https://github.com/Simple-Robotics/proxsuite/pull/391)
+   - created 7 days ago
+
+#### SIMPLE-ROBOTICS/CANDLEWICK
+
+- [#31 Fix Coal primitive loader for `GEOM_BOX`](https://github.com/Simple-Robotics/candlewick/pull/31)
+   - created 10 days ago
+   - fix issue wrt length box de Coal  (size was 2x)
+- [#34 Move python bindings dir](https://github.com/Simple-Robotics/candlewick/pull/34)
+   - created 6 days ago
+- [#35 Change main render passes' transparency blend state](https://github.com/Simple-Robotics/candlewick/pull/35)
+   - created 5 days ago
+   - pb with transparency of body of Upkie
+- [#36 GUI updates: fix HUD toggles, add "about" window, add robot info table, add `GeometryObject` and plane toggles](https://github.com/Simple-Robotics/candlewick/pull/36)
+   - created 5 days ago
+   - Added UI panel to manipulate meshes in realtime
+   - How to save/reuse the changes? Not handled for now
+- [#38 Add second constructor to `RobotScene`, streamline `Visualizer`](https://github.com/Simple-Robotics/candlewick/pull/38)
+   - created 3 days ago
+
 ## 2025-04-07
 
 ### News
