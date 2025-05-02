@@ -2,6 +2,159 @@
 
 
 
+# 2025-04-28
+
+### News
+
+ - [name=Joris Vaillant] Inria TechDays on Robotics on June 18th/19th ? Conflict with CNRS 2rm TechDays. Ask to postpone
+
+### Technical discussions
+
+ - [name=Joris Vaillant] Ubuntu 20.04 no more available in Github Actions
+ - [name=Pierre-Guillaume] CoreDevs meeting organisation. Stop showing WIP PRs from now on
+
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#527 Hide qhullcpp symbol](https://github.com/coal-library/coal/pull/527)
+   - created 445 days ago, updated 46 days ago, **pr status wip**
+- [#658 add BUILD_ONLY_PYTHON_INTERFACE option](https://github.com/coal-library/coal/pull/658)
+   - created 71 days ago, updated 49 days ago, **pr status wip**
+- [#659 Introduce next-generation Python bindings using `nanobind`](https://github.com/coal-library/coal/pull/659)
+   - created 67 days ago, updated 6 days ago, **pr status wip**
+- [#660 Split python build into a specific sub project](https://github.com/coal-library/coal/pull/660)
+   - created 65 days ago, updated 30 days ago, **pr status wip**
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#370 example: custom numeric type](https://github.com/stack-of-tasks/eigenpy/pull/370)
+   - created 708 days ago, updated 49 days ago, **pr status wip**
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2411 Momentum regressor](https://github.com/stack-of-tasks/pinocchio/pull/2411)
+   - created 228 days ago, updated 39 days ago, **pr status wip**
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - created 220 days ago, updated 18 days ago, **pr status to review**
+- [#2551 Implement Eigen-like expression templates for spatial algebra computations](https://github.com/stack-of-tasks/pinocchio/pull/2551)
+   - created 106 days ago, updated 49 days ago, **pr status wip**
+- [#2572 New header convention](https://github.com/stack-of-tasks/pinocchio/pull/2572)
+   - created 73 days ago, updated 49 days ago, **pr status wip**
+- [#2576 [cmake] Change formatting of listfiles to use gersemi, remove cmake-format](https://github.com/stack-of-tasks/pinocchio/pull/2576)
+   - created 72 days ago, updated 49 days ago, **pr status wip**
+- [#2652 Update mjcf parser](https://github.com/stack-of-tasks/pinocchio/pull/2652)
+   - created 9 days ago, updated 9 days ago
+   - this will soon get merged in devel, this PR should be closed once explanations are given to the contributor
+   - To be closed
+- [#2654 [WIP] Introduce the next-generation of Python bindings using nanobind](https://github.com/stack-of-tasks/pinocchio/pull/2654)
+   - created 8 days ago, updated 6 days ago
+   - Will be closed soon (rather introduced on topic-simulation)
+- [#2664 Introducing model graph](https://github.com/stack-of-tasks/pinocchio/pull/2664)
+   - created 3 days ago, updated 3 days ago
+   - define the model as intermediate graph structures
+   - back to wip
+- [#2665 build(deps): bump ros-industrial/industrial_ci from cfe5c929f7dbb0374c01bc26821ec8eb72f6d4e8 to 16472786c1ffc53596007da4318db98d1f677933](https://github.com/stack-of-tasks/pinocchio/pull/2665)
+   - created 0 days ago, updated 0 days ago
+   - merged
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#243 Add memory allocator support for LQ subproblem types, merge `gar` into main aligator library, slight refactor of `DenseRiccatiSolver`](https://github.com/Simple-Robotics/aligator/pull/243)
+   - created 175 days ago, updated 1 days ago, **pr status wip**
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#387 [WIP] OSQP](https://github.com/Simple-Robotics/proxsuite/pull/387)
+   - created 37 days ago, updated 24 days ago, **pr status to review**
+   - Lucas will discuss with Justin
+- [#393 Allow users to provide their own THROW_PRETTY and CHECK_ARGUMENT_SIZE macros](https://github.com/Simple-Robotics/proxsuite/pull/393)
+   - created 5 days ago, updated 3 days ago
+   - Ping the contributor (use max instead of infinity)
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#10 Add equivalent to eigenpy::register_symbolic_link_to_registered_type](https://github.com/Simple-Robotics/nanoeigenpy/pull/10)
+   - created 10 days ago, updated 10 days ago
+   - reviews taken into account
+   - introduce a deprecation with a date
+   - possibly introduce the deprecated C++17 tag 
+
+#### SIMPLE-ROBOTICS/CANDLEWICK
+
+- [#37 Add Candlewick runtime (executable)](https://github.com/Simple-Robotics/candlewick/pull/37)
+   - created 15 days ago, updated 11 days ago, **pr status wip**
+- [#39 determine Python API's default shader path at runtime using relative path](https://github.com/Simple-Robotics/candlewick/pull/39)
+   - created 1 days ago, updated 1 days ago
+   - merged
+
+### PR merged within the past 2 weeks
+
+
+
+#### COAL-LIBRARY/COAL
+
+- [#693 flake.lock: Update](https://github.com/coal-library/coal/pull/693)
+   - created 6 days ago
+- [#682 Add support for Convex16 and Convex32](https://github.com/coal-library/coal/pull/682)
+   - created 18 days ago
+- [#697 Fix autodoc generation on Windows](https://github.com/coal-library/coal/pull/697)
+   - created 3 days ago
+
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#546 Update C++ standard for clang-format to 11, apply updated formatting rules](https://github.com/stack-of-tasks/eigenpy/pull/546)
+   - created 3 days ago
+- [#545 Add user-defined literal `""_a` for `bp::arg`](https://github.com/stack-of-tasks/eigenpy/pull/545)
+   - created 3 days ago
+
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2646 build(deps): bump prefix-dev/setup-pixi from 0.8.4 to 0.8.5](https://github.com/stack-of-tasks/pinocchio/pull/2646)
+   - created 4 days ago
+- [#2648 unittest/python : add visualizer bindings visitor test, add CMake util to create C++ Python modules for tests](https://github.com/stack-of-tasks/pinocchio/pull/2648)
+   - created 2 days ago
+- [#2647 [python] Fix for getters in VisualizerPythonVisitor](https://github.com/stack-of-tasks/pinocchio/pull/2647)
+   - created 3 days ago
+- [#2658 build(deps): bump prefix-dev/setup-pixi from 0.8.5 to 0.8.8](https://github.com/stack-of-tasks/pinocchio/pull/2658)
+   - created 7 days ago
+- [#2657 build(deps): bump ros-industrial/industrial_ci from 3e67ec54d63496e076267392148a26229740befc to cfe5c929f7dbb0374c01bc26821ec8eb72f6d4e8](https://github.com/stack-of-tasks/pinocchio/pull/2657)
+   - created 7 days ago
+- [#2659 Fix custom scalar support](https://github.com/stack-of-tasks/pinocchio/pull/2659)
+   - created 6 days ago
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#286 [pre-commit.ci] pre-commit autoupdate](https://github.com/Simple-Robotics/aligator/pull/286)
+   - created 11 days ago
+- [#291 Update CITATIONS.bib and CITATION.cff](https://github.com/Simple-Robotics/aligator/pull/291)
+   - created 4 days ago
+- [#292 Reverse sign of StateErrorResidual](https://github.com/Simple-Robotics/aligator/pull/292)
+   - created 2 days ago
+- [#293 macos-linux-pixi workflow: change branch rules](https://github.com/Simple-Robotics/aligator/pull/293)
+   - created 2 days ago
+- [#294 Fix segfault in `FrameCollisionResidual`, add corresponding test in `test_frames.py`](https://github.com/Simple-Robotics/aligator/pull/294)
+   - created 2 days ago
+
+#### SIMPLE-ROBOTICS/PROXSUITE-NLP
+
+- [#129 [pre-commit.ci] pre-commit autoupdate](https://github.com/Simple-Robotics/proxsuite-nlp/pull/129)
+   - created 11 days ago
+
+#### SIMPLE-ROBOTICS/CANDLEWICK
+
+- [#38 Add second constructor to `RobotScene`, streamline `Visualizer`](https://github.com/Simple-Robotics/candlewick/pull/38)
+   - created 7 days ago
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#11 Fix Windows installation issue](https://github.com/Simple-Robotics/nanoeigenpy/pull/11)
+   - created 3 days ago
+
+
 ## 2025-04-14
 
 ### News
