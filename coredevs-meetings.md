@@ -1,8 +1,163 @@
 # MAESTRO COREDEVS MEETING - Notes
 
 
+## 2025-05-05
 
-# 2025-04-28
+### News
+
+ - [name=Pierre-Guillaume] Inria's workshop on software for robotics moved to September (to avoid conflict with 2rm workshop)
+
+### Technical discussions
+
+ - [name=Pierre-Guillaume] As a reminder, the agenda has no more "wip" PRs
+ - [name=Pierre-Guillaume] Discuss on preparing roadmaps for the different software (identifying new features planned, defining a release process)
+     - should we have a roadmap written somewhere, so that users know what will happen, updated twice a year ?
+         - Do this for 3 projects first (pinocchio, coal, aligator) to see if it works
+         - research projects may be difficult? 
+             - nobody full-time 
+             - research opportunities change priorities and hard to predict the outcome
+         - We try and see
+     - Can we have monthly release ?
+         - Is it desirable? 
+         - what about hard deadline ? 
+             - try more like a prediction/objective but no guarantees (especially manpower)
+         - timing of pinocchio3
+             - took a long time, was announced way before but postponned
+     - How is SOFA doing?
+         - example of [bi-annual roadmap](https://www.sofa-framework.org/consortium/roadmap/)
+         - feedback: content/how to do has changed overtime since it was done periodically 
+         - overall, it eases the technical governance
+ - [name=Joris] Remove CLA in proxsuite ?
+     - Why a CLA (Contributor License Agreements) needed in ProxSuite
+     - Confirm to whom the rights are assigned (unclear). Valid CLA? 
+     - it seems we have added it because osqp had a similar cla: https://gist.github.com/jcarpent/67dfb0cbcc4a1a4ed0d8dea190af9d08 (written on top "adapted from osqp")
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#702 [cmake] Remove superfluous call to `FINDPYTHON`](https://github.com/coal-library/coal/pull/702)
+   - created 3 days ago, updated 3 days ago
+   - ref. https://github.com/coal-library/coal/commit/041ac9f3ad90a0fe564774233e665831e9ce8a84
+   - better to avoid transitive dependency ?
+   - ref. https://cmake.org/cmake/help/latest/module/FindPythonInterp.html :`PYTHON_EXECUTABLE`
+   - CAPS for variables
+   - Related to: https://github.com/jrl-umi3218/jrl-cmakemodules/pull/761
+
+#### STACK-OF-TASKS/EIGENPY
+
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - created 227 days ago, updated 25 days ago
+- [#2672 flake.lock: Update](https://github.com/stack-of-tasks/pinocchio/pull/2672)
+   - created 0 days ago, updated 0 days ago
+   - merged
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#387 [WIP] OSQP](https://github.com/Simple-Robotics/proxsuite/pull/387)
+   - created 47 days ago, updated 34 days ago
+- [#397 Allow users-defined `THROW_PRETTY` and `CHECK_ARGUMENT_SIZE` macros](https://github.com/Simple-Robotics/proxsuite/pull/397)
+   - created 5 days ago, updated 5 days ago
+   - to close since author does not respond, may be reopened later (may be related to CLA taking a lot of time to validate)
+
+#### SIMPLE-ROBOTICS/CANDLEWICK
+
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#699 Fix autodoc inner class](https://github.com/coal-library/coal/pull/699)
+   - created 7 days ago
+   - issue with generating the inner class prototype from the xml.
+   - Alternative: 
+       - https://robotpy.github.io/cxxheaderparser/
+       - https://pypi.org/project/doxmlparser/ (in-tree doxygen)
+- [#700 Dont update master](https://github.com/coal-library/coal/pull/700)
+   - created 6 days ago
+- [#701 Update pixi lockfile](https://github.com/coal-library/coal/pull/701)
+   - created 4 days ago
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#547 Use devel as default branch](https://github.com/stack-of-tasks/eigenpy/pull/547)
+   - created 6 days ago
+- [#549 Update pixi lockfile](https://github.com/stack-of-tasks/eigenpy/pull/549)
+   - created 4 days ago
+- [#551 flake.lock: Update](https://github.com/stack-of-tasks/eigenpy/pull/551)
+   - created 2 days ago
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2665 build(deps): bump ros-industrial/industrial_ci from cfe5c929f7dbb0374c01bc26821ec8eb72f6d4e8 to 16472786c1ffc53596007da4318db98d1f677933](https://github.com/stack-of-tasks/pinocchio/pull/2665)
+   - created 7 days ago
+- [#2666 Change default branch](https://github.com/stack-of-tasks/pinocchio/pull/2666)
+   - created 6 days ago
+- [#2668 Implement `captureImage` for Panda3D visualizer](https://github.com/stack-of-tasks/pinocchio/pull/2668)
+   - created 5 days ago
+- [#2671 Update pixi lockfile](https://github.com/stack-of-tasks/pinocchio/pull/2671)
+   - created 4 days ago
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#297 Change work in progress branch](https://github.com/Simple-Robotics/aligator/pull/297)
+   - created 6 days ago
+- [#298 Add CMake macro `aligator_create_python_extension()` to export](https://github.com/Simple-Robotics/aligator/pull/298)
+   - created 6 days ago
+- [#299 Merge expose-stage-data.cpp into expose-stage.cpp](https://github.com/Simple-Robotics/aligator/pull/299)
+   - created 5 days ago
+- [#300 [gar] Add `LqrProblemTpl::isApprox()` and helper `lqrKnotsSameDim`, check dimensions in `LqrKnotTpl::isApprox()`](https://github.com/Simple-Robotics/aligator/pull/300)
+   - created 5 days ago
+- [#301 [gar] Add fwd header, rename `{ riccati-impl.hpp => riccati-kernel.hpp }`](https://github.com/Simple-Robotics/aligator/pull/301)
+   - created 5 days ago
+- [#304 [python] make BlkMatrixPythonVisitor an incomplete type when template argument is wrong](https://github.com/Simple-Robotics/aligator/pull/304)
+   - created 5 days ago
+- [#305 .gersemirc : add bench dir](https://github.com/Simple-Robotics/aligator/pull/305)
+   - created 5 days ago
+- [#306 Update pixi lockfile](https://github.com/Simple-Robotics/aligator/pull/306)
+   - created 4 days ago
+- [#243 Add memory allocator support for LQ subproblem types, merge `gar` into main aligator library, slight refactor of `DenseRiccatiSolver`](https://github.com/Simple-Robotics/aligator/pull/243)
+   - created 185 days ago
+- [#307 Officially remove support for Pinocchio 2, require Pinocchio >= 3.4](https://github.com/Simple-Robotics/aligator/pull/307)
+   - created 3 days ago
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#395 Use devel as default branch](https://github.com/Simple-Robotics/proxsuite/pull/395)
+   - created 6 days ago
+
+#### SIMPLE-ROBOTICS/PROXSUITE-NLP
+
+- [#130 Update pixi lockfile](https://github.com/Simple-Robotics/proxsuite-nlp/pull/130)
+   - created 4 days ago
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#10 Add equivalent to eigenpy::register_symbolic_link_to_registered_type](https://github.com/Simple-Robotics/nanoeigenpy/pull/10)
+   - created 20 days ago
+
+#### SIMPLE-ROBOTICS/CANDLEWICK
+
+- [#39 determine Python API's default shader path at runtime using relative path](https://github.com/Simple-Robotics/candlewick/pull/39)
+   - created 8 days ago
+- [#40 Remove std::optional for `Visualizer::debugScene`, initialize in ctor](https://github.com/Simple-Robotics/candlewick/pull/40)
+   - created 7 days ago
+- [#41 Remove print statement in `__init__.py`](https://github.com/Simple-Robotics/candlewick/pull/41)
+   - created 7 days ago
+- [#42 Add pixi lockfile update workflow](https://github.com/Simple-Robotics/candlewick/pull/42)
+   - created 7 days ago
+- [#43 [python] Fix `Visualizer` getters for Pinocchio 3.5.0](https://github.com/Simple-Robotics/candlewick/pull/43)
+   - created 7 days ago
+- [#44 Fix shader paths again](https://github.com/Simple-Robotics/candlewick/pull/44)
+   - created 6 days ago
+
+## 2025-04-28
 
 ### News
 
