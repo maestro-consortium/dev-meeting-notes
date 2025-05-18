@@ -1,6 +1,68 @@
 # MAESTRO COREDEVS MEETING - Notes
 
 
+## 2025-05-12
+
+### News
+
+ - [name=Fabian Schramm] Removed CLA (Contributor License Agreement) for proxsuite
+ - [name=Joris] New release of Aligator (v0.14) with no dependency on proxsuite-nlp
+
+### Technical discussions
+
+ - [name=Pierre-Guillaume] Preparation of technical roadmaps for some of the software this week.
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+#### STACK-OF-TASKS/EIGENPY
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - created 234 days ago, updated 32 days ago, **pr status to review**
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#387 [WIP] OSQP](https://github.com/Simple-Robotics/proxsuite/pull/387)
+   - created 51 days ago, updated 4 days ago, **pr status to review**
+   - to be closed, improved implementaton on another branch
+
+#### SIMPLE-ROBOTICS/CANDLEWICK
+
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#701 Update pixi lockfile](https://github.com/coal-library/coal/pull/701)
+   - created 8 days ago
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#551 flake.lock: Update](https://github.com/stack-of-tasks/eigenpy/pull/551)
+   - created 6 days ago
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2672 flake.lock: Update](https://github.com/stack-of-tasks/pinocchio/pull/2672)
+   - created 4 days ago
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#310 Move constraint sets from `proxsuite-nlp`](https://github.com/Simple-Robotics/aligator/pull/310)
+   - created 3 days ago
+- [#312 Add polymorphic value wrapper, remove dependence on `proxsuite-nlp` headers](https://github.com/Simple-Robotics/aligator/pull/312)
+   - created 3 days ago
+- [#309 Merge parts of `proxsuite-nlp` (manifolds and constraints) into aligator](https://github.com/Simple-Robotics/aligator/pull/309)
+   - created 4 days ago
+- [#313 Managed matrix](https://github.com/Simple-Robotics/aligator/pull/313)
+   - created 2 days ago
+   - allows to have Eigen matrix 
+- [#314 topic/next : aligator 0.14](https://github.com/Simple-Robotics/aligator/pull/314)
+   - created 2 days ago
+ 
 ## 2025-05-05
 
 ### News
