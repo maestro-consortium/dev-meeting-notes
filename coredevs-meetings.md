@@ -1,6 +1,129 @@
 # MAESTRO COREDEVS MEETING - Notes
 
 
+
+
+
+## 2025-02-26
+
+### News
+
+ - [name=Joris Vaillant] Release pinocchio 3.7
+     - Stable version which will be merged in Pinocchio 4
+     - Some minor remaining PR to come for Pinocchio 3
+     - [Panda3d](https://www.panda3d.org/) for offscreen rendering
+ - [name=Pierre-Guillaume Raverdy] Code for Simple is almost online
+     - Not yet a release
+
+### Technical discussions
+
+ - [name=Joris Vaillant] License JRL-CMakeModules
+     - ROS comment that license is not clear
+     - Different licenses used in the module, need to conform with ROS package process/licensing
+         - mostly GPLv3, but package not distributed, helps to generate code
+         - some distributed files (file external) are in GPL
+     - need to sort for v2 version of jrl-cmakemodules
+ - [name=Joris Vaillant] Pinocchio 4 CI Debug on Simple-Robotics/pinocchio
+     - Created to sort/complete the Github CI, avoid exposing the branch to the general public
+     - helps to experiment without too much visibility
+     - CTA: Change the description in Github
+ - [name=Guilhem Saurel] warning hpp-fcl: flag to opt-out
+    - add a flag for pinocchio v3
+    - for pinocchio v4, change hpp-fcl to coal
+    - prepare a new release for COAL (v4)
+        - new PRs from Louis and Nanobind (breaking changes)
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#553 readme: update apt key usage, fix #552](https://github.com/stack-of-tasks/eigenpy/pull/553)
+   - created 3 days ago, updated 1 days ago
+   - can be merged directly (no source file impacted)
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - created 248 days ago, updated 46 days ago
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#399 topic/osqp: Add the OSQP solver in ProxSuite](https://github.com/Simple-Robotics/proxsuite/pull/399)
+   - created 4 days ago, updated 3 days ago
+   - Set to WIP
+
+#### SIMPLE-ROBOTICS/CANDLEWICK
+
+
+### PR merged within the past 2 weeks
+
+#### COAL-LIBRARY/COAL
+
+- [#661 subscribe to ROS buildfarm mails](https://github.com/coal-library/coal/pull/661)
+   - created 4 days ago
+- [#704 CMake: qhull system or nothing](https://github.com/coal-library/coal/pull/704)
+   - created 10 days ago
+- [#705 ci: fix nix](https://github.com/coal-library/coal/pull/705)
+   - created 10 days ago
+
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#534 subscribe to ROS buildfarm mails](https://github.com/stack-of-tasks/eigenpy/pull/534)
+   - created 4 days ago
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2589 subscribe to ROS buildfarm mails](https://github.com/stack-of-tasks/pinocchio/pull/2589)
+   - created 4 days ago
+- [#2593 build(deps): bump prefix-dev/setup-pixi from 0.8.2 to 0.8.3](https://github.com/stack-of-tasks/pinocchio/pull/2593)
+   - created 0 days ago
+- [#2684 Add further check of input arguments for kinematics Jacobians](https://github.com/stack-of-tasks/pinocchio/pull/2684)
+   - created 2 days ago, updated 2 days ago
+- [#2680 Remove support of 20.04 in linux CI](https://github.com/stack-of-tasks/pinocchio/pull/2680)
+   - created 6 days ago
+   - To discuss with potential industrial members
+   - Python 3.9 still supported. 
+       - APT: min 3.10
+       - Python foundation supports from 3.9 to 3.13 (5 versions)
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#317 Exposing vs in ProxDDP result](https://github.com/Simple-Robotics/aligator/pull/317)
+   - created 11 days ago
+- [#320 CMakeLists.txt : Update minimum required version of CMake to 3.22](https://github.com/Simple-Robotics/aligator/pull/320)
+   - created 3 days ago
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+
+#### SIMPLE-ROBOTICS/CANDLEWICK
+
+- [#58 RobotScene : Add order-independent transparency](https://github.com/Simple-Robotics/candlewick/pull/58)
+   - created 7 days ago
+- [#59 Implement and use type-safe command buffer uniform push wrappers](https://github.com/Simple-Robotics/candlewick/pull/59)
+   - created 6 days ago
+- [#60 [core] Revamp SSAO, depth and shadow map pass classes - add move constructors, assignment op, and destructors](https://github.com/Simple-Robotics/candlewick/pull/60)
+   - created 6 days ago
+- [#61 Rework texture downloader, screenshot capture and video recording, fix `CommandBuffer::submitAndAcquireFence()` not setting the internal pointer to null, fix velocity arrow direction in `RobotDebugScene`](https://github.com/Simple-Robotics/candlewick/pull/61)
+   - created 7 days ago
+- [#62 Video and screenshot recording: follow-up](https://github.com/Simple-Robotics/candlewick/pull/62)
+   - created 6 days ago
+- [#63 Video and screenshot recording : part 3](https://github.com/Simple-Robotics/candlewick/pull/63)
+   - created 5 days ago
+- [#64 [utils | third-party] switch from `stb_image_write.h` to `fpng` for writing PNG files](https://github.com/Simple-Robotics/candlewick/pull/64)
+   - created 5 days ago
+- [#65 multibody/Visualizer : add `startRecording()`, `stopRecording()` functions, expose to Python](https://github.com/Simple-Robotics/candlewick/pull/65)
+   - created 5 days ago
+- [#69 Add support for multiple directional lights - with shadow mapping !](https://github.com/Simple-Robotics/candlewick/pull/69)
+   - created 3 days ago
+- [#70 multibody/Visualizer : use `H` key to toggle GUI](https://github.com/Simple-Robotics/candlewick/pull/70)
+   - created 1 days ago
+
+
 ## 2025-05-12
 
 ### News
