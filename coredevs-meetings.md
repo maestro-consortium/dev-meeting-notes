@@ -1,10 +1,109 @@
 # MAESTRO COREDEVS MEETING - Notes
 
 
+# 2025-06-02
+
+### News
+
+- [name=Pierre-Guillaume Raverdy] Code for Simple is online
+    - Not yet a release
+    - Requires upcoming Pinocchio4 (on Simple repo - some compilation issues, monitoring)
+    - When to discuss as part of Maestro ? Wait for first release or no ?
+        - Start now, will help the first release (recurring topic in the technical discussion)
+
+### Technical discussions
+
+- [name=Joris Vaillant] Breaking changes in Coal (devel branch).
+    - ConvexBase are templated now
+    - Need to minimize breaking changes in upcomming release (check with Louis)
+- [name=Pierre-Guillaume Raverdy] What about recuring PR (Pixi, Ros ) in the agenda ?
+    - Only keep in the agenda if the CI fails, can be an important topic
+- [name=Guilhem Saurel] Script to generate different cron start date for different projects (avoid starting everything at the same time) https://github.com/nim65s/scripts/blob/hm/md5cron.py (monthly only for now)
 
 
+### PR to review
 
-## 2025-02-26
+#### COAL-LIBRARY/COAL
+
+- [#709 CMake: add COAL_DISABLE_HPP_FCL_WARNINGS option](https://github.com/coal-library/coal/pull/709)
+   - created 7 days ago, updated 6 days ago
+   - ready for review
+- [#711 Update pixi lockfile](https://github.com/coal-library/coal/pull/711)
+   - created 1 days ago, updated 1 days ago
+   - CI fails, just ROS, minimal
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#554 Update pixi lockfile](https://github.com/stack-of-tasks/eigenpy/pull/554)
+   - created 1 days ago, updated 1 days ago
+   - need to check CI (JRL), just a rebase ?
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - created 258 days ago, updated 56 days ago
+- [#2686 CMake: add COAL_DISABLE_HPP_FCL_WARNINGS](https://github.com/stack-of-tasks/pinocchio/pull/2686)
+   - created 7 days ago, updated 6 days ago
+   - to review, ongoing discussions
+- [#2692 Update pixi lockfile](https://github.com/stack-of-tasks/pinocchio/pull/2692)
+   - created 1 days ago, updated 1 days ago
+   - CI fails (APT) need to check
+- [#2693 build(deps): bump ros-industrial/industrial_ci from 16472786c1ffc53596007da4318db98d1f677933 to 7083afac1ddf852a2923757a7ef588adaba841a9](https://github.com/stack-of-tasks/pinocchio/pull/2693)
+   - created 0 days ago, updated 0 days ago
+   - network issue during the CI, just need to restart it
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#327 Update pixi lockfile](https://github.com/Simple-Robotics/aligator/pull/327)
+   - created 1 days ago, updated 1 days ago
+   - CI fails, need to add tag for changelog
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+
+#### SIMPLE-ROBOTICS/PROXSUITE-NLP
+
+- [#131 Update pixi lockfile](https://github.com/Simple-Robotics/proxsuite-nlp/pull/131)
+   - created 1 days ago, updated 1 days ago
+   - closed
+   - archiving the repo now (remove from meeting agenda)
+
+#### SIMPLE-ROBOTICS/CANDLEWICK
+
+
+### PR merged within the week
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#553 readme: update apt key usage, fix #552](https://github.com/stack-of-tasks/eigenpy/pull/553)
+   - created 13 days ago
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2684 Add further check of input arguments for kinematics Jacobians](https://github.com/stack-of-tasks/pinocchio/pull/2684)
+   - created 9 days ago
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#322 solvers : make proxddp algo's `Results` class copyable again (in C++ and Python)](https://github.com/Simple-Robotics/aligator/pull/322)
+   - created 6 days ago
+- [#324 solvers : use move workspace and results assignment operators in `SolverProxDDP::setup()`](https://github.com/Simple-Robotics/aligator/pull/324)
+   - created 6 days ago
+- [#325 Update minimum eigenpy in readme and cmake](https://github.com/Simple-Robotics/aligator/pull/325)
+   - created 6 days ago
+- [#326 Added wheeled inverted pendulum dynamics](https://github.com/Simple-Robotics/aligator/pull/326)
+   - created 6 days ago
+
+#### SIMPLE-ROBOTICS/CANDLEWICK
+
+- [#71 Better shadows: soft shadows using percentage-closer filtering (PCF), tighter shadow frustum (from scene AABBs)](https://github.com/Simple-Robotics/candlewick/pull/71)
+   - created 7 days ago
+- [#74 Fix hangs when `Renderer` or `Visualizer` are destroyed](https://github.com/Simple-Robotics/candlewick/pull/74)
+   - created 3 days ago
+- [#75 pixi: update lockfile](https://github.com/Simple-Robotics/candlewick/pull/75)
+   - created 2 days ago
+
+## 2025-05-26
 
 ### News
 
