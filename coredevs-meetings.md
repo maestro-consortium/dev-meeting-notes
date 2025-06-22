@@ -1,6 +1,94 @@
 # MAESTRO COREDEVS MEETING - Notes
 
 
+
+# 2025-06-16
+
+### News
+
+ - [name=Pierre-Guillaume] 
+     - Presentation of the Maestro initiative during a  during a panel discussion at VivaTech
+     - New software engineer recruted to oversee the development of the Simple simulator (should arrive in october)
+
+### Technical discussions
+
+ - [name=Joris]
+    - Breaking API change of Coal antiipated for Coal (v4) - to discuss next week
+    - Still waiting for Eigen PR to be merged by Google
+        -  https://gitlab.com/libeigen/eigen/-/merge_requests/1897
+ - [name=Joris] Add issues to discuss in the agenda of the meeting (need to support tags, update the scripts).
+
+### Issues to discuss
+
+ - [name=Justin] CppAD Problem https://github.com/stack-of-tasks/pinocchio/issues/2702
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#715 flake.lock: Update](https://github.com/coal-library/coal/pull/715)
+   - created 4 days ago, updated 4 days ago
+   - Change for required flag in the PR like in Pinocchio so that no marge if CI fails (should be default behavior).
+   - Here CI fails for ROS. Can indeed merge is CI ok for Nix.
+
+#### STACK-OF-TASKS/EIGENPY
+
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - created 272 days ago, updated 70 days ago
+- [#2704 build(deps): bump prefix-dev/setup-pixi from 0.8.8 to 0.8.10](https://github.com/stack-of-tasks/pinocchio/pull/2704)
+   - created 0 days ago, updated 0 days ago
+   - Already merged
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#331 Add a Python test for MPC-like iteration](https://github.com/Simple-Robotics/aligator/pull/331)
+   - created 3 days ago, updated 3 days ago
+   - Random NaN after some iterations. Initialisation issue. Need to check with valgrind
+ 
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+#### SIMPLE-ROBOTICS/SIMPLE
+
+#### SIMPLE-ROBOTICS/CANDLEWICK
+
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#716 convex: add missing typedefs for backward compatibility](https://github.com/coal-library/coal/pull/716)
+   - created 4 days ago
+   - Putting in place typedef (e.g., Triangle) - problem with projects that do forward declaration of these types.
+       - one solution. Header of forward declarations with typedefs
+       - to discuss next week
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2699 build(deps): bump ros-industrial/industrial_ci from 7083afac1ddf852a2923757a7ef588adaba841a9 to e3d16c224caf4832cf68e74093eb70f3a979b4cc](https://github.com/stack-of-tasks/pinocchio/pull/2699)
+   - created 7 days ag
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#402 update readme](https://github.com/Simple-Robotics/proxsuite/pull/402)
+   - created 10 days ago
+
+#### SIMPLE-ROBOTICS/CANDLEWICK
+
+- [#79 next](https://github.com/Simple-Robotics/candlewick/pull/79)
+   - created 6 days ago
+   - many internal changes
+- [#81 Fix building with the next version of Coal (devel)](https://github.com/Simple-Robotics/candlewick/pull/81)
+   - created 4 days ago
+   - solves various issues to use with Coal (devel)
+- [#83 Fix FFmpeg not being actually optional when building, add warnings when calling `Visualizer` recording settings in this case](https://github.com/Simple-Robotics/candlewick/pull/83)
+   - created 4 days ago
+- [#84 Fix display issues with capsules, missing colour for primitives](https://github.com/Simple-Robotics/candlewick/pull/84)
+   - created 4 days ago
+
 # 2025-06-02
 
 ### News
