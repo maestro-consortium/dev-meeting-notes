@@ -2,6 +2,142 @@
 
 
 
+# 2025-06-30
+
+### News
+
+ - [name=Pierre-Guillaume] PUMA published for software development services around the Maestro robotics software stack https://puma.cnrs.fr/entreprise/consultation/512057?orgAcronyme=t5y
+ - [name=Pierre-Guillaume] Discussions started between CNRS and Inria (transfer/valorisation services) about the consortium creation.
+
+### Technical discussions
+
+ - [name=Pierre-Guillaume] Recent open issues listed for all projects. Need a tag to filter the ones for the CoreDevs meeting otherwise too many listed.
+     - issues with label "to_discuss"
+     - new issues within the week
+- [name=Justin] CppAD Problem https://github.com/stack-of-tasks/pinocchio/issues/2702
+    - answered in the issue, will be in Pinocchio 4
+- [name=Guilhem] Split python packaging https://github.com/jrl-umi3218/jrl-cmakemodules/pull/745
+    - many PR in different repos related to separating C++ and Python packages, maybe multiple Python packages for different interpreters
+    - Another approach by Joris, but a bit too intrusive
+    - Some tests with Nix (conclusive), ongoing test with pypi 
+    - issue with option name 
+        - in example_robot_data : name is install_python_interface
+        - in this PR : build_only_python_only vs build_only_python_interface
+    - possible to build python interface while reusing the current C++ build
+    - use "build_python_interface" and "build_standalone_python_interface"
+        - using "bindings" instead of "interface" would be better, but too much impact
+        - potentially change to "bindings" with jrl-cmakemodules v2
+- [name=Joris] CI ARM Github
+    - ARM CI put in place on Proxsuite (release) and Pinocchio, 
+    - one test was failing, corrected
+    - add this proc architecture on all the repos ?
+        - yes
+
+
+#### stack-of-tasks/pinocchio
+
+ - Items to discuss:
+
+   - [#2712 Release Pinocchio 3.5.0+ to ROS 2 Kilted?](https://github.com/stack-of-tasks/pinocchio/issues/2712)
+
+
+#### simple-robotics/proxsuite
+
+ - Items to discuss:
+
+   - [#405 CMake regex failure due to special characters in path](https://github.com/Simple-Robotics/proxsuite/issues/405)
+   - [#404 Using ProxSuite as a CMake subproject config failure](https://github.com/Simple-Robotics/proxsuite/issues/404)
+
+
+#### simple-robotics/candlewick
+
+ - Items to discuss:
+   - [#4 Add standalone `Visualizer` runtime and IPC communication](https://github.com/Simple-Robotics/candlewick/issues/4)
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+
+- [#728 merge #658 + #659](https://github.com/coal-library/coal/pull/728)
+   - Created 18 hours ago, updated 12 hours ago, no status
+   - PR so that both 658 and 659 can be merged independantly
+   - Just for checking, will not be merged
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - Created 282 days ago, updated 80 days ago, status to review
+- [#2713 Add arm running in pixi workflow](https://github.com/stack-of-tasks/pinocchio/pull/2713)
+   - Created 3 days ago, updated 22 hours ago, status to review
+   - completed, can be merged
+- [#2714 CMake:  add BUILD_ONLY_PYTHON_INTERFACE option](https://github.com/stack-of-tasks/pinocchio/pull/2714)
+   - Created 3 days ago, updated 20 hours ago, no status
+   - see Technical Discussion
+- [#2715 Fix hasConfigurationLimit() for mimic joints to return empty vector](https://github.com/stack-of-tasks/pinocchio/pull/2715)
+   - Created 2 days ago, updated 1 days ago, no status
+   - Forgotten function, brought back, but still to review since the same tangent function is used a bit further in the code
+   - Make deadline explicit before Joris handle this
+- [#2717 CMakeLists.txt: remove a duplicate option()](https://github.com/stack-of-tasks/pinocchio/pull/2717)
+   - Created 7 minutes ago, updated 7 minutes ago, no status
+   - Merged
+   - How to automatically detect duplicates ?
+
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#726 CI: nix alls-green](https://github.com/coal-library/coal/pull/726)
+   - Created 3 days ago, merged 3 days ago
+- [#727 require octomap >= 1.8](https://github.com/coal-library/coal/pull/727)
+   - Created 3 days ago, merged 2 days ago
+- [#724 broadphase : add a functional API for collision and distance callbacks](https://github.com/coal-library/coal/pull/724)
+   - Created 8 days ago, merged 3 days ago
+   - Need to be exposed in the nanobind binding
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#559 ci: setup dependabot](https://github.com/stack-of-tasks/eigenpy/pull/559)
+   - Created 3 days ago, merged 3 days ago
+   - Activated, had trigerred many PRs, monthly basis
+- [#558 CI: nix alls-green](https://github.com/stack-of-tasks/eigenpy/pull/558)
+   - Created 3 days ago, merged 3 days ago
+- [#566 ci: bump ROS](https://github.com/stack-of-tasks/eigenpy/pull/566)
+   - Created 3 days ago, merged 3 days ago
+   - Not trigered by dependabot, done manually, to check
+- [#564 build(deps): bump cachix/cachix-action from 15 to 16](https://github.com/stack-of-tasks/eigenpy/pull/564)
+   - Created 3 days ago, merged 3 days ago
+- [#563 build(deps): bump actions/checkout from 3 to 4](https://github.com/stack-of-tasks/eigenpy/pull/563)
+   - Created 3 days ago, merged 3 days ago
+- [#562 build(deps): bump actions/create-github-app-token from 1 to 2](https://github.com/stack-of-tasks/eigenpy/pull/562)
+   - Created 3 days ago, merged 3 days ago
+- [#561 build(deps): bump prefix-dev/setup-pixi from 0.8.1 to 0.8.10](https://github.com/stack-of-tasks/eigenpy/pull/561)
+   - Created 3 days ago, merged 3 days ago
+- [#565 build(deps): bump cachix/install-nix-action from 27 to 31](https://github.com/stack-of-tasks/eigenpy/pull/565)
+   - Created 3 days ago, merged 3 days ago
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+
+- [#2706 Sync submodule cmake](https://github.com/stack-of-tasks/pinocchio/pull/2706)
+   - Created 10 days ago, merged 3 days ago
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+
+- [#403 aarch64 numerical precision issue in sparse_maros_meszaros](https://github.com/Simple-Robotics/proxsuite/pull/403)
+   - Created 9 days ago, merged 17 hours ago
+   - Numerical precision issue ? Stability issue ?
+   - Potential deeper issue
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#12 CMake: sync submodule, bump min version to 3.22 & add pixi update workflow](https://github.com/Simple-Robotics/nanoeigenpy/pull/12)
+   - Created 22 hours ago, merged 21 hours ago
+
+
 # 2025-06-23
 
 ### News
