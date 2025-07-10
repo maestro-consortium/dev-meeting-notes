@@ -1,6 +1,109 @@
 # MAESTRO COREDEVS MEETING - Notes
 
 
+# 2025-07-07
+
+### News
+
+- [name=Pierre-Guillaume] "Depots APP" for early 2024 versions of Pinocchio (v2.7.1) and Aligator (v0.5) being finalized. More to be done in the coming weeks in preparation for kickstarting the Maestro consortium
+- [name=Joris] Merged of nanobin du bindings nanobind de Coal
+- [name=Justin] Deepmind/Nvidia/Disney co-developpent nvx simulateur (Warp and not Jax, backend detection collision based on Coal/GJK), Python framework, reimplements Mujoco. 
+    - Response to genesis  (https://genesis-embodied-ai.github.io/) ?
+    - implies that existing simulators from them will be dropped
+
+### Technical discussions
+
+- [name=Guilhem] standalone python
+    - All tests completed. jrl-cmakemodules ok. PR to be merged soon.
+    - Some tests last week by Joris for Coal, ok so fr but need more tests
+    - Joris to look at PR for jrl, coal, pinocchio
+        - priority for the jrl PR, blocking for ROS, Docker
+- [name=Wilson] 1 month ago, PR on eigen
+  - some work by reviewers, comments, still waiting
+  - Deadline freeze for Ubuntu 26.04 ?
+      - important/crucial to get Eigen 3.5 in it
+  
+### PR to review
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#571 Linear algebra: Expose the remaining Eigen classes (decompositions and solvers)](https://github.com/stack-of-tasks/eigenpy/pull/571)
+   - Created 2 days ago, updated 2 days ago, no status
+   - Some TU to finish, should be ready soon
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - Created 292 days ago, updated 90 days ago, status to review
+- [#2714 CMake:  add BUILD_STANDALONE_PYTHON_INTERFACE option](https://github.com/stack-of-tasks/pinocchio/pull/2714)
+   - Created 12 days ago, updated 6 days ago, no status
+   - check above
+- [#2718 Beta version of Viser visualizer](https://github.com/stack-of-tasks/pinocchio/pull/2718)
+   - Created 7 days ago, updated 2 days ago, no status
+   - Nice PR, interresting
+   - Comments
+       - Works with master branch of Viser, not the latest. 
+       - Fix for Talos when same mesh for left/write
+       - dependency cycle (includes Pinocchio), due to examples certainly.
+       - Wilson th check the PR, then Joris/Guilhem to see how to progress on this
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#729 Update pixi lockfile](https://github.com/coal-library/coal/pull/729)
+   - Created 6 days ago, merged 5 days ago
+   - Montlhy dependency PR
+- [#730 build(deps): bump cachix/cachix-action from 15 to 16](https://github.com/coal-library/coal/pull/730)
+   - Created 5 days ago, merged 5 days ago
+- [#659 Introduce next-generation Python bindings using `nanobind`](https://github.com/coal-library/coal/pull/659)
+   - Created 139 days ago, merged 3 days ago
+   - Merged of nanobind bindings
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#567 Update pixi lockfile](https://github.com/stack-of-tasks/eigenpy/pull/567)
+   - Created 6 days ago, merged 5 days ago
+   - Montlhy dependency PR
+- [#569 build(deps): bump tarides/changelog-check-action from 2 to 3](https://github.com/stack-of-tasks/eigenpy/pull/569)
+   - Created 5 days ago, merged 4 days ago
+- [#568 build(deps): bump actions/cache from 3 to 4](https://github.com/stack-of-tasks/eigenpy/pull/568)
+   - Created 5 days ago, merged 4 days ago
+- [#570 flake.lock: Update](https://github.com/stack-of-tasks/eigenpy/pull/570)
+   - Created 3 days ago, merged 3 days ago
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2713 Add arm running in pixi workflow](https://github.com/stack-of-tasks/pinocchio/pull/2713)
+   - Created 12 days ago, merged 6 days ago
+   - New arm workflow, works fine except one problem related to per-label options (on arm, cppad codegen does not install, had to disable flag)
+   - qemu - how to do an ARM Linux VM 
+- [#2719 Add ROS 2 Kilted to CI jobs](https://github.com/stack-of-tasks/pinocchio/pull/2719)
+   - Created 7 days ago, merged 6 days ago
+   - New ROS distribution supported
+- [#2715 Fix hasConfigurationLimit() for mimic joints to return empty vector](https://github.com/stack-of-tasks/pinocchio/pull/2715)
+   - Created 12 days ago, merged 6 days ago
+   - Problem with configuration joint limits (propagation of the parent to the child)
+   - fixed
+- [#2720 Update pixi lockfile](https://github.com/stack-of-tasks/pinocchio/pull/2720)
+   - Created 6 days ago, merged 4 days ago
+   - Montlhy dependency PR
+- [#2721 Update ROS section and CI badges in README](https://github.com/stack-of-tasks/pinocchio/pull/2721)
+   - Created 4 days ago, merged 3 days ago
+   - External contribution to add badge
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#332 Update pixi lockfile](https://github.com/Simple-Robotics/aligator/pull/332)
+   - Created 6 days ago, merged 5 days ago
+   - Montlhy dependency PR
+
+#### SIMPLE-ROBOTICS/CANDLEWICK
+
+- [#89 Improvements to GUI reporting and interactivity for debug elements](https://github.com/Simple-Robotics/candlewick/pull/89)
+   - Created 3 days ago, merged 3 days ago
+   - Improves interactivity, quality of life
+
 
 # 2025-06-30
 
