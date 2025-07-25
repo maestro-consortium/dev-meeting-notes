@@ -1,6 +1,135 @@
 # MAESTRO COREDEVS MEETING - Notes
 
 
+# 2025-07-21
+
+### News
+
+ - [name=Pierre-Guillaume] CNRS PUMA submissions under review. Official announcement expected end of August (vacations)
+
+### Technical discussions
+
+ - [name=Joris] Remove codacy ?
+     - ok for Python, but problematic for C++. Ruff would be better for Python? (potentially https://mypy-lang.org/ but pb with old code related/visualizer/meshcat/hpp-fcl, lack of typing)
+     - Clang-tidy ? Lots of false positive in the pinocchio code base. Lot of work to setup the rules, and very slow (do only for diffs). Would certainly fail for metaprog/templates.
+     - side subject: wrt visualizatio, check in Simple since newer code (Work in PUMA).
+ - [name=Guilhem] docker
+     - PR last week. Working on "official" docker image
+         - https://github.com/stack-of-tasks/eigenpy/pull/575
+         - dockgen : https://github.com/nim65s/dockgen
+     - Will need to be merged, so that available for next release
+
+#### stack-of-tasks/pinocchio
+
+ - Items to discuss:
+   - [#2729 Inverse/Forward Dynamics of a closed kinematic chain robot](https://github.com/stack-of-tasks/pinocchio/issues/2729)
+       - Willson and Joris to discuss and answer
+   - [#2726 how to get second derivative of the Jacobian with respect to the time.](https://github.com/stack-of-tasks/pinocchio/issues/2726)
+       - Justin to answer
+   - [#2725 End-effector wrench computed via inverse dynamics differs from BaseFeedback wrench？](https://github.com/stack-of-tasks/pinocchio/issues/2725)
+       - Closed by user
+
+### PR to review
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#571 Linear algebra: Expose the remaining classes listed in Eigen documentation (decompositions and solvers)](https://github.com/stack-of-tasks/eigenpy/pull/571)
+   - Created 16 days ago, updated 7 hours ago, no status
+   - Decomposition added
+   - Some methods remain to be added
+- [#575 dockgen: init](https://github.com/stack-of-tasks/eigenpy/pull/575)
+   - Created 4 days ago, updated 3 days ago, no status
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - Created 306 days ago, updated 104 days ago, status to review
+   - waiting for pinocchio4
+- [#2714 CMake:  add BUILD_STANDALONE_PYTHON_INTERFACE option](https://github.com/stack-of-tasks/pinocchio/pull/2714)
+   - Created 26 days ago, updated 12 days ago, no status
+   - Tested by Guilhem. Joris and Guilhem to work this week to merge for Coal+Pinocchio ?
+- [#2723 [pre-commit.ci] pre-commit autoupdate](https://github.com/stack-of-tasks/pinocchio/pull/2723)
+   - Created 13 days ago, updated 12 days ago, no status
+   - Blocked until Pinocchio4 due to code reformat
+- [#2728 CMake: allow use of system example-robot-data](https://github.com/stack-of-tasks/pinocchio/pull/2728)
+   - Created 5 days ago, updated 3 days ago, no status
+   - Do a build all to test everything, can be reviewed then
+   - In example robot data, PR to split packages is still in draft (need to agree on naming)
+       - example-robot-data-scripts, example-robot-data-resources ?
+       - breaking change wrt headers ? (e.g., for Croccodyl)
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#13 Expose additional classes from Eigen (decompositions, solvers, geometry)](https://github.com/Simple-Robotics/nanoeigenpy/pull/13)
+   - Created 12 days ago, updated 7 hours ago, no status
+
+
+#### SIMPLE-ROBOTICS/CANDLEWICK
+
+- [#37 Add Candlewick runtime (executable and client)](https://github.com/Simple-Robotics/candlewick/pull/37)
+   - Created 101 days ago, updated 5 days ago, status ready
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#733 sync submodule](https://github.com/coal-library/coal/pull/733)
+   - Created 11 days ago, merged 3 days ago
+- [#731 [pre-commit.ci] pre-commit autoupdate](https://github.com/coal-library/coal/pull/731)
+   - Created 10 days ago, merged 9 days ago
+- [#732 ROS: silent ci errors about nanoeigenpy for now](https://github.com/coal-library/coal/pull/732)
+   - Created 9 days ago, merged 8 days ago
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#574 ROS: drop ROS1 & Python2 details](https://github.com/stack-of-tasks/eigenpy/pull/574)
+   - Created 5 days ago, merged 4 days ago
+- [#573 sync submodule](https://github.com/stack-of-tasks/eigenpy/pull/573)
+   - Created 11 days ago, merged 3 days ago
+- [#572 [pre-commit.ci] pre-commit autoupdate](https://github.com/stack-of-tasks/eigenpy/pull/572)
+   - Created 10 days ago, merged 9 days ago
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+
+- [#2727 build(deps): bump prefix-dev/setup-pixi from 0.8.10 to 0.8.11](https://github.com/stack-of-tasks/pinocchio/pull/2727)
+   - Created 7 days ago, merged 5 days ago
+- [#2716 Fix mimic patch for CRBA](https://github.com/stack-of-tasks/pinocchio/pull/2716)
+   - Created 26 days ago, merged 5 days ago
+- [#2730 Fixed explicit conversions to Scalar type in `log.hxx`](https://github.com/stack-of-tasks/pinocchio/pull/2730)
+   - Created 4 days ago, merged 3 days ago
+   - Potentially add a new TU ? to check
+- [#2718 Beta version of Viser visualizer](https://github.com/stack-of-tasks/pinocchio/pull/2718)
+   - Created 21 days ago, merged 3 days ago
+   - As a general discussion, check the template for PRs
+- [#2731 Fix missing argument in exposeDelassus() pybind definition](https://github.com/stack-of-tasks/pinocchio/pull/2731)
+   - Created 3 days ago, merged 1 days ago
+- [#2732 build(deps): bump prefix-dev/setup-pixi from 0.8.11 to 0.8.12](https://github.com/stack-of-tasks/pinocchio/pull/2732)
+   - Created 5 hours ago, merged 1 hours ago
+- [#2724 sync submodule](https://github.com/stack-of-tasks/pinocchio/pull/2724)
+   - Created 8 days ago, merged 8 days ago
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#407 [pre-commit.ci] pre-commit autoupdate](https://github.com/Simple-Robotics/proxsuite/pull/407)
+   - Created 10 days ago, merged 9 days ago
+- [#408 Fix fetchcontent packaging](https://github.com/Simple-Robotics/proxsuite/pull/408)
+   - Created 9 days ago, merged 8 days ago
+- [#410 ci: Configure dependabot](https://github.com/Simple-Robotics/proxsuite/pull/410)
+   - Created 8 days ago, merged 8 days ago
+- [#409 sync submodule](https://github.com/Simple-Robotics/proxsuite/pull/409)
+   - Created 8 days ago, merged 7 days ago
+- [#412 build(deps): bump tarides/changelog-check-action from 2 to 3](https://github.com/Simple-Robotics/proxsuite/pull/412)
+   - Created 8 days ago, merged 7 days ago
+- [#411 build(deps): bump JamesIves/github-pages-deploy-action from 3.7.1 to 4.7.3](https://github.com/Simple-Robotics/proxsuite/pull/411)
+   - Created 8 days ago, merged 7 days ago
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#333 sync submodule](https://github.com/Simple-Robotics/aligator/pull/333)
+   - Created 11 days ago, merged 3 days ago
+
+
 # 2025-07-07
 
 ### News
