@@ -1,5 +1,70 @@
 # MAESTRO COREDEVS MEETING - Notes
 
+# 2025-07-28
+
+### News
+
+ - [name=Pierre-Guillaume] PUMA under review
+
+### Technical discussions
+
+
+### PR to review
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#571 Linear algebra: Expose the remaining classes listed in Eigen documentation (decompositions and solvers)](https://github.com/stack-of-tasks/eigenpy/pull/571)
+   - Created 23 days ago, updated 2 days ago, no status
+   - Waiting for Joris to merge
+- [#581 README: Update my affiliation](https://github.com/stack-of-tasks/eigenpy/pull/581)
+   - Created 2 days ago, updated 2 days ago, no status
+   - Waiting for Joris to merge
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - Created 313 days ago, updated 111 days ago, status to review
+- [#2714 CMake:  add BUILD_STANDALONE_PYTHON_INTERFACE option](https://github.com/stack-of-tasks/pinocchio/pull/2714)
+   - Created 33 days ago, updated 19 days ago, no status
+   - a bit more work needed
+- [#2723 [pre-commit.ci] pre-commit autoupdate](https://github.com/stack-of-tasks/pinocchio/pull/2723)
+   - Created 20 days ago, updated 19 days ago, no status
+- [#2735 build(deps): bump prefix-dev/setup-pixi from 0.8.12 to 0.8.14](https://github.com/stack-of-tasks/pinocchio/pull/2735)
+   - Created 5 hours ago, updated 5 hours ago, no status
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#658 CMake: add BUILD_STANDALONE_PYTHON_INTERFACE option](https://github.com/coal-library/coal/pull/658)
+   - Created 164 days ago, merged 3 days ago
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#575 dockgen: init](https://github.com/stack-of-tasks/eigenpy/pull/575)
+   - Created 11 days ago, merged 5 days ago
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2734 Improve issue template and add PR template](https://github.com/stack-of-tasks/pinocchio/pull/2734)
+   - Created 4 days ago, merged 4 days ago
+- [#2728 CMake: allow use of system example-robot-data](https://github.com/stack-of-tasks/pinocchio/pull/2728)
+   - Created 12 days ago, merged 3 days ago
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#13 Expose additional classes from Eigen (decompositions, solvers, geometry)](https://github.com/Simple-Robotics/nanoeigenpy/pull/13)
+   - Created 19 days ago, merged 2 days ago
+- [#20 Add list of contributors](https://github.com/Simple-Robotics/nanoeigenpy/pull/20)
+   - Created 2 days ago, merged 2 days ago
+
+#### SIMPLE-ROBOTICS/CANDLEWICK
+
+- [#37 Add Candlewick runtime (executable and client)](https://github.com/Simple-Robotics/candlewick/pull/37)
+   - Created 108 days ago, merged 6 days ago
+- [#90 multibody : allow reloading geometry models in `RobotScene` and `Visualizer`](https://github.com/Simple-Robotics/candlewick/pull/90)
+   - Created 5 days ago, merged 5 days ago
+
 
 # 2025-07-21
 
