@@ -1,5 +1,93 @@
 # MAESTRO COREDEVS MEETING - Notes
 
+# 2025-08-04
+
+### News
+
+### Technical discussions
+
+ - [name=Guilhem] package names after split - Using similar convention for conda-forge ?(libcoal, coal-python)
+     - proposal https://md.laas.fr/vlO8o5oMTI-SdXXpADNe0Q
+
+#### simple-robotics/simple
+
+ - Items to discuss:
+   - [#5 No build/install instructions](https://github.com/Simple-Robotics/Simple/issues/5)
+       - link to pin4 issue on the same topic
+       - can be closed. pin it so that people can find it easily
+
+#### simple-robotics/candlewick
+
+ - Items to discuss:
+   - [#91 Crash when saving video with missing or invalid file extension](https://github.com/Simple-Robotics/candlewick/issues/91)
+       - internal issue. Wilson to check
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#737 dockgen: init](https://github.com/coal-library/coal/pull/737)
+   - Created 6 days ago, updated 6 days ago, no status
+   - similar to Proxsuite PR #408
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#571 Linear algebra: Expose the remaining classes listed in Eigen documentation (decompositions and solvers)](https://github.com/stack-of-tasks/eigenpy/pull/571)
+   - Created 30 days ago, updated 9 days ago, no status
+   - Some solvers are not returning a matrix. Possible to use a method in the binding to convert a view to a matrix to an actual matrix (if not possible in Eigen, then do nothing more)
+   - wait for this PR to be merged before making a new release
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - Created 320 days ago, updated 118 days ago, status to review
+- [#2714 CMake:  add BUILD_STANDALONE_PYTHON_INTERFACE option](https://github.com/stack-of-tasks/pinocchio/pull/2714)
+   - Created 40 days ago, updated 26 days ago, no status
+   - Joris to review this week
+- [#2723 [pre-commit.ci] pre-commit autoupdate](https://github.com/stack-of-tasks/pinocchio/pull/2723)
+   - Created 27 days ago, updated 26 days ago, no status
+   - Still blocked due to reformeting of code
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#334 Update pixi lockfile](https://github.com/Simple-Robotics/aligator/pull/334)
+   - Created 3 days ago, updated 3 days ago, no status
+   - merged
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#413 replace `std::numeric_limits<T>::infinity()` by `max()`](https://github.com/Simple-Robotics/proxsuite/pull/413)
+   - Created 5 days ago, updated 5 days ago, no status
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#738 Update pixi lockfile](https://github.com/coal-library/coal/pull/738)
+   - Created 3 days ago, merged 2 days ago
+- [#739 build(deps): bump cachix/cachix-action from 15 to 16](https://github.com/coal-library/coal/pull/739)
+   - Created 2 days ago, merged 2 days ago
+- [#740 build(deps): bump prefix-dev/setup-pixi from 0.8.10 to 0.8.14](https://github.com/coal-library/coal/pull/740)
+   - Created 2 days ago, merged 2 days ago
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#583 build(deps): bump prefix-dev/setup-pixi from 0.8.10 to 0.8.14](https://github.com/stack-of-tasks/eigenpy/pull/583)
+   - Created 2 days ago, merged 1 days ago
+- [#581 README: Update my affiliation](https://github.com/stack-of-tasks/eigenpy/pull/581)
+   - Created 9 days ago, merged 14 hours ago
+- [#584 flake.lock: Update](https://github.com/stack-of-tasks/eigenpy/pull/584)
+   - Created 15 hours ago, merged 14 hours ago
+- [#582 Update pixi lockfile](https://github.com/stack-of-tasks/eigenpy/pull/582)
+   - Created 3 days ago, merged 11 hours ago
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2735 build(deps): bump prefix-dev/setup-pixi from 0.8.12 to 0.8.14](https://github.com/stack-of-tasks/pinocchio/pull/2735)
+   - Created 7 days ago, merged 6 days ago
+- [#2736 Update pixi lockfile](https://github.com/stack-of-tasks/pinocchio/pull/2736)
+   - Created 3 days ago, merged 2 days ago
+
 # 2025-07-28
 
 ### News
