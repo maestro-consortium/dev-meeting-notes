@@ -1,6 +1,92 @@
 # MAESTRO COREDEVS MEETING - Notes
 
-# 2025-08-04
+
+
+## 2025-08-11
+
+### Technical discussions
+
+#### coal-library/coal
+
+ - Items to discuss:
+   - [#743 Build fails with upcoming Boost 1.89.0](https://github.com/coal-library/coal/issues/743)
+
+#### stack-of-tasks/pinocchio
+
+ - Items to discuss:
+   - [#2740 Transforming of Jacobian / Jacobian Time Derivative Functionality](https://github.com/stack-of-tasks/pinocchio/issues/2740)
+
+#### simple-robotics/simple
+
+ - Items to discuss:
+   - [#6 Regarding computation of dynamics and its derivaties for infeasible states](https://github.com/Simple-Robotics/Simple/issues/6)
+
+#### simple-robotics/candlewick
+
+ - Items to discuss:
+   - [#91 Crash when saving video with missing or invalid file extension](https://github.com/Simple-Robotics/candlewick/issues/91)
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#741 Correctly calculate AABB for pruned octrees](https://github.com/coal-library/coal/pull/741)
+   - Created 6 days ago, updated 3 days ago, no status
+- [#742 Fix ContactPatchResult falling back to native exception for excessive…](https://github.com/coal-library/coal/pull/742)
+   - Created 2 days ago, updated 2 days ago, no status
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - Created 327 days ago, updated 125 days ago, status to review
+- [#2714 CMake:  add BUILD_STANDALONE_PYTHON_INTERFACE option](https://github.com/stack-of-tasks/pinocchio/pull/2714)
+   - Created 47 days ago, updated 4 days ago, no status
+- [#2743 Fix/cannot found casadi](https://github.com/stack-of-tasks/pinocchio/pull/2743)
+   - Created 1 hours ago, updated 1 hours ago, no status
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#414 Issues with pytorch bindings in the case where structural_feasibility=False.](https://github.com/Simple-Robotics/proxsuite/pull/414)
+   - Created 2 days ago, updated 2 days ago, no status
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+
+- [#22 Nix: init](https://github.com/Simple-Robotics/nanoeigenpy/pull/22)
+   - Created 6 days ago, updated 4 days ago, no status
+
+### PR merged within the week
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#571 Linear algebra: Expose the remaining classes listed in Eigen documentation (decompositions and solvers)](https://github.com/stack-of-tasks/eigenpy/pull/571)
+   - Created 37 days ago, merged 2 days ago
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2664 Introducing model graph](https://github.com/stack-of-tasks/pinocchio/pull/2664)
+   - Created 107 days ago, merged 6 days ago
+- [#2739 flake.lock: Update](https://github.com/stack-of-tasks/pinocchio/pull/2739)
+   - Created 6 days ago, merged 4 days ago
+- [#2741 Fix ViserVisualizer import without hppfcl](https://github.com/stack-of-tasks/pinocchio/pull/2741)
+   - Created 4 days ago, merged 4 days ago
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#334 Update pixi lockfile](https://github.com/Simple-Robotics/aligator/pull/334)
+   - Created 10 days ago, merged 6 days ago
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#413 replace `std::numeric_limits<T>::infinity()` by `max()`](https://github.com/Simple-Robotics/proxsuite/pull/413)
+   - Created 12 days ago, merged 6 days ago
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#21 ROS: fix nanobind](https://github.com/Simple-Robotics/nanoeigenpy/pull/21)
+   - Created 6 days ago, merged 4 days ago
+
+## 2025-08-04
 
 ### News
 
@@ -88,7 +174,7 @@
 - [#2736 Update pixi lockfile](https://github.com/stack-of-tasks/pinocchio/pull/2736)
    - Created 3 days ago, merged 2 days ago
 
-# 2025-07-28
+## 2025-07-28
 
 ### News
 
@@ -154,7 +240,7 @@
    - Created 5 days ago, merged 5 days ago
 
 
-# 2025-07-21
+## 2025-07-21
 
 ### News
 
@@ -283,7 +369,7 @@
    - Created 11 days ago, merged 3 days ago
 
 
-# 2025-07-07
+## 2025-07-07
 
 ### News
 
@@ -387,7 +473,7 @@
    - Improves interactivity, quality of life
 
 
-# 2025-06-30
+## 2025-06-30
 
 ### News
 
@@ -523,7 +609,7 @@
    - Created 22 hours ago, merged 21 hours ago
 
 
-# 2025-06-23
+## 2025-06-23
 
 ### News
 
@@ -639,7 +725,7 @@
    - created 5 days ago
 
 
-# 2025-06-16
+## 2025-06-16
 
 ### News
 
@@ -726,7 +812,7 @@
 - [#84 Fix display issues with capsules, missing colour for primitives](https://github.com/Simple-Robotics/candlewick/pull/84)
    - created 4 days ago
 
-# 2025-06-02
+## 2025-06-02
 
 ### News
 
