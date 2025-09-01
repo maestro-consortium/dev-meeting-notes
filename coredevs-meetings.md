@@ -1,6 +1,102 @@
 # MAESTRO COREDEVS MEETING - Notes
 
 
+## 2025-08-25
+
+### News
+
+ - Creation of the Maestro consortium ongoing (administrative Inria process)
+
+### Technical discussions
+
+#### stack-of-tasks/pinocchio
+
+ - Items to discuss:
+   - [#2747 [Bug]: sites not parsed as frames when attached to a fixed joint](https://github.com/stack-of-tasks/pinocchio/issues/2747)
+       - To be fixed as part of Pinocchio 4, as the Mujoco parser has evolved. Potential quickfix in the meantime to evuluate
+   - [#2746 [Bug]: armature not carried over when using buildReducedModel](https://github.com/stack-of-tasks/pinocchio/issues/2746)
+       - fixed, waiting for PR review
+
+#### simple-robotics/aligator
+
+ - Items to discuss:
+   - [#336 Segmentation fault at runtime: Boost 1.86 incompatibility causes crash](https://github.com/Simple-Robotics/aligator/issues/336)
+       - user possibly struggling in the compilation step (guess: both paths in LD_LIBRARYPATH). Ask confirmation that eigenpy coal also compiled with 1.86.
+
+#### simple-robotics/simple
+
+ - Items to discuss:
+   - [#6 Regarding computation of dynamics and its derivaties for infeasible states](https://github.com/Simple-Robotics/Simple/issues/6)
+       - question requiring detailed reply (definition of "*infeasible states*")
+
+#### simple-robotics/candlewick
+
+ - Items to discuss:
+   - [#95 Investigate weird translucent effect on transparent objects](https://github.com/Simple-Robotics/candlewick/issues/95)
+       - Await Wilson to get back
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#742 Fix ContactPatchResult falling back to native exception for excessive…](https://github.com/coal-library/coal/pull/742)
+   - Created 16 days ago, updated 11 days ago, no status
+   - check with Louis
+- [#744 Remove useless boost components direct dependency](https://github.com/coal-library/coal/pull/744)
+   - Created 12 days ago, updated 10 days ago, no status
+   - can be merged
+- [#746 Fix contact counting in octree collision detection with ShapeShapeCollide](https://github.com/coal-library/coal/pull/746)
+   - Created 5 days ago, updated 4 days ago, no status
+   - Justin to check
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - Created 341 days ago, updated 139 days ago, status to review
+- [#2714 CMake:  add BUILD_STANDALONE_PYTHON_INTERFACE option](https://github.com/stack-of-tasks/pinocchio/pull/2714)
+   - Created 61 days ago, updated 3 days ago, no status
+   - Changing naming logic ? Avoid "duplicate" name ? No invert the name. Problem, already merged in jrl-cmakemodules and coal.
+   - To discuss with Joris next week ? (technical discussion)
+- [#2743 Fix/cannot found casadi](https://github.com/stack-of-tasks/pinocchio/pull/2743)
+   - Created 14 days ago, updated 10 days ago, no status
+   - wait for Joris
+- [#2749 Fix copy of armature field in buildReducedModel](https://github.com/stack-of-tasks/pinocchio/pull/2749)
+   - Created 2 days ago, updated 2 days ago, no status
+   - Added Joris as reviewer
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#414 Issues with pytorch bindings in the case where structural_feasibility=False.](https://github.com/Simple-Robotics/proxsuite/pull/414)
+   - Created 16 days ago, updated 16 days ago, no status
+   - Fabian will check
+   - Converted as draft for now
+- [#415 [WIP]: Add OSQP solver in Proxsuite](https://github.com/Simple-Robotics/proxsuite/pull/415)
+   - Created 2 days ago, updated 2 days ago, no status
+       - drafted: Lucas is working on it
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#22 Nix: init](https://github.com/Simple-Robotics/nanoeigenpy/pull/22)
+   - Created 20 days ago, updated 10 days ago, no status
+       - drafted: Nix CI is passing but wait for the commit to be merged in upstream branch
+
+### PR merged within the week
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2745 build(deps): bump actions/checkout from 4 to 5](https://github.com/stack-of-tasks/pinocchio/pull/2745)
+   - Created 7 days ago, merged 4 days ago
+- [#2744 build(deps): bump prefix-dev/setup-pixi from 0.8.14 to 0.9.0](https://github.com/stack-of-tasks/pinocchio/pull/2744)
+   - Created 7 days ago, merged 4 days ago
+- [#2748 Fix Viser visualizer loading DAE files as trimesh.Scene](https://github.com/stack-of-tasks/pinocchio/pull/2748)
+   - Created 2 days ago, merged 2 days ago
+
+#### SIMPLE-ROBOTICS/CANDLEWICK
+
+- [#94 Add support for multisample anti-aliasing (MSAA), working HiDPI support](https://github.com/Simple-Robotics/candlewick/pull/94)
+   - Created 5 days ago, merged 4 days ago
+- [#96 core : Switch to `spdlog` for logging](https://github.com/Simple-Robotics/candlewick/pull/96)
+   - Created 4 days ago, merged 4 days ago
 
 ## 2025-08-11
 
