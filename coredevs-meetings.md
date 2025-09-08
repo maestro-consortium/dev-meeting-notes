@@ -1,6 +1,91 @@
 # MAESTRO COREDEVS MEETING - Notes
 
 
+## 2025-09-01
+
+### News
+
+ - [name=Pierre-Guillaume] Inria internal workshop on Software in Robotics (from an engineering point of view). About 25-30 engineers from the different campus will be in Paris Sept 15-17. Presentations from the team are expected.
+ - [name=Joris] New release of eigenpy (3.12)
+ - [name=Wilson] New releases of Candlewick (multiples)
+
+
+### Technical discussions
+
+#### stack-of-tasks/pinocchio
+
+ - Items to discuss:
+   - [#2747 [Bug]: sites not parsed as frames when attached to a fixed joint](https://github.com/stack-of-tasks/pinocchio/issues/2747)
+       - problem with MJCF parser. 
+       - Should test with Pinocchio4 as the parser has been heavily reworked. Should evaluate if fix for Pinocchio3 is necessary. 
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#742 Fix ContactPatchResult falling back to native exception for excessive…](https://github.com/coal-library/coal/pull/742)
+   - Created 23 days ago, updated 18 days ago, no status
+   - Fix for memory allocation error (better error message when asking for memory alloc beyond available memory). Check with Louis if better approach possible.
+- [#746 Fix contact counting in octree collision detection with ShapeShapeCollide](https://github.com/coal-library/coal/pull/746)
+   - Created 12 days ago, updated 48 minutes ago, no status
+   - Louis to check.
+- [#747 Update pixi lockfile](https://github.com/coal-library/coal/pull/747)
+   - Created 56 minutes ago, updated 51 minutes ago, no status
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#585 Update pixi lockfile](https://github.com/stack-of-tasks/eigenpy/pull/585)
+   - Created 1 hours ago, updated 1 hours ago, no status
+   - Error on TU Windows. Also on other projects (to check).
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - Created 348 days ago, updated 146 days ago, status to review
+- [#2714 CMake:  add BUILD_STANDALONE_PYTHON_INTERFACE option](https://github.com/stack-of-tasks/pinocchio/pull/2714)
+   - Created 68 days ago, updated 5 days ago, no status
+   - Waiting for consensus on the naming. To discuss with Justin.
+- [#2743 Fix/cannot found casadi](https://github.com/stack-of-tasks/pinocchio/pull/2743)
+   - Created 21 days ago, updated 5 days ago, no status
+   - Fix in separate branch (git workflow issue). Wait for contributor's correction.
+- [#2750 Update pixi lockfile](https://github.com/stack-of-tasks/pinocchio/pull/2750)
+   - Created 1 hours ago, updated 1 hours ago, no status
+   - Issue with CI on Windows (same as other projects)
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#337 Update pixi lockfile](https://github.com/Simple-Robotics/aligator/pull/337)
+   - Created 53 minutes ago, updated 53 minutes ago, no status
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#414 Issues with pytorch bindings in the case where structural_feasibility=False.](https://github.com/Simple-Robotics/proxsuite/pull/414)
+   - Created 23 days ago, updated 6 days ago, no status
+   - Waiting for Mathis feedback
+- [#415 [WIP]: Add OSQP solver in Proxsuite](https://github.com/Simple-Robotics/proxsuite/pull/415)
+   - Created 9 days ago, updated 9 days ago, no status
+   - Joris to review and fix the problem
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#22 Nix: init](https://github.com/Simple-Robotics/nanoeigenpy/pull/22)
+   - Created 27 days ago, updated 3 days ago, no status
+   - Waiting for Guilhem / Nix
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#744 Remove useless boost components direct dependency](https://github.com/coal-library/coal/pull/744)
+   - Created 19 days ago, merged 6 days ago
+   - Problem with Boost target (on 189), but not used directly
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2749 Fix copy of armature field in buildReducedModel](https://github.com/stack-of-tasks/pinocchio/pull/2749)
+   - Created 9 days ago, merged 5 days ago
+   - Added some TU
+ 
 ## 2025-08-25
 
 ### News
