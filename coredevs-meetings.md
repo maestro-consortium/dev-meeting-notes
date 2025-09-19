@@ -1,6 +1,130 @@
 # MAESTRO COREDEVS MEETING - Notes
 
 
+
+# 2025-09-08
+
+### News
+
+ - [name=Pierre-Guillaume] Soumission projet "Concerto" pour AMI Robotique (industrialisation des logiciels, pilotes industriels, documentation)
+
+### Technical discussions
+
+ - [name=Wilson] Eigen 5.0 not really next door (nothing has been decided so far, no communication from maintainers). Need new people on eigen side that have time.
+
+#### coal-library/coal
+
+ - Items to discuss:
+   - [#751 Whether using Security_margin increases performance](https://github.com/coal-library/coal/issues/751)
+       - Putting 1 as security margin in the API increase the margin for detecting the collision, so normal 
+       - Willson to answer, maybe with Louis
+
+#### stack-of-tasks/eigenpy
+
+ - Items to discuss:
+   - [#586 Eigen 5.0 release next door](https://github.com/stack-of-tasks/eigenpy/issues/586)
+
+#### stack-of-tasks/pinocchio
+
+ - Items to discuss:
+   - [#2757 After loading the MJCF, q0 is inconsistent with the base_link position computed by forward kinematics](https://github.com/stack-of-tasks/pinocchio/issues/2757)
+       - Megan is handling the issue.
+   - [#2753 [Bug]: Potential issue parsing mimic joints if they are continuous joints?](https://github.com/stack-of-tasks/pinocchio/issues/2753)
+       - Ongoing PR will fix the issue
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#753 Fix sqrDistLowerBound in octree traversal with height field](https://github.com/coal-library/coal/pull/753)
+   - Created 3 hours ago, updated 3 hours ago, no status
+   - Puts a lowerbound on a computation but no description in the PR
+   - Louis to check
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#590 flake.lock: Update](https://github.com/stack-of-tasks/eigenpy/pull/590)
+   - Created 4 days ago, updated 4 days ago, no status
+   - Errors in the CI, Guilhem to check
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - Created 355 days ago, updated 5 days ago, status to review
+- [#2714 CMake:  add BUILD_STANDALONE_PYTHON_INTERFACE option](https://github.com/stack-of-tasks/pinocchio/pull/2714)
+   - Created 75 days ago, updated 12 days ago, no status
+   - Waiting for Guilhem to merge.
+- [#2743 Fix/cannot found casadi](https://github.com/stack-of-tasks/pinocchio/pull/2743)
+   - Created 28 days ago, updated 12 days ago, no status
+   - No response from contributor (issue with fix on the wrong branch). Joris to handle/fix this week and merge.
+- [#2755 flake.lock: Update](https://github.com/stack-of-tasks/pinocchio/pull/2755)
+   - Created 3 days ago, updated 2 days ago, no status
+   - Waiting for Guilhem to merge.
+- [#2756 Add continuous joint as mimic in urdf parser](https://github.com/stack-of-tasks/pinocchio/pull/2756)
+   - Created 2 days ago, updated 2 days ago, no status
+   - Potential issue with URDF parsing wrt Pinocchio4, to monitor. Cannot wait for Pinocchio4
+- [#2758 build(deps): bump actions/github-script from 7 to 8](https://github.com/stack-of-tasks/pinocchio/pull/2758)
+   - Created 6 hours ago, updated 6 hours ago, no status
+   - Wait for previous PR to be merged
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#414 Issues with pytorch bindings in the case where structural_feasibility=False.](https://github.com/Simple-Robotics/proxsuite/pull/414)
+   - Created 30 days ago, updated 13 days ago, no status
+   - Waiting for Lucas
+- [#415 [WIP]: Add OSQP solver in Proxsuite](https://github.com/Simple-Robotics/proxsuite/pull/415)
+   - Created 16 days ago, updated 2 days ago, no status
+   - Waiting for Lucas
+- [#416 build(deps): bump actions/checkout from 4 to 5](https://github.com/Simple-Robotics/proxsuite/pull/416)
+   - Created 5 days ago, updated 5 days ago, no status
+   - Issue on jrl-cmakemodules (version of cmake). 
+- [#417 build(deps): bump actions/download-artifact from 4 to 5](https://github.com/Simple-Robotics/proxsuite/pull/417)
+   - Created 5 days ago, updated 5 days ago, no status
+   - Issue on jrl-cmakemodules (version of cmake). 
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#22 Nix: init](https://github.com/Simple-Robotics/nanoeigenpy/pull/22)
+   - Created 34 days ago, updated 10 days ago, no status
+ 
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#747 Update pixi lockfile](https://github.com/coal-library/coal/pull/747)
+   - Created 7 days ago, merged 6 days ago
+- [#748 build(deps): bump actions/checkout from 4 to 5](https://github.com/coal-library/coal/pull/748)
+   - Created 6 days ago, merged 6 days ago
+- [#749 build(deps): bump prefix-dev/setup-pixi from 0.8.14 to 0.9.0](https://github.com/coal-library/coal/pull/749)
+   - Created 6 days ago, merged 5 days ago
+- [#750 Fix broadphase node collide bug](https://github.com/coal-library/coal/pull/750)
+   - Created 5 days ago, merged 4 days ago
+- [#746 Fix contact counting in octree collision detection with ShapeShapeCollide](https://github.com/coal-library/coal/pull/746)
+   - Created 19 days ago, merged 3 days ago
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#585 Update pixi lockfile](https://github.com/stack-of-tasks/eigenpy/pull/585)
+   - Created 7 days ago, merged 6 days ago
+- [#587 build(deps): bump prefix-dev/setup-pixi from 0.8.14 to 0.9.0](https://github.com/stack-of-tasks/eigenpy/pull/587)
+   - Created 5 days ago, merged 5 days ago
+- [#588 build(deps): bump actions/checkout from 4 to 5](https://github.com/stack-of-tasks/eigenpy/pull/588)
+   - Created 5 days ago, merged 4 days ago
+- [#589 build(deps): bump actions/attest-build-provenance from 2 to 3](https://github.com/stack-of-tasks/eigenpy/pull/589)
+   - Created 5 days ago, merged 4 days ago
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2750 Update pixi lockfile](https://github.com/stack-of-tasks/pinocchio/pull/2750)
+   - Created 7 days ago, merged 6 days ago
+- [#2754 Add site attached to a fixed body in MJCF parser](https://github.com/stack-of-tasks/pinocchio/pull/2754)
+   - Created 3 days ago, merged 2 days ago
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#337 Update pixi lockfile](https://github.com/Simple-Robotics/aligator/pull/337)
+   - Created 7 days ago, merged 6 days ago
+
 ## 2025-09-01
 
 ### News
