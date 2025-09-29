@@ -1,5 +1,144 @@
 # MAESTRO COREDEVS MEETING - Notes
 
+## 2025-09-22
+
+### News
+ - [name=Pierre-Guillaume] Technical work on the PUMA will start soon. Upcoming meeting to discuss planning jrl-cmake-module
+ - [name=Joris Vaillant] Pinocchio 3.8 release
+     - split of c++/pythAdd pinocchio::graph::ModelGraph class on bindings
+     - still need Boost (primarily for variants) - boost variant 2 for pinocchio 4
+     - model graphs (helps in code factorisation)
+     - bug fixes
+
+### Technical discussions
+
+- [name=Guilhem Saurel] release process
+    - should discuss on release process - check that the whole stack still works before doing a release.
+        - document on release (pinocchio)
+        - can we automatize (check existing script)
+        - parts of the release process in jrl-cmake-module that could be pushed in the CI?
+- [name=Guilhem Saurel] git bisect
+    - to use git bisect, should ensure all commits are ok. regression tests vs bisect.
+        - squashing? maybe since not possible to ensure that all commits are fine.
+        - possible to have bisect only consider merge commits? (alternative to squash)
+            - hard to track the commits where ci works
+            - hard to enforce all commits are fine wrt CI
+- [name=Guilhem Saurel] split packaging for Coal ?
+    - current state of Coal is not suitable for release with split packaging C++/Python
+    - do this with the previous release ? (not the preferred behavior as maintenance fix on previous release should stay on release branch, current state prevents release soon, 1 or 2 months ? ok with this approach then)
+
+#### stack-of-tasks/tsid
+
+- [name=Etienne Arlaud] Small release (PR solved a segfault)
+    - After the split libtsid and python binding will be made and merged
+
+#### coal-library/coal
+
+ - Items to discuss:
+   - [#755 BVHModel security_margin check error](https://github.com/coal-library/coal/issues/755)
+
+### PR to review
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#590 flake.lock: Update](https://github.com/stack-of-tasks/eigenpy/pull/590)
+   - Created 15 days ago, updated 15 days ago, no status
+       - Guilhem to check
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - Created 366 days ago, updated 16 days ago, status to review
+- [#2755 flake.lock: Update](https://github.com/stack-of-tasks/pinocchio/pull/2755)
+   - Created 14 days ago, updated 13 days ago, no status
+       - Guilhem to check
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#414 Issues with pytorch bindings in the case where structural_feasibility=False.](https://github.com/Simple-Robotics/proxsuite/pull/414)
+   - Created 41 days ago, updated 24 days ago, no status
+       - Waiting for extra work from Mathis, moved to WIP status
+- [#415 [WIP]: Add OSQP solver in Proxsuite](https://github.com/Simple-Robotics/proxsuite/pull/415)
+   - Created 27 days ago, updated 3 days ago, no status
+       - Need to do some profiling
+       - General issue with missing initialisation (introduced at some point in ProxSuite - reported by valgrind).
+       - Difference comparing algo and implementaiton (2 different things)
+           - ProxQP vs OSQP
+       - Potential breaking changes
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#22 Nix: init](https://github.com/Simple-Robotics/nanoeigenpy/pull/22)
+   - Created 45 days ago, updated 21 days ago, no status
+       - Guilhem to rebase/merge
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#754 flake.lock: Update](https://github.com/coal-library/coal/pull/754)
+   - Created 6 days ago, merged 6 days ago
+- [#756 Don't trigger CI on push and pull_request event](https://github.com/coal-library/coal/pull/756)
+   - Created 1 days ago, merged 1 days ago
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#591 Don't trigger CI on push and pull_request event](https://github.com/stack-of-tasks/eigenpy/pull/591)
+   - Created 8 days ago, merged 2 days ago
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2762 build(deps): bump ros-industrial/industrial_ci from e3d16c224caf4832cf68e74093eb70f3a979b4cc to eb3ea328ff056aa2435d5b3493e7e2929c310f8e](https://github.com/stack-of-tasks/pinocchio/pull/2762)
+   - Created 4 days ago, merged 3 days ago
+- [#2714 CMake:  add BUILD_STANDALONE_PYTHON_INTERFACE option](https://github.com/stack-of-tasks/pinocchio/pull/2714)
+   - Created 86 days ago, merged 2 days ago
+- [#2763 Fix axis of unaligned mimic joint](https://github.com/stack-of-tasks/pinocchio/pull/2763)
+   - Created 2 days ago, merged 1 days ago
+- [#2765 Don't trigger CI on push and pull_request event #756](https://github.com/stack-of-tasks/pinocchio/pull/2765)
+   - Created 1 days ago, merged 1 days ago
+- [#2743 Fix/cannot found casadi](https://github.com/stack-of-tasks/pinocchio/pull/2743)
+   - Created 39 days ago, merged 1 days ago
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#338 Fix C++20 support](https://github.com/Simple-Robotics/aligator/pull/338)
+   - Created 14 hours ago, merged 13 hours ago
+
+### PR merged within PREVIOUS WEEK (no meeting)
+
+#### COAL-LIBRARY/COAL
+
+- [#753 Fix sqrDistLowerBound in octree traversal with height field](https://github.com/coal-library/coal/pull/753)
+   - Created 7 days ago, merged 5 days ago
+- [#754 flake.lock: Update](https://github.com/coal-library/coal/pull/754)
+   - Created 2 days ago, merged 2 days ago
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2756 Add continuous joint as mimic in urdf parser](https://github.com/stack-of-tasks/pinocchio/pull/2756)
+   - Created 9 days ago, merged 6 days ago
+- [#2758 build(deps): bump actions/github-script from 7 to 8](https://github.com/stack-of-tasks/pinocchio/pull/2758)
+   - Created 7 days ago, merged 6 days ago
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#331 Add a Python test for MPC-like iteration](https://github.com/Simple-Robotics/aligator/pull/331)
+   - Created 93 days ago, merged 6 days ago
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#418 Upgrade nanobind to v2.9.2](https://github.com/Simple-Robotics/proxsuite/pull/418)
+   - Created 6 days ago, merged 6 days ago
+- [#419 Use nanobind's new recursive stub generation, fix dynamic module handling](https://github.com/Simple-Robotics/proxsuite/pull/419)
+   - Created 6 days ago, merged 5 days ago
+- [#421 ci : only trigger workflows on push when on devel](https://github.com/Simple-Robotics/proxsuite/pull/421)
+   - Created 5 days ago, merged 5 days ago
+- [#420 [veg] Fix `-Wdeprecated-literal-operator` warning](https://github.com/Simple-Robotics/proxsuite/pull/420)
+   - Created 5 days ago, merged 4 days ago
+- [#417 build(deps): bump actions/download-artifact from 4 to 5](https://github.com/Simple-Robotics/proxsuite/pull/417)
+   - Created 12 days ago, merged 4 days ago
+- [#416 build(deps): bump actions/checkout from 4 to 5](https://github.com/Simple-Robotics/proxsuite/pull/416)
+   - Created 12 days ago, merged 4 days ago
 
 
 # 2025-09-08
