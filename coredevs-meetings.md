@@ -1,5 +1,104 @@
 # MAESTRO COREDEVS MEETING - Notes
 
+
+## 2025-09-29
+
+### News
+
+ - [name=Antoine Hoarau] Rewrite of proxsuite's CMake in progress.
+ - Sarah shortly presented the [Faer project](https://faer.veganb.tw/), a linear algebra library in Rust
+ - [name=Wilson Jallet] Eigen 5 should be out tomorrow a 9am. Issue with force-push of tags.
+     - issues with 5.0.0 - TU that work on linux but not mac. 
+
+### Technical discussions
+
+- [name=justin] preparing for Pinocchio 4 - ongoing discussion on minimal roadmap
+
+#### stack-of-tasks/pinocchio
+
+ - Items to discuss:
+   - [#2768 Bug Report: `pinocchio::log6` fails with NaN](https://github.com/stack-of-tasks/pinocchio/issues/2768)
+       - issue with pathological cas wrt acos. Proposed fix not working for autodiff.
+       - Assigned to Yann
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#757 Release/3.0.2](https://github.com/coal-library/coal/pull/757)
+   - Created 4 days ago, updated 4 days ago, no status
+   - PR with packaging related commits
+   - Remain todo : apply to Aligator
+- [#758 Optimize the linear and log convex shape support function](https://github.com/coal-library/coal/pull/758)
+   - Created 3 days ago, updated 2 days ago, no status
+   - back to wip since remaining todo
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#594 Refactorize recent code change](https://github.com/stack-of-tasks/eigenpy/pull/594)
+   - Created 22 hours ago, updated 15 hours ago, no status
+   - Joris to review
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - Created 376 days ago, updated 26 days ago, status to review
+- [#2774 build(deps): bump prefix-dev/setup-pixi from 0.9.0 to 0.9.1](https://github.com/stack-of-tasks/pinocchio/pull/2774)
+   - Created 6 hours ago, updated 6 hours ago, no status
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#342 Nix CI: updates](https://github.com/Simple-Robotics/aligator/pull/342)
+   - Created 14 hours ago, updated 13 hours ago, no status
+   - Missing CI, added by Guilhem
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#415 [WIP]: Implementation of OSQP algorithm in Proxsuite](https://github.com/Simple-Robotics/proxsuite/pull/415)
+   - Created 37 days ago, updated 4 days ago, no status
+   - Some TU fail, need to check API break
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#22 Nix: init](https://github.com/Simple-Robotics/nanoeigenpy/pull/22)
+   - Created 55 days ago, updated 31 days ago, no status
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#737 dockgen: init](https://github.com/coal-library/coal/pull/737)
+   - Created 62 days ago, merged 6 days ago
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#590 flake.lock: Update](https://github.com/stack-of-tasks/eigenpy/pull/590)
+   - Created 25 days ago, merged 6 days ago
+- [#593 Remove `accelerate.hpp`](https://github.com/stack-of-tasks/eigenpy/pull/593)
+   - Created 4 days ago, merged 4 days ago
+- [#592 Add support for Python slice objects for `std::vector`](https://github.com/stack-of-tasks/eigenpy/pull/592)
+   - Created 5 days ago, merged 3 days ago
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2767 build(deps): bump actions/checkout from 4 to 5](https://github.com/stack-of-tasks/pinocchio/pull/2767)
+   - Created 7 days ago, merged 6 days ago
+- [#2755 flake.lock: Update](https://github.com/stack-of-tasks/pinocchio/pull/2755)
+   - Created 24 days ago, merged 6 days ago
+- [#2771 example-viser-viewer: fix erd path](https://github.com/stack-of-tasks/pinocchio/pull/2771)
+   - Created 1 days ago, merged 1 days ago
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#339 cmake : sync submodule](https://github.com/Simple-Robotics/aligator/pull/339)
+   - Created 4 days ago, merged 4 days ago
+- [#340 [gar] Add CTAD for parallel and sequential solvers](https://github.com/Simple-Robotics/aligator/pull/340)
+   - Created 2 days ago, merged 2 days ago
+- [#343 README: fix names in bibtex](https://github.com/Simple-Robotics/aligator/pull/343)
+   - Created 13 hours ago, merged 13 hours ago
+- [#344 fix compat with crocoddyl v3.1.0](https://github.com/Simple-Robotics/aligator/pull/344)
+   - Created 13 hours ago, merged 13 hours ago
+
 ## 2025-09-22
 
 ### News
