@@ -1,6 +1,136 @@
 # MAESTRO COREDEVS MEETING - Notes
 
 
+
+## 2025-10-06
+
+### News
+
+ - [name=Guilhem Saurel] release COAL 3.0.2 JRL CMake module, TSID Croccodyl. To come: Aligator
+     - source, nix a venir ainsi que ROS
+     - reste pipy et robotpkg
+     - support des nouvelles versions de CMake, split du packaging entre c++ et bindings python
+ - [name=Joris Vaillant] release de Eigen 5.0
+     - faut-il garder les CI qui n'ont pas de lockfile ? (archlinux)
+         - garder la CI mais ne pas la rendre obligatoire ? (canari)
+         - les faire plutot offiline 1 fois par mois (et pas sur les PR)
+             - ok
+
+### Technical discussions
+
+ - [name=Joris Vaillant] jrl-cmake-modules 2 on a dedicated repository or on a new branch ?
+     - pas/peu de point communs entre les deux projets a priori
+     - plus d'implication des JRL egalement
+     - par contre rester dans le meme repo evite de refaire le packaging
+     - attendre d'avoir une premiere version pour voir ce que ca donne
+     - repartir sur une base saine - POC deja bien avancée, comparer avec jrl-cmake-module v1 pour voir ce qui est a garder ou pas. Evaluer ce qui est utile pour les projets dependants de jrl-cmake-modules
+     - licence des fichiers jrl-cmake-modules à revérifier (éviter les GPL-3 ou autres licences problématiques)
+         - verifier les auteurs, l'utilite des finders avec d'autres licences que BSD
+
+ 
+#### stack-of-tasks/pinocchio
+
+ - Items to discuss:
+   - [#2778 Support for Arch Linux (eigen 5)?](https://github.com/stack-of-tasks/pinocchio/issues/2778)
+       - ne pas ajouter de CI Arch Linux
+       - job eigen 5 pour rebuild l pinocchio sans dépendances
+       - pour l'instant garder eigen 3 et eigen 5
+   - [#2775 Push Pinocchio 3.8.0 to all active ROS releases?](https://github.com/stack-of-tasks/pinocchio/issues/2775)
+       - no gain of time and an issue of security in the ROS distribution
+       - suggest to contribute on similar topics
+       - contact for official consortium relationship
+
+### PR to review
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - Created 383 days ago, updated 33 days ago, status to review
+- [#2777 Update pixi lockfile](https://github.com/stack-of-tasks/pinocchio/pull/2777)
+   - Created 5 days ago, updated 4 days ago, no status
+   - issue with GH runners - since a few weeks - error messages are too short
+- [#2779 Fix Eigen5 support on Pinocchio 3](https://github.com/stack-of-tasks/pinocchio/pull/2779)
+   - Created 2 days ago, updated 2 days ago, no status
+   - Removed `EIGEN_CONSTEXPR` (already done in Pinocchio 4)
+   - Guilhem to add support for Eigen5 (not urgent)
+- [#2780 flake.lock: Update](https://github.com/stack-of-tasks/pinocchio/pull/2780)
+   - Created 1 days ago, updated 1 days ago, no status
+- [#2781 build(deps): bump actions/attest-build-provenance from 2 to 3](https://github.com/stack-of-tasks/pinocchio/pull/2781)
+   - Created 6 hours ago, updated 6 hours ago, no status
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#415 [WIP]: Implementation of OSQP algorithm in Proxsuite](https://github.com/Simple-Robotics/proxsuite/pull/415)
+   - Created 44 days ago, updated 3 days ago, no status
+   - Some profiling to do.
+- [#422 build(deps): bump actions/setup-python from 5 to 6](https://github.com/Simple-Robotics/proxsuite/pull/422)
+   - Created 4 days ago, updated 4 days ago, no status
+   - ArchLinux fails, but not relevant. Merged.
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#347 CMake: BUILD_STANDALONE_PYTHON_INTERFACE](https://github.com/Simple-Robotics/aligator/pull/347)
+    - Joris to check access for Guilhem wrt this repository 
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#757 Release/3.0.2](https://github.com/coal-library/coal/pull/757)
+   - Created 11 days ago, merged 6 days ago
+   - Split of python bindings, update docker generation
+- [#759 Update pixi lockfile](https://github.com/coal-library/coal/pull/759)
+   - Created 5 days ago, merged 4 days ago
+- [#765 Fix compilation warning for DistanceRequest](https://github.com/coal-library/coal/pull/765)
+   - Created 4 days ago, merged 3 days ago
+   - Removed warnings deprecated
+- [#764 build(deps): bump actions/attest-build-provenance from 2 to 3](https://github.com/coal-library/coal/pull/764)
+   - Created 4 days ago, merged 3 days ago
+- [#763 build(deps): bump actions/checkout from 4 to 5](https://github.com/coal-library/coal/pull/763)
+   - Created 4 days ago, merged 2 days ago
+- [#762 build(deps): bump actions/setup-python from 5 to 6](https://github.com/coal-library/coal/pull/762)
+   - Created 4 days ago, merged 2 days ago
+- [#761 build(deps): bump prefix-dev/setup-pixi from 0.9.0 to 0.9.1](https://github.com/coal-library/coal/pull/761)
+   - Created 4 days ago, merged 2 days ago
+- [#760 build(deps): bump ros-industrial/industrial_ci from e3d16c224caf4832cf68e74093eb70f3a979b4cc to eb3ea328ff056aa2435d5b3493e7e2929c310f8e](https://github.com/coal-library/coal/pull/760)
+   - Created 4 days ago, merged 1 days ago
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#594 Refactorize recent code change](https://github.com/stack-of-tasks/eigenpy/pull/594)
+   - Created 7 days ago, merged 5 days ago
+- [#597 build(deps): bump ros-industrial/industrial_ci from e3d16c224caf4832cf68e74093eb70f3a979b4cc to eb3ea328ff056aa2435d5b3493e7e2929c310f8e](https://github.com/stack-of-tasks/eigenpy/pull/597)
+   - Created 4 days ago, merged 3 days ago
+- [#595 Update pixi lockfile](https://github.com/stack-of-tasks/eigenpy/pull/595)
+   - Created 5 days ago, merged 3 days ago
+- [#598 build(deps): bump prefix-dev/setup-pixi from 0.9.0 to 0.9.1](https://github.com/stack-of-tasks/eigenpy/pull/598)
+   - Created 4 days ago, merged 2 days ago
+- [#596 Fix compilation issues related to Eigen 5](https://github.com/stack-of-tasks/eigenpy/pull/596)
+   - Created 4 days ago, merged 2 days ago
+- [#599 flake.lock: Update](https://github.com/stack-of-tasks/eigenpy/pull/599)
+   - Created 2 days ago, merged 2 days ago
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2774 build(deps): bump prefix-dev/setup-pixi from 0.9.0 to 0.9.1](https://github.com/stack-of-tasks/pinocchio/pull/2774)
+   - Created 7 days ago, merged 6 days ago
+- [#2776 setup dockgen](https://github.com/stack-of-tasks/pinocchio/pull/2776)
+   - Created 6 days ago, merged 4 days ago
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#342 Nix CI: updates](https://github.com/Simple-Robotics/aligator/pull/342)
+   - Created 7 days ago, merged 6 days ago
+- [#345 Simplify solver backend: remove CHOLMOD](https://github.com/Simple-Robotics/aligator/pull/345)
+   - Created 6 days ago, merged 6 days ago
+- [#346 Update pixi lockfile](https://github.com/Simple-Robotics/aligator/pull/346)
+   - Created 5 days ago, merged 4 days ago
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#22 Nix: init](https://github.com/Simple-Robotics/nanoeigenpy/pull/22)
+   - Created 62 days ago, merged 6 days ago
+
 ## 2025-09-29
 
 ### News
