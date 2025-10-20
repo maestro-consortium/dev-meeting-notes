@@ -1,6 +1,108 @@
 # MAESTRO COREDEVS MEETING - Notes
 
 
+## 2025-10-13
+
+### News
+
+ - [name=Pierre-Guillaume] Preparation prestation pour documentation (infra et utilisateur)
+     - nouvelle procedure TIRREX : vise à présenter à l'ensemble des responsables d'axes
+
+### Technical discussions
+
+ - [name=Ghuilem] Add the new jrl-cmake-module project in the agenda
+
+#### stack-of-tasks/pinocchio
+
+ - Items to discuss:
+   - [#2782 [Bug]: Fixed joint in mujoco as first joint does not take body position into account](https://github.com/stack-of-tasks/pinocchio/issues/2782)
+       - check if bug still there in Pinocchio4
+       - either fix in Pinocchio3 or use model graphs (Pinocchio4 only)
+   - [#2778 Support for Arch Linux (eigen 5)?](https://github.com/stack-of-tasks/pinocchio/issues/2778]
+       - Guilhem answered, one last thing to be done but issue is solved
+
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#767 flake.lock: Update](https://github.com/coal-library/coal/pull/767)
+   - Created 19 hours ago, updated 19 hours ago, no status
+   - CI Nix disapproves, to be closed: Guilhem is currently working on it
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - Created 390 days ago, updated 40 days ago, status to review
+- [#2777 Update pixi lockfile](https://github.com/stack-of-tasks/pinocchio/pull/2777)
+   - Created 12 days ago, updated 4 days ago, no status
+   - issues with pixi build (max size reached)
+   - fix to remove unused files in the github action
+       - scripts to remove unused features like docker, ...
+       - run_with_debinfo -> no assert messages
+   - also remaining bug wrt missing scipy on arm (use ssh on runner to investigate - slow to build on qemu)
+- [#2779 Fix Eigen5 support on Pinocchio 3](https://github.com/stack-of-tasks/pinocchio/pull/2779)
+   - Created 9 days ago, updated 9 days ago, no status
+   - Guilhem will take a look
+- [#2784 Adding a spline joint to the joint collection](https://github.com/stack-of-tasks/pinocchio/pull/2784)
+   - Created 2 days ago, updated 2 days ago, no status
+   - drafted PR, therefore marked as wip
+- [#2785 build(deps): bump astral-sh/setup-uv from 6 to 7](https://github.com/stack-of-tasks/pinocchio/pull/2785)
+   - Created 6 hours ago, updated 6 hours ago, no status
+   - merged
+
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#415 [WIP]: Implementation of OSQP algorithm in Proxsuite](https://github.com/Simple-Robotics/proxsuite/pull/415)
+   - Created 51 days ago, updated 10 days ago, no status
+   - drafted PR: profiling to come
+- [#423 Add initial pixi support](https://github.com/Simple-Robotics/proxsuite/pull/423)
+   - Created 6 days ago, updated 6 days ago, no status
+   - lockfile missing
+
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#766 [pre-commit.ci] pre-commit autoupdate](https://github.com/coal-library/coal/pull/766)
+   - Created 6 days ago, merged 5 days ago
+   - Update of clang-format, changes the stylr (massive changes wrt space)
+   - Issues wrt merge conflicts
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#600 [pre-commit.ci] pre-commit autoupdate](https://github.com/stack-of-tasks/eigenpy/pull/600)
+   - Created 6 days ago, merged 6 days ago
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2781 build(deps): bump actions/attest-build-provenance from 2 to 3](https://github.com/stack-of-tasks/pinocchio/pull/2781)
+   - Created 7 days ago, merged 6 days ago
+- [#2780 flake.lock: Update](https://github.com/stack-of-tasks/pinocchio/pull/2780)
+   - Created 8 days ago, merged 6 days ago
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#347 CMake: BUILD_STANDALONE_PYTHON_INTERFACE](https://github.com/Simple-Robotics/aligator/pull/347)
+   - Created 6 days ago, merged 6 days ago
+   - Split the binding of the main lib and the python bindingd
+- [#349 Refactor/algo changes: reorient around explicit dynamics](https://github.com/Simple-Robotics/aligator/pull/349)
+   - Created 6 days ago, merged 5 days ago
+- [#348 Revamp ProxDDP solver : remove proximal iteration over co-state, temporarily remove implicit dynamics](https://github.com/Simple-Robotics/aligator/pull/348)
+   - Created 6 days ago, merged 2 days ago
+   - #349 merged into this PR
+   - performance improvments (reduce complexity)
+        - fix memory pull
+        - computation graph
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#422 build(deps): bump actions/setup-python from 5 to 6](https://github.com/Simple-Robotics/proxsuite/pull/422)
+   - Created 11 days ago, merged 6 days ago
+- [#424 [pre-commit.ci] pre-commit autoupdate](https://github.com/Simple-Robotics/proxsuite/pull/424)
+   - Created 6 days ago, merged 5 days ago
 
 ## 2025-10-06
 
