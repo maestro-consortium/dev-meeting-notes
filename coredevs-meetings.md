@@ -1,6 +1,138 @@
 # MAESTRO COREDEVS MEETING - Notes
 
 
+## 2025-10-20
+
+### News
+
+ - [name=Joris Vaillant] Aligator v0.16 release :tada:
+     - removes old backend, heavy refactoring of main backend. Improves performances significantly (x3 on a Ricatti benchmark).
+         - Some features have been removed (implicit integrator) but not used - need some work to reformulate.
+         - Next steps : 0.17 with the new implicit integrator or directly 1.0 with computation graphs
+
+### Technical discussions
+
+ - [name=Joris Vaillant] Global migration to macos-15-intel
+     - That will be the last Mac-Intel image supported on Github (only Mac-Arm later).
+     - Also, Python 3.9 is discontinued (3.14 to add)
+ - [name=Guilhem Saurel] pinocchio-minimal
+     - Project in SoT. Minimal example to use CMake. Used extensively in the CI.
+     - 2 news issues on this project (one wrt naming, one on using this as a template)
+         - template: improve the doc instead ("Getting Started")
+
+#### stack-of-tasks/pinocchio
+
+ - Items to discuss:
+   - [#2792 [Feature]: Colors of robots are not fully applied in Viser](https://github.com/stack-of-tasks/pinocchio/issues/2792)
+       - Joris to check this week
+       - Rerun not good enough for robotics (more a player than an interactive viewer). Rerun has evaolved this summer. Checl again ?
+       - Ongoing work with Viser in LAAS
+       - What about Candlewick ? more a renderer than a viewer
+
+#### simple-robotics/nanoeigenpy
+
+ - Items to discuss:
+   - [#23 CMake: use of `Python_SITELIB`](https://github.com/Simple-Robotics/nanoeigenpy/issues/23)
+       - Currently in nix, patch to address this, but many messages wrt this issue on ROS CI
+       - Disable ROS CI for now until refactoring of v2 CMake tools
+           - add macro to get relative path of sitelib
+       - Allow overide for Windows (relative solution does not work)
+
+### PR to review
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - Created 397 days ago, updated 47 days ago, status to review
+- [#2779 Fix Eigen5 support on Pinocchio 3](https://github.com/stack-of-tasks/pinocchio/pull/2779)
+   - Created 16 days ago, updated 3 days ago, no status
+       - CI test fails, Joris to check
+- [#2786 Add names for joints inside a composite joint](https://github.com/stack-of-tasks/pinocchio/pull/2786)
+   - Created 6 days ago, updated 2 days ago, no status
+- [#2793 Add color support for robot meshes in Viser](https://github.com/stack-of-tasks/pinocchio/pull/2793)
+   - Created 3 days ago, updated 2 days ago, no status
+       - checks by Guilhem already, Joris to check and merge
+- [#2794 Update renamed dependency](https://github.com/stack-of-tasks/pinocchio/pull/2794)
+   - Created 2 days ago, updated 2 days ago, no status
+   - waiting for Pinocchio4
+   - Need collision option on by default ?
+       - yes, for pinocchio4
+- [#2795 build(deps): bump prefix-dev/setup-pixi from 0.9.1 to 0.9.2](https://github.com/stack-of-tasks/pinocchio/pull/2795)
+   - Created 6 hours ago, updated 6 hours ago, no status
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#415 [WIP]: Implementation of OSQP algorithm in Proxsuite](https://github.com/Simple-Robotics/proxsuite/pull/415)
+   - Created 58 days ago, updated 17 days ago, no status
+   - Move as WIP, ongoing work
+- [#423 Add initial pixi support](https://github.com/Simple-Robotics/proxsuite/pull/423)
+   - Created 13 days ago, updated 6 days ago, status to review
+   - Joris to review this week
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#768 Migrate to macos-15-intel](https://github.com/coal-library/coal/pull/768)
+   - Created 4 days ago, merged 4 days ago
+- [#769 ROS: update](https://github.com/coal-library/coal/pull/769)
+   - Created 4 days ago, merged 4 days ago
+- [#770 CMake: lib version/soversion](https://github.com/coal-library/coal/pull/770)
+   - Created 4 days ago, merged 3 days ago
+   - Only major version now.
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#601 Migrate to macos-intel-15](https://github.com/stack-of-tasks/eigenpy/pull/601)
+   - Created 6 days ago, merged 4 days ago
+- [#602 ROS: update](https://github.com/stack-of-tasks/eigenpy/pull/602)
+   - Created 4 days ago, merged 4 days ago
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2785 build(deps): bump astral-sh/setup-uv from 6 to 7](https://github.com/stack-of-tasks/pinocchio/pull/2785)
+   - Created 7 days ago, merged 6 days ago
+- [#2788 Migrate to macos-15-intel](https://github.com/stack-of-tasks/pinocchio/pull/2788)
+   - Created 4 days ago, merged 4 days ago
+- [#2791 CMake: no need for boost system](https://github.com/stack-of-tasks/pinocchio/pull/2791)
+   - Created 4 days ago, merged 3 days ago
+- [#2789 ROS: update](https://github.com/stack-of-tasks/pinocchio/pull/2789)
+   - Created 4 days ago, merged 3 days ago
+- [#2777 Update pixi lockfile](https://github.com/stack-of-tasks/pinocchio/pull/2777)
+   - Created 19 days ago, merged 2 days ago
+   - On Windows, CI fails when building with all options (takes too long). Disabled for now. To investigate.
+- [#2790 CMake: updates for CMake >= 3.22](https://github.com/stack-of-tasks/pinocchio/pull/2790)
+   - Created 4 days ago, merged 2 days ago
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#351 flake.nix : add catch2 dep](https://github.com/Simple-Robotics/aligator/pull/351)
+   - Created 6 days ago, merged 6 days ago
+- [#352 Update CHANGELOG.md following changes merged in #348](https://github.com/Simple-Robotics/aligator/pull/352)
+   - Created 6 days ago, merged 6 days ago
+- [#353 gh-pages workflow : use pixi](https://github.com/Simple-Robotics/aligator/pull/353)
+   - Created 6 days ago, merged 6 days ago
+- [#354 pixi : add doc feature and task, use in gh-pages workflow](https://github.com/Simple-Robotics/aligator/pull/354)
+   - Created 6 days ago, merged 6 days ago
+- [#355 Remove fmt dependency max version spec](https://github.com/Simple-Robotics/aligator/pull/355)
+   - Created 5 days ago, merged 5 days ago
+- [#357 Migrate to macos-15-intel](https://github.com/Simple-Robotics/aligator/pull/357)
+   - Created 4 days ago, merged 4 days ago
+- [#358 Add new-version environment](https://github.com/Simple-Robotics/aligator/pull/358)
+   - Created 4 days ago, merged 4 days ago
+- [#359 `CostStack` - add weight getter and setters (and increase minimum eigenpy version)](https://github.com/Simple-Robotics/aligator/pull/359)
+   - Created 2 days ago, merged 2 days ago
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#425 Migrate to macos-15-intel](https://github.com/Simple-Robotics/proxsuite/pull/425)
+   - Created 2 days ago, merged 2 days ago
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#24 Migrate to macos-15-intel](https://github.com/Simple-Robotics/nanoeigenpy/pull/24)
+   - Created 4 days ago, merged 4 days ago
+
 ## 2025-10-13
 
 ### News
