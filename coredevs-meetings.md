@@ -1,6 +1,133 @@
 # MAESTRO COREDEVS MEETING - Notes
 
 
+
+## 2025-10-27
+
+### News
+
+No news this week
+
+### Technical discussions
+
+- [name=Wilson] No news yet on the Eigen5 feedstock PR (https://github.com/conda-forge/eigen-feedstock/pulls/49)
+     - to be able to tag the ABI versions
+ - [name=Joris Vaillant] Do we add new joint (spline, ellipsoid) to the default joint collection ?
+     - what's the goal of the collection ? Only the joints in robotics or all ?
+     - impact on HPP ?
+         - some thongs are hardcoded - check if using a custom list of joints or the one in Pinocchio
+     - check with Justin 
+ - [name=Guilhem Saurel] pycppad
+     - pycppad had automatic PR not merged
+     - should we had the project in the meeting's agenda
+         - not a major project advertized as Maestro stack
+         - Joris to check now this project also
+         - project in maintenance mode, not much dev anymore
+ - [name=Guilhem Saurel] coal: boost serialization
+     - should we change to optional ?
+     - some people that use Coal outside of robotics domain (e.g., gaming, cross-compilation)
+         - if required then its a nogo
+     - could be also useful wrt the refactoring of the jrl-cmake-module
+     - in the current refactoring of proxsuite (for the new jrl-cmake-module) then we have components and dependency will be automatically set/notset - so if not required boos serialization not included
+         - 2 targets proxsuite and proxsuite-serialization
+         - what about Python binding ? (not yet) 
+         - not a priority (fringe use, lots of things on the table already)
+
+- [name=Wilson Jallet] new project pushed in September: [pymetabind](https://github.com/hudson-trading/pymetabind) - enables interop between C++/Python binding frameworks
+        - open PRs on corresponding frameworks: [pybind11](https://github.com/pybind/pybind11/pull/5800), [nanobind](https://github.com/wjakob/nanobind/pull/1140). No Boost.Python PR open yet it seems
+- [name=Wilson Jallet] Using mimalloc (https://github.com/microsoft/mimalloc) in Aligator
+- No new issue on GH for the projects (Pinocchio, Simple, ...)
+
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#774 Update pixi.toml](https://github.com/coal-library/coal/pull/774)
+   - Created 3 days ago, updated 3 days ago, no status
+   - more than a simple update of the toml
+   - minimal versions Python, ...
+   - pixi build (fixed options - not as good as Conan but helps)
+   - fix about testing the binding boost pyton on Windows
+   - similar PRs are open on other repositories
+   - remaining issue wrt clang version on windows
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#603 Update pixi.toml](https://github.com/stack-of-tasks/eigenpy/pull/603)
+   - Created 5 days ago, updated 3 days ago, no status
+   - same as above
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - Created 404 days ago, updated 54 days ago, status to review
+- [#2779 Fix Eigen5 support on Pinocchio 3](https://github.com/stack-of-tasks/pinocchio/pull/2779)
+   - Created 23 days ago, updated 5 days ago, no status
+   - New problems when activating casadi - fixed
+   - can be merged even if not everything
+   - add Python and eigen5 support on Nix
+- [#2793 Add color support for robot meshes in Viser](https://github.com/stack-of-tasks/pinocchio/pull/2793)
+   - Created 10 days ago, updated 5 days ago, no status
+   - Joris to check (but low priority, maybe next week)
+   - Alexy should resolve points which are indeed solved
+- [#2794 Update renamed dependency](https://github.com/stack-of-tasks/pinocchio/pull/2794)
+   - Created 9 days ago, updated 4 days ago, no status
+   - Will be corrected in Pinocchio4
+   - Can be closed
+- [#2797 Adding an ellipsoid joint to the joint collection](https://github.com/stack-of-tasks/pinocchio/pull/2797)
+   - Created 3 days ago, updated 15 hours ago, no status
+   - Missing test on translation and FD test
+   - Check dimensions given to data
+
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#365 Lie Group and Lie algebra redesign](https://github.com/Simple-Robotics/aligator/pull/365)
+   - Created 3 days ago, updated 3 days ago, no status
+   - Drafted work along with Yann
+- [#366 Introduce mimalloc-based memory resource](https://github.com/Simple-Robotics/aligator/pull/366)
+    - Drafted PR
+    - Use [mimalloc](https://github.com/microsoft/mimalloc) from Microsoft
+
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#423 Add initial pixi support](https://github.com/Simple-Robotics/proxsuite/pull/423)
+   - Created 20 days ago, updated 13 days ago, status to review
+   - On pause (modernize pixi files first, then work on pixi support in ProxSuite)
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#772 Fix contact patches](https://github.com/coal-library/coal/pull/772)
+   - Created 6 days ago, merged 6 days ago
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2786 Add names for joints inside a composite joint](https://github.com/stack-of-tasks/pinocchio/pull/2786)
+   - Created 13 days ago, merged 6 days ago
+- [#2795 build(deps): bump prefix-dev/setup-pixi from 0.9.1 to 0.9.2](https://github.com/stack-of-tasks/pinocchio/pull/2795)
+   - Created 7 days ago, merged 5 days ago
+- [#2796 bindings/python/visualizers : add overload for `BaseVisualizer::play()` in `VisualizerPythonVisitor`](https://github.com/stack-of-tasks/pinocchio/pull/2796)
+   - Created 6 days ago, merged 5 days ago
+   - For C++ visualizers
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#360 modelling : Fixes for upcoming changes to Pinocchio's API](https://github.com/Simple-Robotics/aligator/pull/360)
+   - Created 6 days ago, merged 6 days ago
+- [#362 [core] Move allocator/ArenaMatrix headers from `aligator/memory` to core](https://github.com/Simple-Robotics/aligator/pull/362)
+   - Created 6 days ago, merged 6 days ago
+- [#361 Introduce support for upcoming Pinocchio 4](https://github.com/Simple-Robotics/aligator/pull/361)
+   - Created 6 days ago, merged 5 days ago
+   - Forward support for Pinocchio4
+- [#364 Extend support for `std::string_view` (C++ and Python)](https://github.com/Simple-Robotics/aligator/pull/364)
+   - Created 3 days ago, merged 3 days ago
+   - C++17 wrapper for `const char*`
+   - use case : avoids string allocation when doing a lookup in a map
+
 ## 2025-10-20
 
 ### News
