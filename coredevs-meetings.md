@@ -2,6 +2,121 @@
 
 
 
+## 2025-11-03
+
+### News
+
+ - [name=Joris] Départ de Mégane et arrivée de Jeanne
+
+### Technical discussions
+
+ - [name=Joris] Check organisation rules in Github
+ - 
+#### simple-robotics/proxsuite
+
+ - Items to discuss:
+   - [#426 eigen 5 support](https://github.com/Simple-Robotics/proxsuite/issues/426)
+       - must activate all dependencies (casadi depends on proxsuite)
+       - hard to track, no time yet to investigate
+       - ignore these 3 tests temporarily ?
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#774 Update pixi.toml](https://github.com/coal-library/coal/pull/774)
+   - Created 10 days ago, updated 3 days ago, no status
+       - Issue with install path when using pixi build on Windows
+       - pixi build will allow to have source dependencies
+       - Wilson to check
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#603 Update pixi.toml](https://github.com/stack-of-tasks/eigenpy/pull/603)
+   - Created 12 days ago, updated 3 days ago, no status
+       - same as above
+       - Wilson to check
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - Created 411 days ago, updated 61 days ago, status to review
+- [#2779 Fix Eigen5 support on Pinocchio 3](https://github.com/stack-of-tasks/pinocchio/pull/2779)
+   - Created 30 days ago, updated 12 days ago, no status
+   - waiting for proxsuite on eigen5
+- [#2793 Add color support for robot meshes in Viser](https://github.com/stack-of-tasks/pinocchio/pull/2793)
+   - Created 17 days ago, updated 12 days ago, no status
+   - no time yet, low priority
+- [#2794 Update renamed dependency](https://github.com/stack-of-tasks/pinocchio/pull/2794)
+   - Created 16 days ago, updated 11 days ago, no status
+   - (can be closed - see previous week - fixed in pinocchio4)
+- [#2797 Adding an ellipsoid joint to the joint collection](https://github.com/stack-of-tasks/pinocchio/pull/2797)
+   - Created 10 days ago, updated 1 days ago, no status
+   - Joris to review in the following weeks
+- [#2799 Update pixi lockfile](https://github.com/stack-of-tasks/pinocchio/pull/2799)
+   - Created 2 days ago, updated 2 days ago, no status
+   - Maintenance PR. all read because split in example-data-robot (split in 2 with loaders in separate project)
+   - Need to explain to many people
+   - will need to update all the projects that depend on thsi
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#369 Update pixi.toml for pixi 0.58.0](https://github.com/Simple-Robotics/aligator/pull/369)
+   - Created 5 days ago, updated 4 days ago, no status
+   - Joris to check
+- [#370 Update pixi lockfile](https://github.com/Simple-Robotics/aligator/pull/370)
+   - Created 2 days ago, updated 2 days ago, no status
+   - Close (and do the manual fix in #369)
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#423 Add initial pixi support](https://github.com/Simple-Robotics/proxsuite/pull/423)
+   - Created 27 days ago, updated 20 days ago, status to review
+   - Need for the same PR (coal, eigenpy) to be merged to do the same here
+- [#427 nix: add build with eigen 5, ref #426](https://github.com/Simple-Robotics/proxsuite/pull/427)
+   - Created 6 days ago, updated 6 days ago, no status
+   - Same error wrt eigen5 changes in random test (takes more time to converge)
+   - Valgrind does not report anything
+   - Lucas to check (later)
+   - Ignore the tests for now so that Nix CI is green, so that can be merged (nix is mandatory)
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#776 Update pixi lockfile](https://github.com/coal-library/coal/pull/776)
+   - Created 2 days ago, merged 1 days ago
+- [#777 build(deps): bump prefix-dev/setup-pixi from 0.9.1 to 0.9.2](https://github.com/coal-library/coal/pull/777)
+   - Created 1 days ago, merged 9 hours ago
+- [#778 build(deps): bump astral-sh/setup-uv from 6 to 7](https://github.com/coal-library/coal/pull/778)
+   - Created 1 days ago, merged 6 hours ago
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#604 Update pixi lockfile](https://github.com/stack-of-tasks/eigenpy/pull/604)
+   - Created 2 days ago, merged 1 days ago
+- [#605 build(deps): bump astral-sh/setup-uv from 6 to 7](https://github.com/stack-of-tasks/eigenpy/pull/605)
+   - Created 1 days ago, merged 9 hours ago
+- [#606 build(deps): bump prefix-dev/setup-pixi from 0.9.1 to 0.9.2](https://github.com/stack-of-tasks/eigenpy/pull/606)
+   - Created 1 days ago, merged 8 hours ago
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#366 Introduce `mimalloc`-based memory resource](https://github.com/Simple-Robotics/aligator/pull/366)
+   - Created 6 days ago, merged 6 days ago
+- [#367 Integrate `mimalloc` memory resource as default resource for `SolverProxDDP`, move `blk-matrix.hpp` header to `aligator/core`](https://github.com/Simple-Robotics/aligator/pull/367)
+   - Created 6 days ago, merged 5 days ago
+- [#368 (Finally) remove deprecated `StageConstraint` template class](https://github.com/Simple-Robotics/aligator/pull/368)
+   - Created 5 days ago, merged 5 days ago
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#428 build(deps): bump actions/download-artifact from 5 to 6](https://github.com/Simple-Robotics/proxsuite/pull/428)
+   - Created 1 days ago, merged 1 days ago
+- [#429 build(deps): bump actions/upload-artifact from 4 to 5](https://github.com/Simple-Robotics/proxsuite/pull/429)
+   - Created 1 days ago, merged 8 hours ago
+
+
 ## 2025-10-27
 
 ### News
