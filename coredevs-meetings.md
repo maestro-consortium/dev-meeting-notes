@@ -1,6 +1,95 @@
 # MAESTRO COREDEVS MEETING - Notes
 
 
+## 2025-11-10
+
+### Technical discussions
+
+ - [name=Guilhem] Nouvelles release jrl-cmake-modules pour ROS (pb lie a la ci de ros qui a besoin du .deb, uniquement possible via une release).
+     - https://github.com/jrl-umi3218/jrl-cmakemodules/pull/790
+     - Issue with install location share vs lib (and Unix vs Windows - check ref in issue - butmostly convention)
+     - Architecture independant projects (python, cmake, header only, ...) in share.
+- [name=Hugo] What about CMake 4 ? 
+    - SOFA core/python work with CMake4. Lots of work wrt dependencies.
+    - CMake4 is now tested and compatible with the Maestro software stack
+    - See the [work done on Nix](https://github.com/NixOS/nixpkgs/issues/445447)
+
+#### simple-robotics/aligator
+
+ - Items to discuss:
+   - [#371 Windows Support](https://github.com/Simple-Robotics/aligator/issues/371)
+       - Croccodyl is a dependency, and does not work on Windows.
+       - Croccodyl is not required. Can remove for Windows
+       - Antoine to discuss with Joris on that (tmeplate instanciation)
+
+### PR to review
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - Created 418 days ago, updated 68 days ago, status to review
+- [#2779 Fix Eigen5 support on Pinocchio 3](https://github.com/stack-of-tasks/pinocchio/pull/2779)
+   - Created 37 days ago, updated 19 days ago, no status
+   - Dependency issue (Pin3 -> CaSadi -> ProxSuite)
+   - Still pending
+   - SOFA : How to handle blocked PR waiting for another ?
+       - PR in title of PR : Based on #xx + [GitHub label](https://github.com/sofa-framework/sofa/issues?q=state%3Aopen%20label%3A%22pr%3A%20based%20on%20previous%20PR%22)
+- [#2793 Add color support for robot meshes in Viser](https://github.com/stack-of-tasks/pinocchio/pull/2793)
+   - Created 24 days ago, updated 2 days ago, no status
+- [#2794 Update renamed dependency](https://github.com/stack-of-tasks/pinocchio/pull/2794)
+   - Created 23 days ago, updated 18 days ago, no status
+- [#2797 Adding an ellipsoid joint to the joint collection](https://github.com/stack-of-tasks/pinocchio/pull/2797)
+   - Created 17 days ago, updated 2 days ago, no status
+- [#2799 Update pixi lockfile](https://github.com/stack-of-tasks/pinocchio/pull/2799)
+   - Created 9 days ago, updated 9 days ago, no status
+- [#2803 build(deps): bump prefix-dev/setup-pixi from 0.9.2 to 0.9.3](https://github.com/stack-of-tasks/pinocchio/pull/2803)
+   - Created 6 hours ago, updated 6 hours ago, no status
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#423 Add initial pixi support](https://github.com/Simple-Robotics/proxsuite/pull/423)
+   - Created 34 days ago, updated 27 days ago, status to review
+   - Waiting for Joris - May potentially be closed as another branch for jrl-cmake-module2 adds more support
+- [#427 nix: add build with eigen 5, ref #426](https://github.com/Simple-Robotics/proxsuite/pull/427)
+   - Created 13 days ago, updated 4 days ago, no status
+   - Ongoing work (should be done soon)
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#774 Update pixi.toml](https://github.com/coal-library/coal/pull/774)
+   - Created 17 days ago, merged 5 days ago
+   - Minimal Python, ccache, clang/gcc ... (smae PR on other projects)
+- [#780 Activate pixi build on Windows](https://github.com/coal-library/coal/pull/780)
+   - Created 4 days ago, merged 4 days ago
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#607 flake.lock: Update](https://github.com/stack-of-tasks/eigenpy/pull/607)
+   - Created 6 days ago, merged 6 days ago
+- [#603 Update pixi.toml](https://github.com/stack-of-tasks/eigenpy/pull/603)
+   - Created 19 days ago, merged 4 days ago
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2800 Update SDF support include path in CMakeLists](https://github.com/stack-of-tasks/pinocchio/pull/2800)
+   - Created 6 days ago, merged 5 days ago
+- [#2802 Update pixi.toml](https://github.com/stack-of-tasks/pinocchio/pull/2802)
+   - Created 2 days ago, merged 2 days ago
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#372 add missing link against Eigen3::Eigen](https://github.com/Simple-Robotics/aligator/pull/372)
+   - Created 4 days ago, merged 4 days ago
+- [#369 Update pixi.toml for pixi 0.58.0](https://github.com/Simple-Robotics/aligator/pull/369)
+   - Created 12 days ago, merged 4 days ago
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#25 Update pixi.toml](https://github.com/Simple-Robotics/nanoeigenpy/pull/25)
+   - Created 4 days ago, merged 3 days ago
+
 
 ## 2025-11-03
 
