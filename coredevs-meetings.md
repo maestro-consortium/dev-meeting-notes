@@ -1,6 +1,103 @@
 # MAESTRO COREDEVS MEETING - Notes
 
 
+## 2025-11-17
+
+### Technical discussions
+
+- [name={Pierre-Guillaume}] Previous weeks
+    - Antoine to discuss with Joris wrt [#371 Windows support](https://github.com/Simple-Robotics/aligator/issues/371) (template instanciation)
+    - Attente refactoring Aligator ?
+        - Pas prioritaire, le support Windows peut etre lance
+- [name={Joris}] Presentations on memory allocators ? (PMR-C++17)
+- [name={Wilson}] Eigen 5.0.1 released
+    - Nix should be ok
+    - Waiting on [this PR for conda](https://github.com/conda-forge/eigen-feedstock/pull/49) before the recipe is updated for 3.4.1 & 5.x
+
+#### coal-library/coal
+
+ - Items to discuss:
+   - [#784 DynamicAABBTreeCollisionManager result error detected](https://github.com/coal-library/coal/issues/784)
+       - Joris to check this week
+
+#### stack-of-tasks/pinocchio
+
+ - Items to discuss:
+   - [#2805 modelAppend with URDF-Submodel with fixed Joints](https://github.com/stack-of-tasks/pinocchio/issues/2805)
+       - Joris to check this week
+
+#### simple-robotics/aligator
+
+ - Items to discuss:
+   - [#374 Adding the possibility to activate and deactivate constraints at will](https://github.com/Simple-Robotics/aligator/issues/374)
+       - Would need changes in both backend/frontend, to investigate
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#781 Fix module name in nanobind_add_stub](https://github.com/coal-library/coal/pull/781)
+   - Created 6 days ago, updated 4 days ago, no status
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - Created 425 days ago, updated 75 days ago, status to review
+- [#2779 Fix Eigen5 support on Pinocchio 3](https://github.com/stack-of-tasks/pinocchio/pull/2779)
+   - Created 44 days ago, updated 26 days ago, no status
+   - Last week: 
+       - Dependency issue (Pin3 -> CaSadi -> ProxSuite)
+       - Still pending
+- [#2793 Add color support for robot meshes in Viser](https://github.com/stack-of-tasks/pinocchio/pull/2793)
+   - Created 31 days ago, updated 2 days ago, no status
+   - Local test is not failing, need to fix try/catch blocks
+- [#2797 Adding an ellipsoid joint to the joint collection](https://github.com/stack-of-tasks/pinocchio/pull/2797)
+   - Created 24 days ago, updated 3 days ago, no status
+   - Ongoing discussions with Pierre Puchaud, Joris to work on the PR
+- [#2799 Update pixi lockfile](https://github.com/stack-of-tasks/pinocchio/pull/2799)
+   - Created 16 days ago, updated 16 days ago, no status
+   - Already another PR modifying the lockfile, modif will come in December
+   - Closed
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#423 Add initial pixi support](https://github.com/Simple-Robotics/proxsuite/pull/423)
+   - Created 41 days ago, updated 34 days ago, status to review
+   - Last week : Waiting for Joris - May potentially be closed as another branch for jrl-cmake-module2 adds more support
+   - Closed: done in next PR
+- [#427 nix: add build with eigen 5, ref #426](https://github.com/Simple-Robotics/proxsuite/pull/427)
+   - Created 20 days ago, updated 6 days ago, no status
+   - Last week : Ongoing work (should be done soon)
+   - TU was ok on Eigen3, fails on Eigen5
+   - Numerical precision issue in Eigen
+       - Lucas to have a quick look ?
+   - In parallel, Joris to discuss with Guilhem if ok to merge
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#783 Contact patch simplifier](https://github.com/coal-library/coal/pull/783)
+   - Created 4 days ago, merged 4 days ago
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2803 build(deps): bump prefix-dev/setup-pixi from 0.9.2 to 0.9.3](https://github.com/stack-of-tasks/pinocchio/pull/2803)
+   - Created 7 days ago, merged 2 days ago
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#373 Fixes around parallelisation](https://github.com/Simple-Robotics/aligator/pull/373)
+   - Created 4 days ago, merged 3 days ago
+   - missing parameter (default 1 for openmp) 
+- [#376 core: have `TrajOptProblem::replaceStageCircular()` return ejected first stage](https://github.com/Simple-Robotics/aligator/pull/376)
+   - Created 3 days ago, merged 3 days ago
+- [#375 Small fixes for pixi run build and tracy integrations](https://github.com/Simple-Robotics/aligator/pull/375)
+   - Created 3 days ago, merged 3 days ago
+- [#377 Adding aligator parallel + openMP documentation](https://github.com/Simple-Robotics/aligator/pull/377)
+   - Created 3 days ago, merged 2 days ago
+   - Added advanced documentation
+
 ## 2025-11-10
 
 ### Technical discussions
