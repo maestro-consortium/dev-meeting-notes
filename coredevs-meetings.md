@@ -1,6 +1,109 @@
 # MAESTRO COREDEVS MEETING - Notes
 
 
+
+## 2025-11-24
+
+### News
+
+ - [name=Guilhem] Repology https://repology.org/
+     - monitoring
+
+### Technical discussions
+
+ - [name=Joris] Upcomming discussion for where to host the new version of jrl-cmakemodule
+
+#### coal-library/coal
+
+ - Items to discuss:
+   - [#784 DynamicAABBTreeCollisionManager result error detected](https://github.com/coal-library/coal/issues/784)
+       - Joris a demande un script pour pouvopir reproduire, en attente
+
+#### stack-of-tasks/pinocchio
+
+ - Items to discuss:
+   - [#2810 [Bug]: Sensor frames are reordered after buildModel() instead of preserving insertion order](https://github.com/stack-of-tasks/pinocchio/issues/2810)
+       - nouvelle API de model graph, frames pas dans le meme ordre
+       - de quel cote faire le mapping
+   - [#2808 [Feature]: How to add limit constraints automatically when solve ik](https://github.com/stack-of-tasks/pinocchio/issues/2808)
+       - not pinocchio, maybe refer to LoIK, PINK, TSID
+       - can be closed
+
+### PR to review
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - Created 432 days ago, updated 82 days ago, status to review
+- [#2779 Fix Eigen5 support on Pinocchio 3](https://github.com/stack-of-tasks/pinocchio/pull/2779)
+   - Created 51 days ago, updated 33 days ago, no status
+   - Guilhem working on it 
+- [#2797 Adding an ellipsoid joint to the joint collection](https://github.com/stack-of-tasks/pinocchio/pull/2797)
+   - Created 31 days ago, updated 2 days ago, no status
+   - ellisoid cannot be reversed currently
+   - should plan for a reverse joint in pinocchio (low priority)
+   - potentially same problem for joint spline (to check)
+- [#2807 Fix appendModel issue when a frame have non null transformation](https://github.com/stack-of-tasks/pinocchio/pull/2807)
+   - Created 3 days ago, updated 2 days ago, no status
+   - bug when 3 frames attached to a joint with inertia, other corner cases
+   - fixed, TU added, last comment to check
+   - will be merged soon
+- [#2809 Add Realtime Sanitizer (RTsan) support](https://github.com/stack-of-tasks/pinocchio/pull/2809)
+   - Created 3 days ago, updated 1 days ago, no status
+   - RTSan
+   - adds pixi task (debug build)
+   - checks if non deterministic event (compile and/or run time)
+       - malloc, mutex lock, ....
+- [#2811 Fix doxygen document hierarchy](https://github.com/stack-of-tasks/pinocchio/pull/2811)
+   - Created 2 days ago, updated 2 days ago, no status
+   - Can be merged (Joris will do it)
+- [#2812 build(deps): bump actions/checkout from 5 to 6](https://github.com/stack-of-tasks/pinocchio/pull/2812)
+   - Created 6 hours ago, updated 6 hours ago, no status
+    - merged
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+
+- [#432 Correction of update status PROXQP_SOLVED_CLOSEST_FEASIBLE in dense backend](https://github.com/Simple-Robotics/proxsuite/pull/432)
+   - Created 1 days ago, updated 1 days ago, no status
+   - Fix issue (infeasible problem, solving the closest one)
+   - can be merged
+- [#433 Unit tests, Maros Meszaros: Redefine function load_qp](https://github.com/Simple-Robotics/proxsuite/pull/433)
+   - Created 1 days ago, updated 20 hours ago, no status
+   - Fixed, with the other orthogonal PR above 
+   - Still need to investigate the initialization issue with eigen5 (forn 20 to 700 seconds)
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#781 Fix module name in nanobind_add_stub](https://github.com/coal-library/coal/pull/781)
+   - Created 13 days ago, merged 6 days ago
+   - Fix naming
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2793 Add color support for robot meshes in Viser](https://github.com/stack-of-tasks/pinocchio/pull/2793)
+   - Created 38 days ago, merged 4 days ago
+   - Fixed, but no TU on viser for now
+- [#2806 Add more cache and temporary files to gitignore](https://github.com/stack-of-tasks/pinocchio/pull/2806)
+   - Created 3 days ago, merged 3 days ago
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#378 Add two frame equality residual](https://github.com/Simple-Robotics/aligator/pull/378)
+   - Created 5 days ago, merged 4 days ago
+   - Related to Agimus project, follow a spline
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#427 nix: add build with eigen 5, ref #426](https://github.com/Simple-Robotics/proxsuite/pull/427)
+   - Created 27 days ago, merged 6 days ago
+- [#431 Fix compilation error using Apple Clang (version 17.0.0).](https://github.com/Simple-Robotics/proxsuite/pull/431)
+   - Created 2 days ago, merged 2 days ago
+
+
 ## 2025-11-17
 
 ### Technical discussions
