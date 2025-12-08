@@ -2,6 +2,103 @@
 
 
 
+## 2025-12-01
+
+### News
+
+### Technical discussions
+
+ - [name=Joris Vaillant] JRL-CMakeModules 2 sur le repo jrl-cmakemodules
+     - Licence : 
+         - BSD-3 clause for v2 (with also dependencies with Mit, Boost)
+         - v1 has a bunch of licences (GPL, BSD, MIT ....)
+     - At some point, v1 code will be removed
+     - Some willow people will be maintainers for the project
+ - [name=Wilson Jallet] C++17 in Pinocchio
+     - specialisation de template / constexpr
+     - lister et mettra a jour quand Pinocchio 4 pret a etre releaser
+     - Boost -> std optional
+     - Boost::variant : faire une release majeure de maintenance ?
+
+#### coal-library/coal
+
+ - Items to discuss:
+   - [#785 Build warnings on Windows](https://github.com/coal-library/coal/issues/785): investigation ongoing
+
+#### stack-of-tasks/pinocchio
+
+ - Items to discuss:
+   - [#2816 [Bug]: Constraint_models are not updated when building a reduced model](https://github.com/stack-of-tasks/pinocchio/issues/2816)
+       - API to be deprecated in Pinocchio v4, the change will not be done in this version
+       - Possibly add the feature in v4
+       - Joris to answer
+   - [#2815 [Feature]: Remove Eigen memory alignment management](https://github.com/stack-of-tasks/pinocchio/issues/2815)
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#786 Update pixi lockfile](https://github.com/coal-library/coal/pull/786)
+   - Created 2 hours ago, updated 2 hours ago, no status
+   - Merged
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#608 Update pixi lockfile](https://github.com/stack-of-tasks/eigenpy/pull/608)
+   - Created 2 hours ago, updated 2 hours ago, no status
+   - Merged
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - Created 439 days ago, updated 89 days ago, status to review
+- [#2779 Fix Eigen5 support on Pinocchio 3](https://github.com/stack-of-tasks/pinocchio/pull/2779)
+   - Created 58 days ago, updated 40 days ago, no status
+   - No change so far
+- [#2797 Adding an ellipsoid joint to the joint collection](https://github.com/stack-of-tasks/pinocchio/pull/2797)
+   - Created 38 days ago, updated 3 days ago, no status
+   - Documentation added, need to rework motion subspace, almost finished
+- [#2809 Add Realtime Sanitizer (RTsan) support](https://github.com/stack-of-tasks/pinocchio/pull/2809)
+   - Created 10 days ago, updated 2 days ago, no status
+   - Merged
+   - helped isolate algorithms in Pinocchio that do dynamic allocations
+- [#2817 Update pixi lockfile](https://github.com/stack-of-tasks/pinocchio/pull/2817)
+   - Created 2 hours ago, updated 2 hours ago, no status
+   - CI says no, to be investigated by Joris
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#379 Update pixi lockfile](https://github.com/Simple-Robotics/aligator/pull/379)
+   - Created 2 hours ago, updated 2 hours ago, no status
+   - Merged
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#434 flake.lock: Update](https://github.com/Simple-Robotics/proxsuite/pull/434)
+   - Created 6 days ago, updated 6 days ago, no status
+
+### PR merged within the week
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2811 Fix doxygen document hierarchy](https://github.com/stack-of-tasks/pinocchio/pull/2811)
+   - Created 9 days ago, merged 6 days ago
+- [#2807 Fix appendModel issue when a frame have non null transformation](https://github.com/stack-of-tasks/pinocchio/pull/2807)
+   - Created 10 days ago, merged 5 days ago
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#432 Correction of update status PROXQP_SOLVED_CLOSEST_FEASIBLE in dense backend](https://github.com/Simple-Robotics/proxsuite/pull/432)
+   - Created 8 days ago, merged 6 days ago
+- [#433 Unit tests, Maros Meszaros: Redefine function load_qp](https://github.com/Simple-Robotics/proxsuite/pull/433)
+   - Created 8 days ago, merged 6 days ago
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#26 Fix typo _MSVC_LAG -> _MSVC_LANG](https://github.com/Simple-Robotics/nanoeigenpy/pull/26)
+   - Created 5 days ago, merged 5 days ago
+   - Check for the same typo in Aligator, other projects
+ 
 ## 2025-11-24
 
 ### News
