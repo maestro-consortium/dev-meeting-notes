@@ -1,5 +1,138 @@
 # MAESTRO COREDEVS MEETING - Notes
 
+## 2025-12-08
+
+### News
+
+ - [name=PG&Friends] Agimus meeting: LAAS and PAL Robotics engineers joined the event
+
+### Technical discussions
+
+ - [name=Joris] Aligator and Ubuntu 22.04
+     - linked to PR https://github.com/Simple-Robotics/aligator/pull/383
+         - PR following the Agimus meeting
+     - fmt API changes between 8 and 12
+     - mimalloc
+     - Boost (v1.74 on u 22.04, v1.83 on ubuntu 24.04)
+     - migrate from fmt to spdlog (https://github.com/gabime/spdlog) ?
+         - fmt string 
+     - once completed, put back CI with Ubuntu 22.04
+
+#### coal-library/coal
+
+ - Items to discuss:
+   - [#792 New primitive implementation](https://github.com/coal-library/coal/issues/792)
+       - Need for primitive design, Louis has been notified
+   - [#790 Improve performance of the clipping algorithm](https://github.com/coal-library/coal/issues/790)
+       - Louis will be looking at the method implementation
+   - [#785 Build warnings on Windows](https://github.com/coal-library/coal/issues/785)
+       - Boost test vs catch2 vs google bench
+
+
+#### stack-of-tasks/pinocchio
+
+ - Items to discuss:
+   - [#2820 [Feature]: Add compatibility with libsdformat >= 15](https://github.com/stack-of-tasks/pinocchio/issues/2820)
+       - task for later, Joris will investigate later
+   - [#2819 [Feature]: Replace `boost::variant` by `boost::variant::variant2`](https://github.com/stack-of-tasks/pinocchio/issues/2819)
+       - avoid hacks
+       - improving build timing (slightly at the project scale)
+       - not for now (breaking change)
+
+#### simple-robotics/aligator
+
+ - Items to discuss:
+   - [#381 ArenaMatrix not exposed to Python](https://github.com/Simple-Robotics/aligator/issues/381)
+       - Fixed in nanoeigenpy (but switch from eigenpy to nanoeigenpy is not for now)
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#789 Remove windows.h and fixes some warnings](https://github.com/coal-library/coal/pull/789)
+   - Created 6 days ago, updated 6 days ago, no status
+   - Joris to check this week
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#611 flake.lock: Update](https://github.com/stack-of-tasks/eigenpy/pull/611)
+   - Created 4 days ago, updated 4 days ago, no status
+   - Nix update
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - Created 446 days ago, updated 96 days ago, status to review
+- [#2779 Fix Eigen5 support on Pinocchio 3](https://github.com/stack-of-tasks/pinocchio/pull/2779)
+   - Created 65 days ago, updated 47 days ago, no status
+   - No progress
+- [#2797 Adding an ellipsoid joint to the joint collection](https://github.com/stack-of-tasks/pinocchio/pull/2797)
+   - Created 45 days ago, updated 2 days ago, no status
+   - Some tests failing, to be investigated
+- [#2823 flake.lock: Update](https://github.com/stack-of-tasks/pinocchio/pull/2823)
+   - Created 3 days ago, updated 3 days ago, no status
+- [#2824 build(deps): bump actions/checkout from 5 to 6](https://github.com/stack-of-tasks/pinocchio/pull/2824)
+   - Created 6 hours ago, updated 6 hours ago, no status
+   - Pixi build has been broken further to a pixi update, to be investigated
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#383 Fix compatibility with ubuntu22.04 for real-time usage](https://github.com/Simple-Robotics/aligator/pull/383)
+   - Created 3 days ago, updated 2 days ago, no status
+   - Breaks the build for other platforms
+   - can not be accepted as is
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#434 flake.lock: Update](https://github.com/Simple-Robotics/proxsuite/pull/434)
+   - Created 13 days ago, updated 13 days ago, no status
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#786 Update pixi lockfile](https://github.com/coal-library/coal/pull/786)
+   - Created 7 days ago, merged 6 days ago
+- [#787 build(deps): bump actions/checkout from 5 to 6](https://github.com/coal-library/coal/pull/787)
+   - Created 6 days ago, merged 6 days ago
+- [#788 build(deps): bump prefix-dev/setup-pixi from 0.9.2 to 0.9.3](https://github.com/coal-library/coal/pull/788)
+   - Created 6 days ago, merged 6 days ago
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#608 Update pixi lockfile](https://github.com/stack-of-tasks/eigenpy/pull/608)
+   - Created 7 days ago, merged 6 days ago
+- [#609 build(deps): bump actions/checkout from 5 to 6](https://github.com/stack-of-tasks/eigenpy/pull/609)
+   - Created 6 days ago, merged 5 days ago
+- [#610 build(deps): bump prefix-dev/setup-pixi from 0.9.2 to 0.9.3](https://github.com/stack-of-tasks/eigenpy/pull/610)
+   - Created 6 days ago, merged 5 days ago
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2809 Add Realtime Sanitizer (RTsan) support](https://github.com/stack-of-tasks/pinocchio/pull/2809)
+   - Created 17 days ago, merged 6 days ago
+- [#2817 Update pixi lockfile](https://github.com/stack-of-tasks/pinocchio/pull/2817)
+   - Created 7 days ago, merged 5 days ago
+- [#2821 Fix RTSan test integration (fix #2809)](https://github.com/stack-of-tasks/pinocchio/pull/2821)
+   - Created 4 days ago, merged 2 days ago
+   - Desactivate CI on ARM architecture due to bug in mutex
+   - Since we are checking for dynamic allocation, ok to just check on linux since they are the same on intel and arm
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#379 Update pixi lockfile](https://github.com/Simple-Robotics/aligator/pull/379)
+   - Created 7 days ago, merged 6 days ago
+- [#380 Update jrl-cmakemodule submodule](https://github.com/Simple-Robotics/aligator/pull/380)
+   - Created 6 days ago, merged 6 days ago
+- [#382 Fix for LogResidualCost](https://github.com/Simple-Robotics/aligator/pull/382)
+   - Created 4 days ago, merged 4 days ago
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#436 build(deps): bump actions/checkout from 5 to 6](https://github.com/Simple-Robotics/proxsuite/pull/436)
+   - Created 6 days ago, merged 5 days ago
+- [#435 build(deps): bump JamesIves/github-pages-deploy-action from 4.7.3 to 4.7.4](https://github.com/Simple-Robotics/proxsuite/pull/435)
+   - Created 6 days ago, merged 5 days ago
 
 
 ## 2025-12-01
