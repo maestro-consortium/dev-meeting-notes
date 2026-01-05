@@ -1,5 +1,142 @@
 # MAESTRO COREDEVS MEETING - Notes
 
+
+## 2025-12-15
+
+### News
+
+ - [name=Joris Vaillant] Ellispoid joint merged into Pinocchio
+     - new joint, important for biomechanics (elbow, knee)
+     - upcomming will be spline joint (january-february)
+     - each new joint is breaking hpp project (missing an example)
+     - hpp, only parse URDF, so limited joint collection, but each new joint breaks hpp
+     - in upcoming Pinocchio4, new API to copy joint collection
+     - having multiple collections in Pinocchio would greatly increase the build time (CI)
+     - joint collection URDF
+         - for python bindings, provide the lib with everything
+         - hpp vs default collection
+             - cannot cast currently
+             - no difference in terms of classes
+
+### Technical discussions
+
+ - [name=Antoine] PR for jrl-cmakemodule-v2: merge in the repository, then in side repository using jrl-cmakemodule
+     - PR also for updates for the projects coal, proxsuite, eigenpy, nanoeigenpy
+     - Wait for Pinocchio4 release
+     - simple, pycppad, aligator : see how to update (check that people can use the v2)
+
+#### coal-library/coal
+
+ - Items to discuss:
+   - [#793 [feature request] Make assimp optional](https://github.com/coal-library/coal/issues/793)
+       - huge dependency
+       - assimp not the fastest / best
+       - use loaders per file type
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#794 Refactor CMake with JRL CMake Modules v2](https://github.com/coal-library/coal/pull/794)
+   - Created 3 days ago, updated 2 days ago, no status
+   - Joris will start with eigenpy, nanoeigenpy (easier, start of the dependencies)
+- [#795 flake.lock: Update](https://github.com/coal-library/coal/pull/795)
+   - Created 2 days ago, updated 2 days ago, no status
+   - Guilhem to check
+   - Keeo the CI tests for split of the binding  (but only in Pixi, not required for Nix ?)
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#611 flake.lock: Update](https://github.com/stack-of-tasks/eigenpy/pull/611)
+   - Created 11 days ago, updated 11 days ago, no status
+- [#612 Refactor CMake with JRL CMake Modules v2](https://github.com/stack-of-tasks/eigenpy/pull/612)
+   - Created 3 days ago, updated 2 days ago, no status
+   - CI started
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - Created 453 days ago, updated 103 days ago, status to review
+- [#2779 Fix Eigen5 support on Pinocchio 3](https://github.com/stack-of-tasks/pinocchio/pull/2779)
+   - Created 72 days ago, updated 54 days ago, no status
+   - Scipy does not compile with Eigen5
+- [#2823 flake.lock: Update](https://github.com/stack-of-tasks/pinocchio/pull/2823)
+   - Created 10 days ago, updated 10 days ago, no status
+- [#2826 build(deps): bump ros-industrial/industrial_ci from eb3ea328ff056aa2435d5b3493e7e2929c310f8e to ba2a3d0f830f8051b356711a8df2fedfc5d256cf](https://github.com/stack-of-tasks/pinocchio/pull/2826)
+   - Created 6 hours ago, updated 6 hours ago, no status
+   - Can the ROS CI be launched locally ?
+   - Yes, but not exactly the same
+- [#2827 build(deps): bump peter-evans/create-pull-request from 7 to 8](https://github.com/stack-of-tasks/pinocchio/pull/2827)
+   - Created 6 hours ago, updated 6 hours ago, no status
+- [#2828 build(deps): bump actions/cache from 4 to 5](https://github.com/stack-of-tasks/pinocchio/pull/2828)
+   - Created 6 hours ago, updated 4 hours ago, no status
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#383 Fix compatibility with ubuntu22.04 for real-time usage](https://github.com/Simple-Robotics/aligator/pull/383)
+   - Created 10 days ago, updated 9 days ago, no status
+   - PR to be taken over by Joris, but not priority (for jan 2026)
+   - Already some formatter, so compatible with fmt 8 and 12
+       - between 8 and 10, specialization with osstreamformatter operator vs another class
+       - should change code in aligator to ditch operator and use fmt formater instead
+       - use alias to implement println in fmt8 (check namespace also)
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#434 flake.lock: Update](https://github.com/Simple-Robotics/proxsuite/pull/434)
+   - Created 20 days ago, updated 20 days ago, no status
+   - blocked by scipy - update of nix package (not a proxsuite issue)
+- [#437 Refactor CMake with JRL CMake Modules v2](https://github.com/Simple-Robotics/proxsuite/pull/437)
+   - Created 3 days ago, updated 2 days ago, no status
+   - Launch CI, Joris to check
+- [#438 Patch solver settings issue in API docs](https://github.com/Simple-Robotics/proxsuite/pull/438)
+   - Created 2 days ago, updated 2 days ago, no status
+   - To check (Joris): primal infinesity solving
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#28 Refactor CMake with JRL CMake Modules v2](https://github.com/Simple-Robotics/nanoeigenpy/pull/28)
+   - Created 3 days ago, updated 1 days ago, no status
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#789 Remove windows.h and fixes some warnings](https://github.com/coal-library/coal/pull/789)
+   - Created 13 days ago, merged 5 days ago
+   - Code simplification, problematic include
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2824 build(deps): bump actions/checkout from 5 to 6](https://github.com/stack-of-tasks/pinocchio/pull/2824)
+   - Created 7 days ago, merged 6 days ago
+- [#2797 Adding an ellipsoid joint to the joint collection](https://github.com/stack-of-tasks/pinocchio/pull/2797)
+   - Created 52 days ago, merged 3 days ago
+   - See news/discussion
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#384 Fix build without pinocchio](https://github.com/Simple-Robotics/aligator/pull/384)
+   - Created 3 days ago, merged 3 days ago
+   - Bug fix
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#27 ci: setup dependabot for github-actions](https://github.com/Simple-Robotics/nanoeigenpy/pull/27)
+   - Created 3 days ago, merged 3 days ago
+- [#29 build(deps): bump actions/checkout from 4 to 6](https://github.com/Simple-Robotics/nanoeigenpy/pull/29)
+   - Created 3 days ago, merged 3 days ago
+- [#32 build(deps): bump prefix-dev/setup-pixi from 0.8.10 to 0.9.3](https://github.com/Simple-Robotics/nanoeigenpy/pull/32)
+   - Created 3 days ago, merged 3 days ago
+- [#33 pixi: Update pixi lockfile](https://github.com/Simple-Robotics/nanoeigenpy/pull/33)
+   - Created 2 days ago, merged 2 days ago
+   - Manual update
+   - Check CI/cron since job not launched
+- [#31 build(deps): bump peter-evans/create-pull-request from 7 to 8](https://github.com/Simple-Robotics/nanoeigenpy/pull/31)
+   - Created 3 days ago, merged 2 days ago
+- [#30 build(deps): bump ros-industrial/industrial_ci from e3d16c224caf4832cf68e74093eb70f3a979b4cc to eb3ea328ff056aa2435d5b3493e7e2929c310f8e](https://github.com/Simple-Robotics/nanoeigenpy/pull/30)
+   - Created 3 days ago, merged 2 days ago
+
 ## 2025-12-08
 
 ### News
