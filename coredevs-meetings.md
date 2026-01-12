@@ -1,5 +1,145 @@
 # MAESTRO COREDEVS MEETING - Notes
 
+## 2026-01-05
+
+### News
+
+ - [name=Pierre-Guillaume] Last time with WebEx visio link (Inria changes provider).
+
+### Technical discussions
+
+ - [name=Joris] Closed issue relater to viser https://github.com/stack-of-tasks/pinocchio/issues/2829
+     - issue with rendering, indeed there is a regression
+     - previous PR of Alexis (LAAS intern), on Talos with STL vs DAE ?
+     - To check with Florent
+ - [name=Joris] Last release this week if Pinocchio 3.9
+     - preparing for Pinocchio v4 stabilization and release
+ - [name=Hugo] Using OSQP ?
+     - new implementation in ProxSuite (ongoing)
+     - another implementation by NYU https://github.com/machines-in-motion/mim_solvers
+
+
+
+#### simple-robotics/candlewick
+
+ - Items to discuss:
+   - [#97 Crash of candlewick-visualizer and Metal assertion on macOS (Apple M4)](https://github.com/Simple-Robotics/candlewick/issues/97)
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#794 Refactor CMake with JRL CMake Modules v2](https://github.com/coal-library/coal/pull/794)
+   - Created 24 days ago, updated 18 days ago, no status
+   - Review done, to be taken into account
+   - Some tasks listed to be performed before merge
+- [#795 flake.lock: Update](https://github.com/coal-library/coal/pull/795)
+   - Created 23 days ago, updated 23 days ago, no status
+   - Guilhem to check
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#612 Refactor CMake with JRL CMake Modules v2](https://github.com/stack-of-tasks/eigenpy/pull/612)
+   - Created 24 days ago, updated 5 days ago, no status
+   - First review by Joris
+- [#614 flake: use eigen 5.0.1 from nixpkgs](https://github.com/stack-of-tasks/eigenpy/pull/614)
+   - Created 16 days ago, updated 16 days ago, no status
+   - Eigen 5 now available in Nix
+   - Rebase and then merge
+- [#619 flake.lock: Update](https://github.com/stack-of-tasks/eigenpy/pull/619)
+   - Created 1 days ago, updated 1 days ago, no status
+   - May conflict with [#614](https://github.com/stack-of-tasks/eigenpy/pull/614)
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - Created 474 days ago, updated 124 days ago, status to review
+- [#2779 Fix Eigen5 support on Pinocchio 3](https://github.com/stack-of-tasks/pinocchio/pull/2779)
+   - Created 93 days ago, updated 75 days ago, no status
+   - Possibly standby due to similar work in Pinocchio 4
+- [#2823 flake.lock: Update](https://github.com/stack-of-tasks/pinocchio/pull/2823)
+   - Created 31 days ago, updated 5 hours ago, no status
+   - Guilhem will work on it
+- [#2832 Ignore non-source files in Nix CI job](https://github.com/stack-of-tasks/pinocchio/pull/2832)
+   - Created 4 days ago, updated 4 days ago, no status
+   - Cache was possibly full (not Github cache, external S# service)
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#383 Fix compatibility with ubuntu22.04 for real-time usage](https://github.com/Simple-Robotics/aligator/pull/383)
+   - Created 32 days ago, updated 30 days ago, no status
+   - Nothing done here, to be done after Pinocchio 4 release
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#434 flake.lock: Update](https://github.com/Simple-Robotics/proxsuite/pull/434)
+   - Created 41 days ago, updated 16 days ago, no status
+- [#437 Refactor CMake with JRL CMake Modules v2](https://github.com/Simple-Robotics/proxsuite/pull/437)
+   - Created 24 days ago, updated 5 days ago, no status
+   - From this PR, it shows CI Conda could be fully replaced with Pixi
+- [#440 build(deps): bump JamesIves/github-pages-deploy-action from 4.7.4 to 4.7.6](https://github.com/Simple-Robotics/proxsuite/pull/440)
+   - Created 3 days ago, updated 3 days ago, no status
+   - CI conda is failing due to assert in Nanobind binding
+   - Joris investigates
+- [#441 build(deps): bump actions/download-artifact from 6 to 7](https://github.com/Simple-Robotics/proxsuite/pull/441)
+   - Created 3 days ago, updated 3 days ago, no status
+   - Same than 440
+- [#442 build(deps): bump actions/upload-artifact from 5 to 6](https://github.com/Simple-Robotics/proxsuite/pull/442)
+   - Created 3 days ago, updated 3 days ago, no status
+   - Same than 440
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#35 Nix: Eigen 5](https://github.com/Simple-Robotics/nanoeigenpy/pull/35)
+   - Created 16 days ago, updated 16 days ago, no status
+- PR on JRLCmakeModule2 should be re-opened
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#796 Update pixi lockfile](https://github.com/coal-library/coal/pull/796)
+   - Created 4 days ago, merged 2 days ago
+- [#799 build(deps): bump peter-evans/create-pull-request from 7 to 8](https://github.com/coal-library/coal/pull/799)
+   - Created 4 days ago, merged 2 days ago
+- [#798 build(deps): bump actions/cache from 4 to 5](https://github.com/coal-library/coal/pull/798)
+   - Created 4 days ago, merged 2 days ago
+- [#797 build(deps): bump ros-industrial/industrial_ci from eb3ea328ff056aa2435d5b3493e7e2929c310f8e to ba2a3d0f830f8051b356711a8df2fedfc5d256cf](https://github.com/coal-library/coal/pull/797)
+   - Created 4 days ago, merged 2 days ago
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#615 Update pixi lockfile](https://github.com/stack-of-tasks/eigenpy/pull/615)
+   - Created 4 days ago, merged 2 days ago
+- [#616 build(deps): bump peter-evans/create-pull-request from 7 to 8](https://github.com/stack-of-tasks/eigenpy/pull/616)
+   - Created 3 days ago, merged 2 days ago
+- [#618 build(deps): bump actions/cache from 4 to 5](https://github.com/stack-of-tasks/eigenpy/pull/618)
+   - Created 3 days ago, merged 2 days ago
+- [#617 build(deps): bump ros-industrial/industrial_ci from eb3ea328ff056aa2435d5b3493e7e2929c310f8e to ba2a3d0f830f8051b356711a8df2fedfc5d256cf](https://github.com/stack-of-tasks/eigenpy/pull/617)
+   - Created 3 days ago, merged 2 days ago
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2833 Update pixi lockfile](https://github.com/stack-of-tasks/pinocchio/pull/2833)
+   - Created 4 days ago, merged 2 days ago
+- [#2830 Simplify and fix DAE loading in Viser visualizer](https://github.com/stack-of-tasks/pinocchio/pull/2830)
+   - Created 4 days ago, merged 2 days ago
+- [#2831 Add RoboPlan, PlaCo, and CRISP controllers to open source projects](https://github.com/stack-of-tasks/pinocchio/pull/2831)
+   - Created 4 days ago, merged 2 days ago
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#385 Update pixi lockfile](https://github.com/Simple-Robotics/aligator/pull/385)
+   - Created 4 days ago, merged 2 days ago
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#36 Revert "Refactor CMake with JRL CMake Modules v2"](https://github.com/Simple-Robotics/nanoeigenpy/pull/36)
+   - Created 15 days ago, merged 5 days ago
+- [#37 Update pixi lockfile](https://github.com/Simple-Robotics/nanoeigenpy/pull/37)
+   - Created 4 days ago, merged 2 days ago
+- [#38 build(deps): bump actions/cache from 4 to 5](https://github.com/Simple-Robotics/nanoeigenpy/pull/38)
+   - Created 4 days ago, merged 2 days ago
 
 ## 2025-12-15
 
