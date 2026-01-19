@@ -1,6 +1,134 @@
 # MAESTRO COREDEVS MEETING - Notes
 
 
+## 2026-01-19
+
+### News
+
+
+### Technical discussions
+
+ - [name=Joris Vaillant] Politique de support Windows/OSX de la stack maestro
+     - For the release on Pinocchio4, cleanup with deprecated versions (e.g., minimum version with Ubuntu 22 - LTS)
+     - What about OSX (Apple Clang) or Windows ?
+     - Apple clang not tested in current CI (no brew, just Conda)
+     - Windows : recommendation not to use older MSVC compiler (19)
+         - Visual Studio 2019 has extended support until April 2029
+     - As part of the consortium, need to get information wrt build chains
+ - [name=Pierre-Guillaume] Documentation et numero de version
+     - Maestro vs chaque logiciel
+         - distribution Maestro
+         - stable vs devel (e.g., pinocchio 4 vs pinocchio 4.2)
+     - Pointeurs entre logiciels
+     - What the stability that we provide over long term (e.g, ubuntu-style)
+     - ref https://calver.org/
+ - [name=Joris Vaillant] Nanobind, custom scalar, casadi, cppad
+
+
+#### coal-library/coal
+
+ - Items to discuss:
+   - [#804 GPU Support](https://github.com/coal-library/coal/issues/804)
+       - Joris replied, closed
+   - [#792 New primitive implementation](https://github.com/coal-library/coal/issues/792): no response since Dec 5 2025. The guy wants to open a PR. Just needs maintainer approval. 
+       - Louis to answer
+
+#### stack-of-tasks/eigenpy
+
+ - Items to discuss:
+   - [#621 Add runtime flag/constant to follow pybind/nanobind for runtime row vectors](https://github.com/stack-of-tasks/eigenpy/issues/621)
+   - Vectors using line or column format, depending on the API. Must fix, conventions (eigenpy vs nanobind)
+   - Wilson to link/better document the issue
+   - New PR needed
+
+#### stack-of-tasks/pinocchio
+
+ - Items to discuss:
+   - [#2837 Handle deprecation of top-level comma expression in array subscripts `-Wdeprecated-comma-subscript`](https://github.com/stack-of-tasks/pinocchio/issues/2837)
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#794 Refactor CMake with JRL CMake Modules v2](https://github.com/coal-library/coal/pull/794)
+   - Created 38 days ago, updated 1 days ago, no status
+   - Antoine to squash commits, Joris to work on it
+- [#795 flake.lock: Update](https://github.com/coal-library/coal/pull/795)
+   - Created 37 days ago, updated 6 days ago, no status
+   - Some issues, Ghuilem to check
+- [#802 Enable specifying extra margins for objects in DynamicAABBTreeArray broadphase manager.](https://github.com/coal-library/coal/pull/802)
+   - Created 4 days ago, updated 2 days ago, no status
+   - Security margin in broadphase ? Not natively in coal because depends on the contraints of the application using Coal.
+   - Broadphase wrapper specific to the application, general wrappers in Coal ?
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#612 Refactor CMake with JRL CMake Modules v2](https://github.com/stack-of-tasks/eigenpy/pull/612)
+   - Created 38 days ago, updated 1 days ago, no status
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - Created 488 days ago, updated 138 days ago, status to review
+- [#2779 Fix Eigen5 support on Pinocchio 3](https://github.com/stack-of-tasks/pinocchio/pull/2779)
+   - Created 107 days ago, updated 6 days ago, no status
+- [#2823 flake.lock: Update](https://github.com/stack-of-tasks/pinocchio/pull/2823)
+   - Created 45 days ago, updated 14 days ago, no status
+   - Same problem as in Coal, Guilhem to check/fix
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#434 flake.lock: Update](https://github.com/Simple-Robotics/proxsuite/pull/434)
+   - Created 55 days ago, updated 30 days ago, no status
+   - Same problem as in Coal, Guilhem to check/fix
+- [#437 Refactor CMake with JRL CMake Modules v2](https://github.com/Simple-Robotics/proxsuite/pull/437)
+   - Created 38 days ago, updated 1 days ago, no status
+- [#440 build(deps): bump JamesIves/github-pages-deploy-action from 4.7.4 to 4.7.6](https://github.com/Simple-Robotics/proxsuite/pull/440)
+   - Created 17 days ago, updated 17 days ago, no status
+   - Linked to nanobind issue, enforce numpy < 2.4 and merge
+   - Joris to handle
+- [#441 build(deps): bump actions/download-artifact from 6 to 7](https://github.com/Simple-Robotics/proxsuite/pull/441)
+   - Created 17 days ago, updated 17 days ago, no status
+- [#442 build(deps): bump actions/upload-artifact from 5 to 6](https://github.com/Simple-Robotics/proxsuite/pull/442)
+   - Created 17 days ago, updated 17 days ago, no status
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#40 Refactor CMake with JRL CMake Modules v2 (v2)](https://github.com/Simple-Robotics/nanoeigenpy/pull/40)
+   - Created 13 days ago, updated 1 days ago, no status
+   - Tested in Coal, using Fetch
+   - Waiting for the merge in jrl-cmake-modules to incorporate v2
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#803 Update lockfile because of pixi 0.63](https://github.com/coal-library/coal/pull/803)
+   - Created 2 days ago, merged 2 days ago
+   - Update of pixi wrt not stable pixi lockfile related to pixi-build
+   - Stable ABI ? starting in Python 3.12, cannot be activated everywhere. Maybe not usefull in our use case ?
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2835 [ROS-O] Remove unused ROS_VERSION condition in package.xml](https://github.com/stack-of-tasks/pinocchio/pull/2835)
+   - Created 5 days ago, merged 3 days ago
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#383 Fix compatibility with ubuntu22.04 for real-time usage](https://github.com/Simple-Robotics/aligator/pull/383)
+   - Created 45 days ago, merged 4 days ago
+- [#387 Fix ubuntu CI](https://github.com/Simple-Robotics/aligator/pull/387)
+   - Created 4 days ago, merged 3 days ago
+- [#388 Update jrl-cmakemodules](https://github.com/Simple-Robotics/aligator/pull/388)
+   - Created 2 days ago, merged 2 days ago
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#42 [fix] test_iterative_solvers.py: Increase MAX_ITER to 80000 for tests](https://github.com/Simple-Robotics/nanoeigenpy/pull/42)
+   - Created 3 days ago, merged 3 days ago
+- [#43 Update pixi lockfile](https://github.com/Simple-Robotics/nanoeigenpy/pull/43)
+   - Created 1 days ago, merged 1 days ago
+
 ## 2026-01-12
 
 ### News
