@@ -1,5 +1,137 @@
 # MAESTRO COREDEVS MEETING - Notes
 
+
+## 2026-01-12
+
+### News
+
+ - [name=Joris] [Pinocchio 3.9 Release](https://github.com/stack-of-tasks/pinocchio/releases/tag/v3.9.0)
+     - Last release before Pinocchio 4
+     - Mostly about adding the elipsoid joint
+
+### Technical discussions
+
+ - [name=Joris] Branch/Tag protection rule to avoid bad push
+     - Use mergify, or block push for other branches than devel, tags other then release
+         - mergify : new service to learn
+         - blocking rules (rulesets) : need to have exceptions for bots
+     - what about forks ?
+         - rules only on the main repository, not on the (personal) forks
+     - Joris to implement rulesets first, investigate mergify
+ - [name=Joris] Who should generate Proxsuite CMake Wheel package ?
+     - Periodic updates required (Python, ...), bug reports (macos), ...
+     - so need to decide who's in charge for this
+         - Guilhem to take over, add the cereal package
+         - will remote our pipeline when done
+         
+
+#### coal-library/coal
+
+ - Items to discuss:
+   - [#801 Delete the old `master` branch?](https://github.com/coal-library/coal/issues/801)
+       - only release tags on devel
+       - master never used, can be deleted
+       - (already deleted on aligator, do the same on other repos)
+
+#### simple-robotics/nanoeigenpy
+
+ - Items to discuss:
+   - [#41 Random fail in iterative_solvers test](https://github.com/Simple-Robotics/nanoeigenpy/issues/41)
+       - Antoine and Lucas to check
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#794 Refactor CMake with JRL CMake Modules v2](https://github.com/coal-library/coal/pull/794)
+   - Created 31 days ago, updated 2 days ago, no status
+   - all green
+- [#795 nix: update for buildStandalone + eigen 5](https://github.com/coal-library/coal/pull/795)
+   - Created 30 days ago, updated 4 days ago, no status
+   - Pending for needed nano-eigenpy, now solved, work will restart
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#612 Refactor CMake with JRL CMake Modules v2](https://github.com/stack-of-tasks/eigenpy/pull/612)
+   - Created 31 days ago, updated 16 hours ago, no status
+   - all green (except nix)
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - Created 481 days ago, updated 131 days ago, status to review
+- [#2779 Fix Eigen5 support on Pinocchio 3](https://github.com/stack-of-tasks/pinocchio/pull/2779)
+   - Created 100 days ago, updated 82 days ago, no status
+- [#2823 flake.lock: Update](https://github.com/stack-of-tasks/pinocchio/pull/2823)
+   - Created 38 days ago, updated 7 days ago, no status
+- [#2832 Ignore non-source files in Nix CI job](https://github.com/stack-of-tasks/pinocchio/pull/2832)
+   - Created 11 days ago, updated 6 days ago, no status
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#383 Fix compatibility with ubuntu22.04 for real-time usage](https://github.com/Simple-Robotics/aligator/pull/383)
+   - Created 38 days ago, updated 2 days ago, no status
+   - CI setup, still need to work on it (ubuntu 22 and 24)
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#434 flake.lock: Update](https://github.com/Simple-Robotics/proxsuite/pull/434)
+   - Created 48 days ago, updated 23 days ago, no status
+   - eigen5 issue on arm, possibly a precision issue
+- [#437 Refactor CMake with JRL CMake Modules v2](https://github.com/Simple-Robotics/proxsuite/pull/437)
+   - Created 31 days ago, updated 2 days ago, no status
+   - Header added on uint128
+- [#440 build(deps): bump JamesIves/github-pages-deploy-action from 4.7.4 to 4.7.6](https://github.com/Simple-Robotics/proxsuite/pull/440)
+   - Created 10 days ago, updated 10 days ago, no status
+   - Check issue https://github.com/wjakob/nanobind/issues/1259
+- [#441 build(deps): bump actions/download-artifact from 6 to 7](https://github.com/Simple-Robotics/proxsuite/pull/441)
+   - Created 10 days ago, updated 10 days ago, no status
+- [#442 build(deps): bump actions/upload-artifact from 5 to 6](https://github.com/Simple-Robotics/proxsuite/pull/442)
+   - Created 10 days ago, updated 10 days ago, no status
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#40 Refactor CMake with JRL CMake Modules v2 (v2)](https://github.com/Simple-Robotics/nanoeigenpy/pull/40)
+   - Created 6 days ago, updated 10 minutes ago, no status
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#800 [pre-commit.ci] pre-commit autoupdate](https://github.com/coal-library/coal/pull/800)
+   - Created 6 days ago, merged 5 days ago
+   - 4 times a year, pre-commit updte on all projects
+   - on some repos, check if merged can be done and if not, other jobs are not laucnhed, while on some other repos, the others jobs are laucnhed 
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#614 flake: use eigen 5.0.1 from nixpkgs](https://github.com/stack-of-tasks/eigenpy/pull/614)
+   - Created 23 days ago, merged 6 days ago
+- [#620 [pre-commit.ci] pre-commit autoupdate](https://github.com/stack-of-tasks/eigenpy/pull/620)
+   - Created 6 days ago, merged 5 days ago
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#386 Change uses of future-deprecated macro `PINOCCHIO_STD_VECTOR_WITH_EIGEN_ALLOCATOR` to `PINOCCHIO_ALIGNED_STD_VECTOR`](https://github.com/Simple-Robotics/aligator/pull/386)
+   - Created 2 days ago, merged 2 days ago
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#443 [pre-commit.ci] pre-commit autoupdate](https://github.com/Simple-Robotics/proxsuite/pull/443)
+   - Created 6 days ago, merged 5 days ago
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#39 Redefine typedefs for mapped sparse matrix for Eigen 5.x](https://github.com/Simple-Robotics/nanoeigenpy/pull/39)
+   - Created 6 days ago, merged 6 days ago
+- [#35 Nix: Eigen 5](https://github.com/Simple-Robotics/nanoeigenpy/pull/35)
+   - Created 23 days ago, merged 2 days ago
+
+#### SIMPLE-ROBOTICS/CANDLEWICK
+
+- [#99 cmake: sync submodule](https://github.com/Simple-Robotics/candlewick/pull/99)
+   - Created 5 days ago, merged 5 days ago
+
 ## 2026-01-05
 
 ### News
