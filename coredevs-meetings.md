@@ -1,10 +1,92 @@
 # MAESTRO COREDEVS MEETING - Notes
 
 
+
+## 2026-01-26
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#794 Refactor CMake with JRL CMake Modules v2](https://github.com/coal-library/coal/pull/794)
+   - Created 42 days ago, updated 2 days ago, no status
+   - Wait review
+- [#795 flake.lock: Update](https://github.com/coal-library/coal/pull/795)
+   - Created 41 days ago, updated 10 days ago, no status
+   - Red CI and PR not uptodate
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#612 Refactor CMake with JRL CMake Modules v2](https://github.com/stack-of-tasks/eigenpy/pull/612)
+   - Created 42 days ago, updated 5 days ago, no status
+   - Wait review
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - Created 492 days ago, updated 142 days ago, status to review
+- [#2823 flake.lock: Update](https://github.com/stack-of-tasks/pinocchio/pull/2823)
+   - Created 49 days ago, updated 18 days ago, no status
+   - Red CI and PR not uptodate
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#434 flake.lock: Update](https://github.com/Simple-Robotics/proxsuite/pull/434)
+   - Created 59 days ago, updated 34 days ago, no status
+   - Red CI and PR not uptodate
+
+- [#437 Refactor CMake with JRL CMake Modules v2](https://github.com/Simple-Robotics/proxsuite/pull/437)
+   - Created 42 days ago, updated 10 hours ago, no status
+   - Test bindings build from source with UV
+       - Nice feedback
+   - Wait review
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#40 Refactor CMake with JRL CMake Modules v2 (v2)](https://github.com/Simple-Robotics/nanoeigenpy/pull/40)
+   - Created 17 days ago, updated 5 days ago, no status
+   - Wait review
+       - Joris must do his first review
+
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#803 Update lockfile because of pixi 0.63](https://github.com/coal-library/coal/pull/803)
+   - Created 6 days ago, merged 6 days ago
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#388 Update jrl-cmakemodules](https://github.com/Simple-Robotics/aligator/pull/388)
+   - Created 6 days ago, merged 6 days ago
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#444 Put an upper bound on numpy version (<2.4)](https://github.com/Simple-Robotics/proxsuite/pull/444)
+   - Created 3 days ago, merged 3 days ago
+- [#442 build(deps): bump actions/upload-artifact from 5 to 6](https://github.com/Simple-Robotics/proxsuite/pull/442)
+   - Created 21 days ago, merged 2 days ago
+- [#441 build(deps): bump actions/download-artifact from 6 to 7](https://github.com/Simple-Robotics/proxsuite/pull/441)
+   - Created 21 days ago, merged 2 days ago
+- [#440 build(deps): bump JamesIves/github-pages-deploy-action from 4.7.4 to 4.7.6](https://github.com/Simple-Robotics/proxsuite/pull/440)
+   - Created 21 days ago, merged 2 days ago
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#43 Update pixi lockfile](https://github.com/Simple-Robotics/nanoeigenpy/pull/43)
+   - Created 5 days ago, merged 5 days ago
+
+#### SIMPLE-ROBOTICS/CANDLEWICK
+
+- [#100 Update imgui submodule](https://github.com/Simple-Robotics/candlewick/pull/100)
+   - Created 3 days ago, merged 3 days ago
+- [#101 Update pixi lockfile + cli11 dep version](https://github.com/Simple-Robotics/candlewick/pull/101)
+   - Created 3 days ago, merged 3 days ago
+- [#102 Expose `Visualizer.toggleGui(value=None)`](https://github.com/Simple-Robotics/candlewick/pull/102)
+   - Created 3 days ago, merged 3 days ago
+
 ## 2026-01-19
-
-### News
-
 
 ### Technical discussions
 
