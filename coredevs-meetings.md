@@ -1,6 +1,72 @@
 # MAESTRO COREDEVS MEETING - Notes
 
 
+# 2026-02-02
+
+#### stack-of-tasks/pinocchio
+
+ - Items to discuss:
+   - [#2839 Switch CMake formatting from cmake-format to gersemi](https://github.com/stack-of-tasks/pinocchio/issues/2839)
+       - Will be done in pinocchio 4
+
+#### simple-robotics/proxsuite
+
+ - Items to discuss:
+   - [#445 Solver returns PROXQP_PRIMAL_INFEASIBLE with small primal residual (8e-6) on sparse QP](https://github.com/Simple-Robotics/proxsuite/issues/445)
+       - A first check has been done, nothing seems incoherent
+       - Reply in the issue (changing tolerance), check logs
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#794 Refactor CMake with JRL CMake Modules v2](https://github.com/coal-library/coal/pull/794)
+   - Created 52 days ago, updated 12 days ago, no status
+- [#795 flake.lock: Update](https://github.com/coal-library/coal/pull/795)
+   - Created 51 days ago, updated 20 days ago, no status
+   - No time to work on it
+- [#807 build(deps): bump prefix-dev/setup-pixi from 0.9.3 to 0.9.4](https://github.com/coal-library/coal/pull/807)
+   - Created 23 hours ago, updated 7 hours ago, no status
+   - merged
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#612 Refactor CMake with JRL CMake Modules v2](https://github.com/stack-of-tasks/eigenpy/pull/612)
+   - Created 52 days ago, updated 15 days ago, no status
+- [#623 build(deps): bump prefix-dev/setup-pixi from 0.9.3 to 0.9.4](https://github.com/stack-of-tasks/eigenpy/pull/623)
+   - Created 7 hours ago, updated 7 hours ago, no status
+- [#624 build(deps): bump ros-industrial/industrial_ci from ba2a3d0f830f8051b356711a8df2fedfc5d256cf to 0f4bd2d1b926eac95fd6bc5bd1fcb3051a6e927d](https://github.com/stack-of-tasks/eigenpy/pull/624)
+   - Created 7 hours ago, updated 7 hours ago, no status
+   - merged
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - Created 502 days ago, updated 152 days ago, status to review
+- [#2823 flake.lock: Update](https://github.com/stack-of-tasks/pinocchio/pull/2823)
+   - Created 59 days ago, updated 28 days ago, no status
+   - No time to work on it
+- [#2840 build(deps): bump ros-industrial/industrial_ci from ba2a3d0f830f8051b356711a8df2fedfc5d256cf to 0f4bd2d1b926eac95fd6bc5bd1fcb3051a6e927d](https://github.com/stack-of-tasks/pinocchio/pull/2840)
+   - Created 7 days ago, updated 7 days ago, no status
+- [#2843 build(deps): bump prefix-dev/setup-pixi from 0.9.3 to 0.9.4](https://github.com/stack-of-tasks/pinocchio/pull/2843)
+   - Created 6 hours ago, updated 6 hours ago, no status
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#434 flake.lock: Update](https://github.com/Simple-Robotics/proxsuite/pull/434)
+   - Created 69 days ago, updated 44 days ago, no status
+   - Issue with SciPy test on ARM
+   - Have to look if issue already exists on scipy
+- [#437 Refactor CMake with JRL CMake Modules v2](https://github.com/Simple-Robotics/proxsuite/pull/437)
+   - Created 52 days ago, updated 5 days ago, no status
+- [#446 build(deps): bump JamesIves/github-pages-deploy-action from 4.7.6 to 4.8.0](https://github.com/Simple-Robotics/proxsuite/pull/446)
+   - Created 13 hours ago, updated 10 hours ago, no status
+   - merged
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#40 Refactor CMake with JRL CMake Modules v2 (v2)](https://github.com/Simple-Robotics/nanoeigenpy/pull/40)
+   - Created 27 days ago, updated 15 days ago, no status
 
 ## 2026-01-26
 
