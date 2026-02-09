@@ -1,7 +1,7 @@
 # MAESTRO COREDEVS MEETING - Notes
 
 
-# 2026-02-02
+## 2026-02-02
 
 #### stack-of-tasks/pinocchio
 
@@ -67,6 +67,42 @@
 
 - [#40 Refactor CMake with JRL CMake Modules v2 (v2)](https://github.com/Simple-Robotics/nanoeigenpy/pull/40)
    - Created 27 days ago, updated 15 days ago, no status
+
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#805 Topic/patch modifs](https://github.com/coal-library/coal/pull/805)
+   - Created 2 days ago, merged 2 days ago
+- [#806 Update pixi lockfile](https://github.com/coal-library/coal/pull/806)
+   - Created 1 days ago, merged 10 hours ago
+- [#808 build(deps): bump ros-industrial/industrial_ci from ba2a3d0f830f8051b356711a8df2fedfc5d256cf to 0f4bd2d1b926eac95fd6bc5bd1fcb3051a6e927d](https://github.com/coal-library/coal/pull/808)
+   - Created 23 hours ago, merged 7 hours ago
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#622 Update pixi lockfile](https://github.com/stack-of-tasks/eigenpy/pull/622)
+   - Created 1 days ago, merged 9 hours ago
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2842 Update pixi lockfile](https://github.com/stack-of-tasks/pinocchio/pull/2842)
+   - Created 1 days ago, merged 10 hours ago
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#389 Update pixi lockfile](https://github.com/Simple-Robotics/aligator/pull/389)
+   - Created 1 days ago, merged 9 hours ago
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#46 Update pixi lockfile](https://github.com/Simple-Robotics/nanoeigenpy/pull/46)
+   - Created 1 days ago, merged 10 hours ago
+- [#44 build(deps): bump ros-industrial/industrial_ci from ba2a3d0f830f8051b356711a8df2fedfc5d256cf to 0f4bd2d1b926eac95fd6bc5bd1fcb3051a6e927d](https://github.com/Simple-Robotics/nanoeigenpy/pull/44)
+   - Created 1 days ago, merged 10 hours ago
+- [#45 build(deps): bump prefix-dev/setup-pixi from 0.9.3 to 0.9.4](https://github.com/Simple-Robotics/nanoeigenpy/pull/45)
+   - Created 1 days ago, merged 9 hours ago
 
 ## 2026-01-26
 
