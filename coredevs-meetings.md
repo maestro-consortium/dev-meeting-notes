@@ -1,5 +1,107 @@
 # MAESTRO COREDEVS MEETING - Notes
 
+#
+# 2026-02-09
+
+
+### Technical discussions
+
+
+#### coal-library/coal
+
+ - Items to discuss:
+   - [#809 The calculation of collision points between the small box and BVH_OBB is incorrect](https://github.com/coal-library/coal/issues/809)
+       - Joris to check with Louis, ask for a script to reproduce the issue
+
+#### stack-of-tasks/pinocchio
+
+ - Items to discuss:
+   - [#2844 Kinematics  Frame Hessian](https://github.com/stack-of-tasks/pinocchio/issues/2844)
+       - Justin did answer, algorithm immplemented in Pinocchio4 (issue to be closed when released)
+
+
+#### simple-robotics/aligator
+
+ - Items to discuss:
+   - [#391 bug: DynamicsFiniteDifferenceHelper lacks support for ExplicitDynamicsModel](https://github.com/Simple-Robotics/aligator/issues/391)
+       - change in hierarchy 
+       - contribution
+       - Wilson to check
+
+#### simple-robotics/proxsuite
+
+ - Items to discuss:
+   - [#445 Solver returns PROXQP_PRIMAL_INFEASIBLE with small primal residual (8e-6) on sparse QP](https://github.com/Simple-Robotics/proxsuite/issues/445)
+       - Lucas provided some guidance to help address the issue
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#794 Refactor CMake with JRL CMake Modules v2](https://github.com/coal-library/coal/pull/794)
+   - Created 59 days ago, updated 2 days ago, no status
+   - Question regarding some older parts of the coal library (fcl/hpp-fcl), however this code is not used in Coal. Should we remove this code/modernize it ?
+   - Not a priority. No need to modernize (put in a TODO).
+   - There will be a new release of Coal (Coal v4) because breaking changes in API due to Pinocchio4).
+- [#795 flake.lock: Update](https://github.com/coal-library/coal/pull/795)
+   - Created 58 days ago, updated 27 days ago, no status
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#612 Refactor CMake with JRL CMake Modules v2](https://github.com/stack-of-tasks/eigenpy/pull/612)
+   - Created 59 days ago, updated 2 days ago, no status
+- [#625 flake.lock: Update](https://github.com/stack-of-tasks/eigenpy/pull/625)
+   - Created 5 days ago, updated 5 days ago, no status
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - Created 509 days ago, updated 159 days ago, status to review
+- [#2823 flake.lock: Update](https://github.com/stack-of-tasks/pinocchio/pull/2823)
+   - Created 66 days ago, updated 4 days ago, no status
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#390 Topic/pin4 fixes 2](https://github.com/Simple-Robotics/aligator/pull/390)
+   - Created 5 days ago, updated 5 days ago, no status
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#434 flake.lock: Update](https://github.com/Simple-Robotics/proxsuite/pull/434)
+   - Created 76 days ago, updated 51 days ago, no status
+- [#437 Refactor CMake with JRL CMake Modules v2](https://github.com/Simple-Robotics/proxsuite/pull/437)
+   - Created 59 days ago, updated 2 days ago, no status
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#40 Refactor CMake with JRL CMake Modules v2 (v2)](https://github.com/Simple-Robotics/nanoeigenpy/pull/40)
+   - Created 34 days ago, updated 2 days ago, no status
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#807 build(deps): bump prefix-dev/setup-pixi from 0.9.3 to 0.9.4](https://github.com/coal-library/coal/pull/807)
+   - Created 8 days ago, merged 6 days ago
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#624 build(deps): bump ros-industrial/industrial_ci from ba2a3d0f830f8051b356711a8df2fedfc5d256cf to 0f4bd2d1b926eac95fd6bc5bd1fcb3051a6e927d](https://github.com/stack-of-tasks/eigenpy/pull/624)
+   - Created 7 days ago, merged 6 days ago
+- [#623 build(deps): bump prefix-dev/setup-pixi from 0.9.3 to 0.9.4](https://github.com/stack-of-tasks/eigenpy/pull/623)
+   - Created 7 days ago, merged 6 days ago
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2843 build(deps): bump prefix-dev/setup-pixi from 0.9.3 to 0.9.4](https://github.com/stack-of-tasks/pinocchio/pull/2843)
+   - Created 7 days ago, merged 6 days ago
+- [#2840 build(deps): bump ros-industrial/industrial_ci from ba2a3d0f830f8051b356711a8df2fedfc5d256cf to 0f4bd2d1b926eac95fd6bc5bd1fcb3051a6e927d](https://github.com/stack-of-tasks/pinocchio/pull/2840)
+   - Created 14 days ago, merged 6 days ago
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#446 build(deps): bump JamesIves/github-pages-deploy-action from 4.7.6 to 4.8.0](https://github.com/Simple-Robotics/proxsuite/pull/446)
+   - Created 7 days ago, merged 6 days ago
 
 ## 2026-02-02
 
