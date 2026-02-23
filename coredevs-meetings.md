@@ -1,11 +1,130 @@
 # MAESTRO COREDEVS MEETING - Notes
 
-#
-# 2026-02-09
 
+
+## 2026-02-16
 
 ### Technical discussions
 
+ - [name=Guilhem] Options for CMake. 
+     - in version, complete version, in soversion just the major version
+     - if only one is set, the other use the same value, so this is an issue, anything done currently
+         - property version (linked to this)
+         - may brake compilation
+         - ABI may break
+         - pip is not able to manage this properly (on conda, can set a build number, on pip need to gnerate a new version)
+         - if ABI breaks, need to change the major version ? (release policy/process)
+ - [name=Antoine] Build des wheels. 
+     - Pixi job to build wheels (build, test to install the package). Allow to test locally before launching the CI.
+     - example: https://github.com/cmake-wheel/pinocchio/blob/cmeel/.github/workflows/release.yml
+     - current ci to build wheels and publish on pypi is outside the repositories of the project as they require specific builds (see previous discussion)
+
+#### stack-of-tasks/pinocchio
+
+ - Items to discuss:
+   - [#2848 Pinocchio 3.9.0 not available on PyPi](https://github.com/stack-of-tasks/pinocchio/issues/2848)
+       - done but not published, launching test, should be done shortly
+   - [#2846 [Bug]: collisionPairMapping of a GeometryModel is not updated when removeGeometryObject is called](https://github.com/stack-of-tasks/pinocchio/issues/2846)
+       - to fix after Pinocchio4 release. Issue with data structure, may need to change it. Joris to work on it.
+
+#### simple-robotics/aligator
+
+ - Items to discuss:
+   - [#391 bug: DynamicsFiniteDifferenceHelper lacks support for ExplicitDynamicsModel](https://github.com/Simple-Robotics/aligator/issues/391)
+       - contributor did the requested changes, merged
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#794 Refactor CMake with JRL CMake Modules v2](https://github.com/coal-library/coal/pull/794)
+   - Created 66 days ago, updated 17 minutes ago, no status
+   - Requires JRL v2 to be merged (Guilhem, Joris to check this first)
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#612 Refactor CMake with JRL CMake Modules v2](https://github.com/stack-of-tasks/eigenpy/pull/612)
+   - Created 66 days ago, updated 17 minutes ago, no status
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - Created 516 days ago, updated 166 days ago, status to review
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#390 Fix building with upcoming Pinocchio 4](https://github.com/Simple-Robotics/aligator/pull/390)
+   - Created 12 days ago, updated 4 days ago, no status
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#434 flake.lock: Update](https://github.com/Simple-Robotics/proxsuite/pull/434)
+   - Created 83 days ago, updated 5 days ago, no status
+   - Could not merge due to issue on UT (eigen5)
+   - tolerance issue on MacOS ARM (was not tested)
+- [#437 Refactor CMake with JRL CMake Modules v2](https://github.com/Simple-Robotics/proxsuite/pull/437)
+   - Created 66 days ago, updated 17 minutes ago, no status
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#40 Refactor CMake with JRL CMake Modules v2 (v2)](https://github.com/Simple-Robotics/nanoeigenpy/pull/40)
+   - Created 41 days ago, updated 17 minutes ago, no status
+
+#### SIMPLE-ROBOTICS/LOIK
+
+- [#8 Added extended testing, separated tests and benchmarks](https://github.com/Simple-Robotics/LoIK/pull/8)
+   - Created 554 days ago, updated 542 days ago, no status
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#810 Update pixi lockfile](https://github.com/coal-library/coal/pull/810)
+   - Created 5 days ago, merged 4 days ago
+   - manual update, issue with ci
+- [#811 Fix octree against octree collision check](https://github.com/coal-library/coal/pull/811)
+   - Created 3 days ago, merged 3 days ago
+   - fix on conditions for collision
+   - no UT added however, need to discuss to make sure always added
+- [#795 flake.lock: Update](https://github.com/coal-library/coal/pull/795)
+   - Created 65 days ago, merged 1 days ago
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#625 flake.lock: Update](https://github.com/stack-of-tasks/eigenpy/pull/625)
+   - Created 12 days ago, merged 5 days ago
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2823 flake.lock: Update](https://github.com/stack-of-tasks/pinocchio/pull/2823)
+   - Created 73 days ago, merged 1 days ago
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#393 Update pixi lockfile (manual)](https://github.com/Simple-Robotics/aligator/pull/393)
+   - Created 5 days ago, merged 5 days ago
+- [#392 fix: update finite difference helper to support explicit dynamics (#391)](https://github.com/Simple-Robotics/aligator/pull/392)
+   - Created 6 days ago, merged 4 days ago
+- [#394 python/modelling/expose-autodiff.cpp: Use ""_a literal](https://github.com/Simple-Robotics/aligator/pull/394)
+   - Created 4 days ago, merged 4 days ago
+- [#395 workflows : turn off cache for pixi build](https://github.com/Simple-Robotics/aligator/pull/395)
+   - Created 4 days ago, merged 4 days ago
+   - issue with ci for pixi build. in theory frozen dependencies. but installed in pixi environment and in the ci, the build cache used by default (so versions where not correct). 
+   - Deactivated the build cache for now. Not the main bottleneck.
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#447 Update nanobind version to allow updating numpy](https://github.com/Simple-Robotics/proxsuite/pull/447)
+   - Created 4 days ago, merged 3 days ago
+   - Fix on nanobind.
+   - Needed fix (require python-gil)
+   - Potential issue with Ubuntu 22 ?
+   - Bug on miniforge install also (hardcoded miniforge version)
+   - Had to set Python_VERSION (copy of Python3_VERSION)
+
+## 2026-02-09
+
+### Technical discussions
 
 #### coal-library/coal
 
