@@ -1,5 +1,119 @@
 # MAESTRO COREDEVS MEETING - Notes
 
+
+## 2026-03-02
+
+### News
+
+ - [name=Pierre-Guillaume] Proposal submitted to EIC call https://eic.ec.europa.eu/eic-funding-opportunities/advanced-innovation-challenges-pilot_en
+
+### Technical discussions
+
+- [name=Wilson] Eigen ABI / Traversario
+    - Now tags on eigen with version of package and ABI (so microarchitecture version / AVX)
+    - Eigen 5.0.1 soon merged on condaforge
+    - But Ubuntu 26 will still be on Eigen 3.4.0
+
+#### simple-robotics/aligator
+
+ - Items to discuss:
+   - [#399 aligator-test-py-mpc randomly hang on Ubuntu 22.04](https://github.com/Simple-Robotics/aligator/issues/399)
+       - issue with apt, very old dependencies
+       - strategy, either rolling release (issues happen constantly) or do a synchronize every 2 years
+       - in industry, 5 years lag is fine. need a machine to work for 10 years
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#794 Refactor CMake with JRL CMake Modules v2](https://github.com/coal-library/coal/pull/794)
+   - Created 80 days ago, updated 9 days ago, no status
+- [#814 Update pixi lockfile](https://github.com/coal-library/coal/pull/814)
+   - Created 1 days ago, updated 1 days ago, no status
+- [#815 build(deps): bump actions/attest-build-provenance from 3 to 4](https://github.com/coal-library/coal/pull/815)
+   - Created 23 hours ago, updated 23 hours ago, no status
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#612 Refactor CMake with JRL CMake Modules v2](https://github.com/stack-of-tasks/eigenpy/pull/612)
+   - Created 80 days ago, updated 9 days ago, no status
+- [#626 Update pixi lockfile](https://github.com/stack-of-tasks/eigenpy/pull/626)
+   - Created 1 days ago, updated 1 days ago, no status
+- [#627 build(deps): bump actions/attest-build-provenance from 3 to 4](https://github.com/stack-of-tasks/eigenpy/pull/627)
+   - Created 7 hours ago, updated 7 hours ago, no status
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - Created 530 days ago, updated 180 days ago, status to review
+- [#2852 Update pixi lockfile](https://github.com/stack-of-tasks/pinocchio/pull/2852)
+   - Created 1 days ago, updated 1 days ago, no status
+- [#2853 build(deps): bump actions/attest-build-provenance from 3 to 4](https://github.com/stack-of-tasks/pinocchio/pull/2853)
+   - Created 6 hours ago, updated 6 hours ago, no status
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#390 Fix building with upcoming Pinocchio 4](https://github.com/Simple-Robotics/aligator/pull/390)
+   - Created 26 days ago, updated 5 days ago, no status
+   - Stop rebasing for now (too many small problems each time)
+- [#400 Update pixi lockfile](https://github.com/Simple-Robotics/aligator/pull/400)
+   - Created 1 days ago, updated 1 days ago, no status
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#434 flake.lock: Update](https://github.com/Simple-Robotics/proxsuite/pull/434)
+   - Created 97 days ago, updated 6 days ago, no status
+- [#437 Refactor CMake with JRL CMake Modules v2](https://github.com/Simple-Robotics/proxsuite/pull/437)
+   - Created 80 days ago, updated 9 days ago, no status
+- [#451 build(deps): bump actions/download-artifact from 7 to 8](https://github.com/Simple-Robotics/proxsuite/pull/451)
+   - Created 13 hours ago, updated 13 hours ago, no status
+- [#452 build(deps): bump actions/upload-artifact from 6 to 7](https://github.com/Simple-Robotics/proxsuite/pull/452)
+   - Created 13 hours ago, updated 13 hours ago, no status
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#40 Refactor CMake with JRL CMake Modules v2 (v2)](https://github.com/Simple-Robotics/nanoeigenpy/pull/40)
+   - Created 55 days ago, updated 9 days ago, no status
+- [#48 Update pixi lockfile](https://github.com/Simple-Robotics/nanoeigenpy/pull/48)
+   - Created 1 days ago, updated 1 days ago, no status
+
+#### SIMPLE-ROBOTICS/LOIK
+
+- [#28 Update pixi lockfile](https://github.com/Simple-Robotics/LoIK/pull/28)
+   - Created 1 days ago, updated 1 days ago, no status
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#813 Enhance patch simplifier](https://github.com/coal-library/coal/pull/813)
+   - Created 5 days ago, merged 2 days ago
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#47 python extension : expose `__eigen_max_align_bytes__`](https://github.com/Simple-Robotics/nanoeigenpy/pull/47)
+   - Created 6 days ago, merged 6 days ago
+   - Exposes a flag to detect if compiles with AVX optimisations
+
+#### SIMPLE-ROBOTICS/CANDLEWICK
+
+- [#103 Move cpp examples to their own directory](https://github.com/Simple-Robotics/candlewick/pull/103)
+   - Created 5 days ago, merged 5 days ago
+- [#104 utils : Fix use after free](https://github.com/Simple-Robotics/candlewick/pull/104)
+   - Created 5 days ago, merged 5 days ago
+- [#105 Fix SSAO visual artifacts when MSAA is enabled. Increase performance of SSAO, allow passing effect kernel size](https://github.com/Simple-Robotics/candlewick/pull/105)
+   - Created 5 days ago, merged 5 days ago
+- [#106 Enhancement to `Visualizer` constructors, use `fmt::format` instead of std version](https://github.com/Simple-Robotics/candlewick/pull/106)
+   - Created 5 days ago, merged 5 days ago
+- [#108 pixi: update lockfile](https://github.com/Simple-Robotics/candlewick/pull/108)
+   - Created 3 days ago, merged 3 days ago
+- [#107 Rework shader pipeline, use Slang instead of GLSL](https://github.com/Simple-Robotics/candlewick/pull/107)
+   - Created 4 days ago, merged 4 days ago
+- [#109 Shader enhancements](https://github.com/Simple-Robotics/candlewick/pull/109)
+   - Created 3 days ago, merged 3 days ago
+- [#110 Fix computation of alpha channel for transparent objects](https://github.com/Simple-Robotics/candlewick/pull/110)
+   - Created 3 days ago, merged 3 days ago
+
 ## 2026-02-23
 
 ### Technical discussions
