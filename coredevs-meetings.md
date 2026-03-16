@@ -1,6 +1,118 @@
 # MAESTRO COREDEVS MEETING - Notes
 
 
+## 2026-03-09
+
+### Technical discussions
+
+ - [name=WJ] https://github.com/conda-forge/pinocchio-feedstock/pull/157 pinocchio conda sous rattler-build
+     - Rattler build (nvx paquets sur conda forge) des personnes de Pixi
+     - Nouvelles recettes conda (bcp plus rapide)
+     - nouveau format standart de recettes (migrer les autres projets de la stack)
+
+#### stack-of-tasks/pinocchio
+
+ - Items to discuss:
+   - [#2854 [Bug]: contact models are not returned in fixed-base models when using the python bindings](https://github.com/stack-of-tasks/pinocchio/issues/2854)
+       - Cannot have a fixed base in some case
+       - Already adressed in Pinocchio4
+           - MJCF parsing API has changed. 
+               - Not noted in changelog as a breaking change
+               - Should we handle this ? (compatibility layer)
+       - Should we do a fix in Pinocchio3 ?
+           - No. Not enough resources to manage both
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#794 Refactor CMake with JRL CMake Modules v2](https://github.com/coal-library/coal/pull/794)
+   - Created 87 days ago, updated 16 days ago, no status
+   - No change this week, on standby until Pinocchio4 released
+- [#814 Update pixi lockfile](https://github.com/coal-library/coal/pull/814)
+   - Created 8 days ago, updated 8 days ago, no status
+   - Pb in pixi build (symbolic link in JRL deleted)
+   - Major eigen update, need to upgrade (need to add eigen-abi-devel lib dependency)
+- [#815 build(deps): bump actions/attest-build-provenance from 3 to 4](https://github.com/coal-library/coal/pull/815)
+   - Created 7 days ago, updated 7 days ago, no status
+   - monthly update dependabot
+- [#816 Fix condition for negative bounding volume check](https://github.com/coal-library/coal/pull/816)
+   - Created 2 days ago, updated 2 days ago, no status
+   - Discussion with Louis (BVH)
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#612 Refactor CMake with JRL CMake Modules v2](https://github.com/stack-of-tasks/eigenpy/pull/612)
+   - Created 87 days ago, updated 16 days ago, no status
+   - No work (pending)
+- [#626 Update pixi lockfile](https://github.com/stack-of-tasks/eigenpy/pull/626)
+   - Created 8 days ago, updated 8 days ago, no status
+   - same as above
+- [#627 build(deps): bump actions/attest-build-provenance from 3 to 4](https://github.com/stack-of-tasks/eigenpy/pull/627)
+   - Created 7 days ago, updated 7 days ago, no status
+   - monthly update dependabot
+- [#628 flake.lock: Update](https://github.com/stack-of-tasks/eigenpy/pull/628)
+   - Created 5 days ago, updated 2 days ago, no status
+   - Pixi CI fails but Nix passes
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - Created 537 days ago, updated 187 days ago, status to review
+- [#2852 Update pixi lockfile](https://github.com/stack-of-tasks/pinocchio/pull/2852)
+   - Created 8 days ago, updated 8 days ago, no status
+- [#2853 build(deps): bump actions/attest-build-provenance from 3 to 4](https://github.com/stack-of-tasks/pinocchio/pull/2853)
+   - Created 7 days ago, updated 7 days ago, no status
+- [#2855 MJCF constraint loading path with fixed bases](https://github.com/stack-of-tasks/pinocchio/pull/2855)
+   - Created 5 days ago, updated 2 days ago, no status
+   - See above (technical discussion), Joris to answer
+- [#2856 flake.lock: Update](https://github.com/stack-of-tasks/pinocchio/pull/2856)
+   - Created 4 days ago, updated 2 days ago, no status
+   - Issues on pixi part, check if lock file not up to date.
+- [#2857 build(deps): bump docker/login-action from 3 to 4](https://github.com/stack-of-tasks/pinocchio/pull/2857)
+   - Created 6 hours ago, updated 6 hours ago, no status
+- [#2858 build(deps): bump docker/metadata-action from 5 to 6](https://github.com/stack-of-tasks/pinocchio/pull/2858)
+   - Created 6 hours ago, updated 6 hours ago, no status
+- [#2859 build(deps): bump docker/build-push-action from 6 to 7](https://github.com/stack-of-tasks/pinocchio/pull/2859)
+   - Created 6 hours ago, updated 5 hours ago, no status
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#390 Fix building with upcoming Pinocchio 4](https://github.com/Simple-Robotics/aligator/pull/390)
+   - Created 33 days ago, updated 12 days ago, no status
+   - Stand-by
+- [#400 Update pixi lockfile](https://github.com/Simple-Robotics/aligator/pull/400)
+   - Created 8 days ago, updated 8 days ago, no status
+   - To be ignored, Joris will take a look
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#434 flake.lock: Update](https://github.com/Simple-Robotics/proxsuite/pull/434)
+   - Created 104 days ago, updated 13 days ago, no status
+- [#437 Refactor CMake with JRL CMake Modules v2](https://github.com/Simple-Robotics/proxsuite/pull/437)
+   - Created 87 days ago, updated 16 days ago, no status
+- [#452 build(deps): bump actions/upload-artifact from 6 to 7](https://github.com/Simple-Robotics/proxsuite/pull/452)
+   - Created 7 days ago, updated 7 days ago, no status
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#40 Refactor CMake with JRL CMake Modules v2 (v2)](https://github.com/Simple-Robotics/nanoeigenpy/pull/40)
+   - Created 62 days ago, updated 16 days ago, no status
+- [#48 Update pixi lockfile](https://github.com/Simple-Robotics/nanoeigenpy/pull/48)
+   - Created 8 days ago, updated 8 days ago, no status
+
+#### SIMPLE-ROBOTICS/LOIK
+
+- [#28 Update pixi lockfile](https://github.com/Simple-Robotics/LoIK/pull/28)
+   - Created 8 days ago, updated 8 days ago, no status
+
+### PR merged within the week
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#451 build(deps): bump actions/download-artifact from 7 to 8](https://github.com/Simple-Robotics/proxsuite/pull/451)
+   - Created 7 days ago, merged 6 days ago
+
 ## 2026-03-02
 
 ### News
