@@ -1,6 +1,116 @@
 # MAESTRO COREDEVS MEETING - Notes
 
 
+## 2026-03-16
+
+### News
+
+ - [name=Pierre-Guillaume] Soumission d'un dossier a l'appel Pionniers de l'IA (https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-des-pionniers-de-lintelligence-artificielle)
+
+### Technical discussions
+
+ - [name=Guilhem] doxygen
+     - Refaire site de documentation doxygen (avec tagfile)
+     - Comment gérer les tagfiles ?
+     - Développer un mécanisme pour trouver les tagfiles des dépendences
+         1. packager le tagfile
+         2. mécanisme pour trouver le tagfile depuis un packet -doc
+    - Avoid to install mathjax
+    - To implement in JRLv2
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#794 Refactor CMake with JRL CMake Modules v2](https://github.com/coal-library/coal/pull/794)
+   - Created 94 days ago, updated 23 days ago, no status
+- [#815 build(deps): bump actions/attest-build-provenance from 3 to 4](https://github.com/coal-library/coal/pull/815)
+   - Created 15 days ago, updated 15 days ago, no status
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#612 Refactor CMake with JRL CMake Modules v2](https://github.com/stack-of-tasks/eigenpy/pull/612)
+   - Created 94 days ago, updated 23 days ago, no status
+- [#627 build(deps): bump actions/attest-build-provenance from 3 to 4](https://github.com/stack-of-tasks/eigenpy/pull/627)
+   - Created 14 days ago, updated 14 days ago, no status
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - Created 544 days ago, updated 194 days ago, status to review
+- [#2853 build(deps): bump actions/attest-build-provenance from 3 to 4](https://github.com/stack-of-tasks/pinocchio/pull/2853)
+   - Created 14 days ago, updated 14 days ago, no status
+- [#2856 flake.lock: Update](https://github.com/stack-of-tasks/pinocchio/pull/2856)
+   - Created 11 days ago, updated 1 days ago, no status
+- [#2857 build(deps): bump docker/login-action from 3 to 4](https://github.com/stack-of-tasks/pinocchio/pull/2857)
+   - Created 7 days ago, updated 7 days ago, no status
+- [#2858 build(deps): bump docker/metadata-action from 5 to 6](https://github.com/stack-of-tasks/pinocchio/pull/2858)
+   - Created 7 days ago, updated 7 days ago, no status
+- [#2859 build(deps): bump docker/build-push-action from 6 to 7](https://github.com/stack-of-tasks/pinocchio/pull/2859)
+   - Created 7 days ago, updated 7 days ago, no status
+- [#2861 build(deps): bump actions/create-github-app-token from 2 to 3](https://github.com/stack-of-tasks/pinocchio/pull/2861)
+   - Created 7 hours ago, updated 7 hours ago, no status
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#390 Fix building with upcoming Pinocchio 4](https://github.com/Simple-Robotics/aligator/pull/390)
+   - Created 40 days ago, updated 19 days ago, no status
+- [#400 Update pixi lockfile](https://github.com/Simple-Robotics/aligator/pull/400)
+   - Created 15 days ago, updated 3 days ago, no status
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#437 Refactor CMake with JRL CMake Modules v2](https://github.com/Simple-Robotics/proxsuite/pull/437)
+   - Created 94 days ago, updated 23 days ago, no status
+- [#452 build(deps): bump actions/upload-artifact from 6 to 7](https://github.com/Simple-Robotics/proxsuite/pull/452)
+   - Created 14 days ago, updated 14 days ago, no status
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#40 Refactor CMake with JRL CMake Modules v2 (v2)](https://github.com/Simple-Robotics/nanoeigenpy/pull/40)
+   - Created 69 days ago, updated 23 days ago, no status
+
+#### SIMPLE-ROBOTICS/LOIK
+
+- [#29 build(deps): bump actions/create-github-app-token from 2 to 3](https://github.com/Simple-Robotics/LoIK/pull/29)
+   - Created 51 minutes ago, updated 51 minutes ago, no status
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#814 Update pixi lockfile](https://github.com/coal-library/coal/pull/814)
+   - Created 15 days ago, merged 6 days ago
+- [#816 Fix condition for negative bounding volume check](https://github.com/coal-library/coal/pull/816)
+   - Created 9 days ago, merged 6 days ago
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#626 Update pixi lockfile](https://github.com/stack-of-tasks/eigenpy/pull/626)
+   - Created 15 days ago, merged 6 days ago
+- [#628 flake.lock: Update](https://github.com/stack-of-tasks/eigenpy/pull/628)
+   - Created 12 days ago, merged 4 days ago
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2852 Update pixi lockfile](https://github.com/stack-of-tasks/pinocchio/pull/2852)
+   - Created 15 days ago, merged 5 days ago
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#434 flake.lock: Update](https://github.com/Simple-Robotics/proxsuite/pull/434)
+   - Created 111 days ago, merged 6 days ago
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#48 Update pixi lockfile](https://github.com/Simple-Robotics/nanoeigenpy/pull/48)
+   - Created 15 days ago, merged 6 days ago
+
+#### SIMPLE-ROBOTICS/LOIK
+
+- [#28 Update pixi lockfile](https://github.com/Simple-Robotics/LoIK/pull/28)
+   - Created 15 days ago, merged 5 days ago
+
 ## 2026-03-09
 
 ### Technical discussions
