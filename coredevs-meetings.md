@@ -1,6 +1,156 @@
 # MAESTRO COREDEVS MEETING - Notes
 
 
+## 2026-03-23
+
+### News
+
+ - [name=Pierre-Guillaume] Meeting Inria. Go de la direction pour ca creation du consortium Maestro.
+ - https://gepetto.github.io/doc/
+
+### Technical discussions
+
+ - [name=Pierre-Guillaume] Un article sur la securite de dependabot. https://blog.stephane-robert.info/post/dependabot-renovate-risques-securite/ remonté par Kim (SED). Quid des configs des logiciels ici ? 
+     - pas d'auto merge de notre cote. voir le point 3.
+     - important de toujours maitriser 
+     - reflechir sur issue sur le deploiement nix 
+     - passer en push vs pull
+     - Action: lancer poutine et zizmor en local pour check
+         - PG voir avec Kim pour lancer les scripts et faire un retour.
+ - [name=Antoine] release.py: garder le script d'aide à la release dans les jrl ou le sortir pour en faire un répo indépendant ?
+     - Discussion Ghuilem/Antoine sur jrl v2
+     - Quels arguments pour le garder (target, eviter de faire un nouveau repo)
+         - nvx repo : trouver un nom ;-)
+     - Decision
+         - le garder dans le repo
+         - changer le nom du script
+ - [name=Antoine] Automatisation des changelog via nouvelle API github (petit travail sur chaque PR, versus gros travail sur la release). https://docs.github.com/en/repositories/releasing-projects-on-github/automatically-generated-release-notes
+     - Discussion Ghuilem/Antoine
+     - MAJ du changelog automatique.
+     - New, nouvelles regles pour faciliter l'automatisation de la creation du changelog (labels)
+     - Pas vraiment un pb pour l'instant. Cout faible pour generer le changelog a la main, bonne qualite. Generation auto de changelog etait pourrie.
+     - release note et changelog: ne pas decoreller
+     - en mode auto
+         - conflit de changelog. trivial a gerer mais pb downstream sur les patchs. 
+         - solution: fragments de changelog
+             - trop complique a mettre en oeuvre pour ce que l'on a.
+         - autre solution
+             - git strategy ? possible par fichier ?
+             - mais ne passera pas a l'echelle du patch non plus
+
+#### stack-of-tasks/pinocchio
+
+ - Items to discuss:
+   - [#2862 [Bug]: Changing Root Joint doesn't do anything](https://github.com/stack-of-tasks/pinocchio/issues/2862)
+        - pas d'option pour l'instant pour faire ca
+        - solution proposee par Joris. Attente du retour.
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#794 Refactor CMake with JRL CMake Modules v2](https://github.com/coal-library/coal/pull/794)
+   - Created 101 days ago, updated 30 days ago, no status
+- [#820 Add missing override specifiers](https://github.com/coal-library/coal/pull/820)
+   - Created 5 days ago, updated 5 days ago, no status
+   - Error on BVH. Louis to review.
+   - Some benchmark
+       - https://github.com/tesseract-robotics/tesseract_collision_benchmarks/pull/5
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#612 Refactor CMake with JRL CMake Modules v2](https://github.com/stack-of-tasks/eigenpy/pull/612)
+   - Created 101 days ago, updated 4 days ago, no status
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - Created 551 days ago, updated 201 days ago, status to review
+- [#2864 build(deps): bump cachix/cachix-action from 16 to 17](https://github.com/stack-of-tasks/pinocchio/pull/2864)
+   - Created 6 hours ago, updated 6 hours ago, no status
+       - merged
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#390 Fix building with upcoming Pinocchio 4](https://github.com/Simple-Robotics/aligator/pull/390)
+   - Created 47 days ago, updated 26 days ago, no status
+   - ongoing. many breaking changes. 
+   - need to address since some problems cannot be solved now.
+       - e.g., bilateral constraints (eg locomotion) not working,
+       - Joris/Wilson to discuss with Louis/Yann
+       - Making a back-compatibility layer ? 
+           - similar to MJCF, ...
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#437 Refactor CMake with JRL CMake Modules v2](https://github.com/Simple-Robotics/proxsuite/pull/437)
+   - Created 101 days ago, updated 4 days ago, no status
+- [#453 doc: fix latex](https://github.com/Simple-Robotics/proxsuite/pull/453)
+    - Created 6 days ago, updated 6 days ago, no status
+    - checking math in latex early vs waiting for Mathjax
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#40 Refactor CMake with JRL CMake Modules v2 (v2)](https://github.com/Simple-Robotics/nanoeigenpy/pull/40)
+   - Created 76 days ago, updated 4 days ago, no status
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#815 build(deps): bump actions/attest-build-provenance from 3 to 4](https://github.com/coal-library/coal/pull/815)
+   - Created 21 days ago, merged 6 days ago
+- [#819 Add missing calls to computeLocalAABB for internal objects](https://github.com/coal-library/coal/pull/819)
+   - Created 5 days ago, merged 5 days ago
+- [#821 Deactivate pixi build ci#629](https://github.com/coal-library/coal/pull/821)
+   - Created 3 days ago, merged 3 days ago
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#627 build(deps): bump actions/attest-build-provenance from 3 to 4](https://github.com/stack-of-tasks/eigenpy/pull/627)
+   - Created 21 days ago, merged 6 days ago
+- [#629 Deactivate pixi build ci](https://github.com/stack-of-tasks/eigenpy/pull/629)
+   - Created 3 days ago, merged 3 days ago
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2861 build(deps): bump actions/create-github-app-token from 2 to 3](https://github.com/stack-of-tasks/pinocchio/pull/2861)
+   - Created 7 days ago, merged 6 days ago
+- [#2856 flake.lock: Update](https://github.com/stack-of-tasks/pinocchio/pull/2856)
+   - Created 18 days ago, merged 6 days ago
+- [#2859 build(deps): bump docker/build-push-action from 6 to 7](https://github.com/stack-of-tasks/pinocchio/pull/2859)
+   - Created 14 days ago, merged 5 days ago
+- [#2863 Deactivate pixi build ci](https://github.com/stack-of-tasks/pinocchio/pull/2863)
+   - Created 3 days ago, merged 3 days ago
+- [#2858 build(deps): bump docker/metadata-action from 5 to 6](https://github.com/stack-of-tasks/pinocchio/pull/2858)
+   - Created 14 days ago, merged 3 days ago
+- [#2853 build(deps): bump actions/attest-build-provenance from 3 to 4](https://github.com/stack-of-tasks/pinocchio/pull/2853)
+   - Created 21 days ago, merged 3 days ago
+- [#2857 build(deps): bump docker/login-action from 3 to 4](https://github.com/stack-of-tasks/pinocchio/pull/2857)
+   - Created 14 days ago, merged 2 days ago
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#400 Update pixi lockfile](https://github.com/Simple-Robotics/aligator/pull/400)
+   - Created 22 days ago, merged 3 days ago
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#452 build(deps): bump actions/upload-artifact from 6 to 7](https://github.com/Simple-Robotics/proxsuite/pull/452)
+   - Created 21 days ago, merged 6 days ago
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#49 pixi : Add Eigen 3 & 5 features/environments](https://github.com/Simple-Robotics/nanoeigenpy/pull/49)
+   - Created 4 days ago, merged 4 days ago
+
+#### SIMPLE-ROBOTICS/LOIK
+
+- [#29 build(deps): bump actions/create-github-app-token from 2 to 3](https://github.com/Simple-Robotics/LoIK/pull/29)
+   - Created 6 days ago, merged 6 days ago
+- [#30 Deactivate pixi build CI](https://github.com/Simple-Robotics/LoIK/pull/30)
+   - Created 3 days ago, merged 3 days ago
+
 ## 2026-03-16
 
 ### News
