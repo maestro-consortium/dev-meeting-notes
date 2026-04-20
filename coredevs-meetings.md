@@ -1,6 +1,131 @@
 # MAESTRO COREDEVS MEETING - Notes
 
 
+## 2026-04-20
+
+### News
+
+ - [name=Joris] Pinocchio 4 :tada:
+ - [name=Pierre-Guillaume] Kick-Off Maestro (juillet)
+
+#### coal-library/coal
+
+ - Items to discuss:
+   - [#832 DynamicAABBTreeArrayCollisionManager leaks memory after destruction](https://github.com/coal-library/coal/issues/832)
+       - ongoing discussions with person (use case, there is an alternative for this)
+       - inventory of what is useful (in the old HPP-FCL methods)
+
+
+#### stack-of-tasks/eigenpy
+
+ - Items to discuss:
+   - [#638 `Ref<const MatrixXd>` silently reads garbage for `(1, N)` numpy arrays due to false F-contiguous detection](https://github.com/stack-of-tasks/eigenpy/issues/638)
+        - eigenpy does more things than Numpy
+        - this means complex mapping code
+        - nanoeigenpy more strict
+        - will need some work to fix
+
+#### simple-robotics/aligator
+
+ - Items to discuss:
+   - [#402 pin4: Fix test for `aligator.underactuatedConstrainedInverseDynamics()`](https://github.com/Simple-Robotics/aligator/issues/402)
+       - last Pinocchio 4 issue potentially related to constraint API changes
+       - to investigate (next maintainer for Aligator)
+       - also issue with timeout with Ubuntu CI
+
+#### simple-robotics/pycppad
+
+ - Items to discuss:
+   - [#35 Update pre-commit with Pinocchio's settings](https://github.com/Simple-Robotics/pycppad/issues/35)
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#794 Refactor CMake with JRL CMake Modules v2](https://github.com/coal-library/coal/pull/794)
+   - Created 129 days ago, updated 58 days ago, no status
+- [#822 Add GEOM_CUSTOM node type for user-defined shapes](https://github.com/coal-library/coal/pull/822)
+   - Created 27 days ago, updated 18 days ago, no status
+   - Joris to check this thoroughly - to be done in May - same with functions to deprecate
+- [#824 Update pixi lockfile](https://github.com/coal-library/coal/pull/824)
+   - Created 19 days ago, updated 19 days ago, no status
+   - Potential issue with eigen5, to investigate
+- [#834 flake.lock: Update](https://github.com/coal-library/coal/pull/834)
+   - Created 7 days ago, updated 7 days ago, no status
+   - Ongoing heavy update of the Nix CI by Guilhem - so all is red - waiting for this update to complete
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#612 Refactor CMake with JRL CMake Modules v2](https://github.com/stack-of-tasks/eigenpy/pull/612)
+   - Created 129 days ago, updated 4 days ago, no status
+   - To be done/finalized in May
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - Created 579 days ago, updated 229 days ago, status to review
+   - To plan with Justin now that Pinocchio 4 released
+- [#2873 Upgrade Pinocchio Python bindings to nanobind](https://github.com/stack-of-tasks/pinocchio/pull/2873)
+   - Created 6 days ago, updated 2 days ago, no status
+   - To be reviewed later - checklist
+   - functional review (waiting for custom scalar - will need to help community from Boost Python to nanobind)
+- [#2877 build(deps): bump ros-industrial/industrial_ci from 0f4bd2d1b926eac95fd6bc5bd1fcb3051a6e927d to c3c2176f065be940a8c3738362f550639cb8d2d3](https://github.com/stack-of-tasks/pinocchio/pull/2877)
+   - Created 6 hours ago, updated 6 hours ago, no status
+   - Can be merged
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#437 Refactor CMake with JRL CMake Modules v2](https://github.com/Simple-Robotics/proxsuite/pull/437)
+   - Created 129 days ago, updated 2 days ago, no status
+   - Waiting for the official merge in JRL
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#40 Refactor CMake with JRL CMake Modules v2 (v2)](https://github.com/Simple-Robotics/nanoeigenpy/pull/40)
+   - Created 104 days ago, updated 32 days ago, no status
+   - Waiting for the official merge in JRL
+
+#### SIMPLE-ROBOTICS/CANDLEWICK
+
+- [#111 feat: base-color texture support for DAE meshes](https://github.com/Simple-Robotics/candlewick/pull/111)
+   - Created 20 days ago, updated 6 days ago, no status
+   - Need to reevaluate about roadmap for this project, use within Maestro
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#833 Nanobind bindings : fix `shared_ptr<>` for BVH classes](https://github.com/coal-library/coal/pull/833)
+   - Created 10 days ago, merged 6 days ago
+   - Fix missing header
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2872 build(deps): bump actions/github-script from 8 to 9](https://github.com/stack-of-tasks/pinocchio/pull/2872)
+   - Created 7 days ago, merged 6 days ago
+- [#2874 Update sdformat to version 16](https://github.com/stack-of-tasks/pinocchio/pull/2874)
+   - Created 6 days ago, merged 5 days ago
+- [#2875 Fix typo in README](https://github.com/stack-of-tasks/pinocchio/pull/2875)
+   - Created 5 days ago, merged 5 days ago
+- [#2876 update doc links](https://github.com/stack-of-tasks/pinocchio/pull/2876)
+   - Created 5 days ago, merged 2 days ago
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#390 Add support for Pinocchio version 4](https://github.com/Simple-Robotics/aligator/pull/390)
+   - Created 75 days ago, merged 4 days ago
+   - Merged but still some tests that fail
+- [#403 modelling/spaces : add getter for underlying `pin::LieGroup` object](https://github.com/Simple-Robotics/aligator/pull/403)
+   - Created 2 days ago, merged 2 days ago
+- [#404 nix: switch to flakoboros](https://github.com/Simple-Robotics/aligator/pull/404)
+   - Created 2 days ago, merged 1 days ago
+   - New system for CI on Nix
+
+#### SIMPLE-ROBOTICS/LOIK
+
+- [#32 build(deps): bump prefix-dev/setup-pixi from 0.9.4 to 0.9.5](https://github.com/Simple-Robotics/LoIK/pull/32)
+   - Created 13 days ago, merged 6 days ago
+
 ## 2026-04-13
 
 ### News
