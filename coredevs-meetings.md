@@ -1,6 +1,142 @@
 # MAESTRO COREDEVS MEETING - Notes
 
 
+## 2026-04-13
+
+### News
+
+ - [name=Joris] Pinocchio v4.
+     - last minor issue on nix. seems a problem on Ghuilem side.
+     - PR closed, can be done after the release
+     - Release this afternoon
+
+### Technical discussions
+
+ - [name=Wilson] Suites migration `nanobind` de la stack 
+   - https://github.com/wjakob/nanobind/pull/1320 - support pour les types `Eigen::Tensor` dans nanobind (nécessaire pour nos usages)
+   - migration de Pinocchio (branche Simple-Robotics/pin4) quasi terminée
+   - reste travail sur la serialisation (certains types dont le binding est réalisé par coal ont leur bindings modifiés ex-post dans Pinocchio), model graph, ajouts eventuels à pin4 apres le 10/04
+   - Eigen via nanobind est plus rigoureux/restrictif qu'eigenpy (conversion matrices (n,1) de numpy)
+   - **À faire après** benchmark (compilation/runtime) entre anciens et nouveaux bindings, envoyer résultats à wjakob
+
+#### coal-library/coal
+
+ - Items to discuss:
+   - [#832 DynamicAABBTreeArrayCollisionManager leaks memory after destruction](https://github.com/coal-library/coal/issues/832)
+       - Joris did tests with Valgrind. Indeed, lots of memory freed at the end.
+       - To check with Louis (either fix or discard this manager)
+   - [#831 "Scale" parameter in Transform3s](https://github.com/coal-library/coal/issues/831)
+       - Find alternative. No by default. Ask use-case to be sure.
+       - To check with Louis. more like a messh feature, not rigid-body.
+
+#### stack-of-tasks/pinocchio
+
+ - Items to discuss:
+   - [#2868 [Feature]: Add OcTree Visualization For Viser](https://github.com/stack-of-tasks/pinocchio/issues/2868)
+       - waiting for Pinocchio4
+       - Joris to check later
+       - LAAS works on viser now. Viser nice for simple examples, packaging and performance issues when doing complex scenes (multiple robots).
+           - maybe not discard gepetto_viewer
+       - tree-js issue. what about rerun ?
+           - rerun more about plotting ? not rendering
+       - vuer : new renderer also in tree-js
+           - https://github.com/vuer-ai/vuer
+           - maybe same issue for scaling ?
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#794 Refactor CMake with JRL CMake Modules v2](https://github.com/coal-library/coal/pull/794)
+   - Created 122 days ago, updated 51 days ago, no status
+- [#822 Add GEOM_CUSTOM node type for user-defined shapes](https://github.com/coal-library/coal/pull/822)
+   - Created 20 days ago, updated 11 days ago, no status
+- [#824 Update pixi lockfile](https://github.com/coal-library/coal/pull/824)
+   - Created 11 days ago, updated 11 days ago, no status
+   - Pb with eigen 5, not working on it for now
+- [#833 Nanobind bindings : fix `shared_ptr<>` for BVH classes](https://github.com/coal-library/coal/pull/833)
+   - Created 3 days ago, updated 3 days ago, no status
+   - can be merged
+- [#834 flake.lock: Update](https://github.com/coal-library/coal/pull/834)
+   - Created 18 hours ago, updated 18 hours ago, no status
+   - put in draft, Ghuilem is refactoring things
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#612 Refactor CMake with JRL CMake Modules v2](https://github.com/stack-of-tasks/eigenpy/pull/612)
+   - Created 122 days ago, updated 19 days ago, no status
+   - rebase
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - Created 572 days ago, updated 222 days ago, status to review
+   - Waiting for Pinocchio4
+- [#2872 build(deps): bump actions/github-script from 8 to 9](https://github.com/stack-of-tasks/pinocchio/pull/2872)
+   - Created 6 hours ago, updated 6 hours ago, no status
+   - merged
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#390 Fix building with upcoming Pinocchio 4](https://github.com/Simple-Robotics/aligator/pull/390)
+   - Created 68 days ago, updated 8 days ago, no status
+   - To check now (Wilson) - need to rewrite constraints
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#437 Refactor CMake with JRL CMake Modules v2](https://github.com/Simple-Robotics/proxsuite/pull/437)
+   - Created 122 days ago, updated 11 days ago, no status
+   - rebase
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#40 Refactor CMake with JRL CMake Modules v2 (v2)](https://github.com/Simple-Robotics/nanoeigenpy/pull/40)
+   - Created 97 days ago, updated 25 days ago, no status
+   - rebase
+
+#### SIMPLE-ROBOTICS/CANDLEWICK
+
+- [#111 feat: base-color texture support for DAE meshes](https://github.com/Simple-Robotics/candlewick/pull/111)
+   - Created 13 days ago, updated 13 days ago, no status
+   - external contributor
+   - Adding support for textures
+   - Waiting for some sample images in the PR
+    
+#### SIMPLE-ROBOTICS/LOIK
+
+- [#32 build(deps): bump prefix-dev/setup-pixi from 0.9.4 to 0.9.5](https://github.com/Simple-Robotics/LoIK/pull/32)
+   - Created 6 days ago, updated 6 days ago, no status
+   - to rebase and check (Joris)
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#830 [pre-commit.ci] pre-commit autoupdate](https://github.com/coal-library/coal/pull/830)
+   - Created 6 days ago, merged 5 days ago
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#637 [pre-commit.ci] pre-commit autoupdate](https://github.com/stack-of-tasks/eigenpy/pull/637)
+   - Created 6 days ago, merged 5 days ago
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2869 build(deps): bump prefix-dev/setup-pixi from 0.9.4 to 0.9.5](https://github.com/stack-of-tasks/pinocchio/pull/2869)
+   - Created 7 days ago, merged 5 days ago
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#455 [pre-commit.ci] pre-commit autoupdate](https://github.com/Simple-Robotics/proxsuite/pull/455)
+   - Created 6 days ago, merged 5 days ago
+- [#454 build(deps): bump cachix/cachix-action from 16 to 17](https://github.com/Simple-Robotics/proxsuite/pull/454)
+   - Created 11 days ago, merged 5 days ago
+
+#### SIMPLE-ROBOTICS/LOIK
+
+- [#33 [pre-commit.ci] pre-commit autoupdate](https://github.com/Simple-Robotics/LoIK/pull/33)
+   - Created 6 days ago, merged 5 days ago
+
 ## 2026-03-23
 
 ### News
