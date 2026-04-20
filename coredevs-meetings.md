@@ -8,6 +8,8 @@
  - [name=Joris] Pinocchio 4 :tada:
  - [name=Pierre-Guillaume] Kick-Off Maestro (juillet)
 
+### Technical discussions
+
 #### coal-library/coal
 
  - Items to discuss:
