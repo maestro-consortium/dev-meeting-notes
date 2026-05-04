@@ -3,13 +3,7 @@
 
 ## 2026-04-27
 
-### News
-
- - [name=John Doe] ...
-
 ### Technical discussions
-
- - [name=John Doe] ...
 
 #### coal-library/coal
 
