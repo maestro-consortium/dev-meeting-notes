@@ -1,6 +1,73 @@
 # MAESTRO COREDEVS MEETING - Notes
 
 
+## 2026-04-27
+
+### News
+
+ - [name=John Doe] ...
+
+### Technical discussions
+
+ - [name=John Doe] ...
+
+#### coal-library/coal
+
+ - Items to discuss:
+   - [#835 coal-octree test crash with clangxx >= 22.1 on Windows](https://github.com/coal-library/coal/issues/835)
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#794 Refactor CMake with JRL CMake Modules v2](https://github.com/coal-library/coal/pull/794)
+   - Created 136 days ago, updated 3 days ago, no status
+- [#822 Add GEOM_CUSTOM node type for user-defined shapes](https://github.com/coal-library/coal/pull/822)
+   - Created 34 days ago, updated 25 days ago, no status
+- [#834 flake.lock: Update](https://github.com/coal-library/coal/pull/834)
+   - Created 14 days ago, updated 14 days ago, no status
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#612 Refactor CMake with JRL CMake Modules v2](https://github.com/stack-of-tasks/eigenpy/pull/612)
+   - Created 136 days ago, updated 11 days ago, no status
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - Created 586 days ago, updated 236 days ago, status to review
+- [#2873 Upgrade Pinocchio Python bindings to nanobind](https://github.com/stack-of-tasks/pinocchio/pull/2873)
+   - Created 13 days ago, updated 9 days ago, no status
+- [#2878 viser: apply mesh scale to vertices instead of translation](https://github.com/stack-of-tasks/pinocchio/pull/2878)
+   - Created 22 hours ago, updated 22 hours ago, no status
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#437 Refactor CMake with JRL CMake Modules v2](https://github.com/Simple-Robotics/proxsuite/pull/437)
+   - Created 136 days ago, updated 9 days ago, no status
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#40 Refactor CMake with JRL CMake Modules v2 (v2)](https://github.com/Simple-Robotics/nanoeigenpy/pull/40)
+   - Created 111 days ago, updated 5 days ago, no status
+
+#### SIMPLE-ROBOTICS/CANDLEWICK
+
+- [#111 feat: base-color texture support for DAE meshes](https://github.com/Simple-Robotics/candlewick/pull/111)
+   - Created 27 days ago, updated 13 days ago, no status
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#824 Update pixi lockfile](https://github.com/coal-library/coal/pull/824)
+   - Created 26 days ago, merged 5 days ago
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2877 build(deps): bump ros-industrial/industrial_ci from 0f4bd2d1b926eac95fd6bc5bd1fcb3051a6e927d to c3c2176f065be940a8c3738362f550639cb8d2d3](https://github.com/stack-of-tasks/pinocchio/pull/2877)
+   - Created 7 days ago, merged 6 days ago
+
 ## 2026-04-20
 
 ### News
