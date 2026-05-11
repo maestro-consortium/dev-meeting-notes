@@ -1,6 +1,166 @@
 # MAESTRO COREDEVS MEETING - Notes
 
 
+
+## 2026-05-04
+
+### News
+
+ - [name=Pierre-Guillaume] Kick-off of Maestro on July 3rd
+
+### Technical discussions
+
+ - [name=Pierre-Guillaume] AI-generated PR and Vibe coding
+     - See Coal PR : https://github.com/coal-library/coal/pull/838
+         - Guidelines usage IA UnitaryHack : https://unitaryhack.dev/ai-guide/
+         - Probabl: https://blog.probabl.ai/maintaining-open-source-age-of-gen-ai 
+         - Scikit-learn: https://scikit-learn.org/dev/developers/contributing.html#automated-contributions-policy
+         - matplotlib
+         - godot
+     - Open a note about it and discuss it next week
+     - Ask contributor to declar what tools they are using and why
+     - Ok for translation
+     - Ok for help while developping ?
+     - Message for human should be written by human
+ - [name=Guilhem] flakoboros
+     - PR open on some projects
+     - Documentation writting ongoing
+     - https://gepetto.github.io/flakoboros/
+ - https://github.com/coal-library/coal/pull/848
+#### coal-library/coal
+
+ - Items to discuss:
+   - [#837 30% speedup. What is the best way to contribute?](https://github.com/coal-library/coal/issues/837)
+       - see above
+
+#### simple-robotics/proxsuite
+
+ - Items to discuss:
+   - [#456 `proxsuite 0.7.2` macOS wheel has unresolvable `@rpath/libc++.1.dylib` — RPATH points to the GH Actions runner that built it](https://github.com/Simple-Robotics/proxsuite/issues/456)
+       - Joris to check, answer the issue
+       - May need to delete current packages (wheels) and generate them again (Guilhem, maybe this week) or do a new release ?
+           - split of c++/Python ?
+           - new version of jrl-cmake-module
+       - Potential PUMA topic ? Windows topic (to check). 
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#794 Refactor CMake with JRL CMake Modules v2](https://github.com/coal-library/coal/pull/794)
+   - Created 143 days ago, updated 4 days ago, no status
+- [#822 Add GEOM_CUSTOM node type for user-defined shapes](https://github.com/coal-library/coal/pull/822)
+   - Created 41 days ago, updated 3 days ago, no status
+   - Louis is fine with it. Joris need to check but its a large PR.
+- [#839 build: enable native SIMD flags and no-interposition link for performance](https://github.com/coal-library/coal/pull/839)
+   - Created 3 days ago, updated 3 days ago, no status
+   - to close ? Need a clear AI-based contribution policy first, also code-of-conduct
+- [#840 perf: specialize RSS rectangle distance outputs](https://github.com/coal-library/coal/pull/840)
+   - Created 3 days ago, updated 3 days ago, no status
+   - see above
+- [#841 perf: devirtualize BVH traversal via templated collide/distance overloads](https://github.com/coal-library/coal/pull/841)
+   - Created 3 days ago, updated 3 days ago, no status
+   - see above
+- [#842 perf: optimize oriented BV traversal (precompute transform, early exits)](https://github.com/coal-library/coal/pull/842)
+   - Created 3 days ago, updated 3 days ago, no status
+   - see above
+- [#843 perf: hoist GJKSolver out of mesh leaf-collision path](https://github.com/coal-library/coal/pull/843)
+   - Created 3 days ago, updated 3 days ago, no status
+   - see above
+- [#844 ci: disable industrial_ci PRERELEASE](https://github.com/coal-library/coal/pull/844)
+   - Created 3 days ago, updated 10 hours ago, no status
+   - rebased, to merge
+- [#845 feat: add SIMD convex support scanning with SoA cache](https://github.com/coal-library/coal/pull/845)
+   - Created 3 days ago, updated 3 days ago, no status
+   - see above
+- [#846 feat: add Möller 1997 boolean tri-tri fast path with test coverage](https://github.com/coal-library/coal/pull/846)
+   - Created 3 days ago, updated 3 days ago, no status
+   - see above
+- [#849 Update pixi lockfile](https://github.com/coal-library/coal/pull/849)
+   - Created 2 days ago, updated 2 days ago, no status
+   - ROS ci red but not mandatory
+   - can be rebased/merged
+- [#850 build(deps): bump ros-industrial/industrial_ci from 0f4bd2d1b926eac95fd6bc5bd1fcb3051a6e927d to c553397753252d630e88e7e91aa69c6c8a478ee0](https://github.com/coal-library/coal/pull/850)
+   - Created 2 days ago, updated 1 days ago, no status
+   - to investigate
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#612 Refactor CMake with JRL CMake Modules v2](https://github.com/stack-of-tasks/eigenpy/pull/612)
+   - Created 143 days ago, updated 18 days ago, no status
+- [#639 Update pixi lockfile](https://github.com/stack-of-tasks/eigenpy/pull/639)
+   - Created 2 days ago, updated 10 hours ago, no status
+- [#642 flake.lock: Update](https://github.com/stack-of-tasks/eigenpy/pull/642)
+   - Created 15 hours ago, updated 15 hours ago, no status
+   - to check (Guilhem)
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - Created 593 days ago, updated 243 days ago, status to review
+- [#2873 Upgrade Pinocchio Python bindings to nanobind](https://github.com/stack-of-tasks/pinocchio/pull/2873)
+   - Created 20 days ago, updated 16 days ago, no status
+   - Big PR, cannot be done yet but should not delay otherwise bindings will not be synchronized....
+- [#2878 viser: apply mesh scale> to vertices instead of translation](https://github.com/stack-of-tasks/pinocchio/pull/2878)
+   - Created 7 days ago, updated 7 days ago, no status
+   - Joris : to review
+- [#2879 Update pixi lockfile](https://github.com/stack-of-tasks/pinocchio/pull/2879)
+   - Created 3 days ago, updated 3 days ago, no status
+- [#2880 test cppad: fix scalar type](https://github.com/stack-of-tasks/pinocchio/pull/2880)
+   - Created 1 days ago, updated 1 days ago, no status
+   - Issue with cppad + nix
+- [#2881 build(deps): bump ros-industrial/industrial_ci from c3c2176f065be940a8c3738362f550639cb8d2d3 to c553397753252d630e88e7e91aa69c6c8a478ee0](https://github.com/stack-of-tasks/pinocchio/pull/2881)
+   - Created 6 hours ago, updated 6 hours ago, no status
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#405 Update pixi lockfile](https://github.com/Simple-Robotics/aligator/pull/405)
+   - Created 2 days ago, updated 2 days ago, no status
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#437 Refactor CMake with JRL CMake Modules v2](https://github.com/Simple-Robotics/proxsuite/pull/437)
+   - Created 143 days ago, updated 16 days ago, no status
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#40 Refactor CMake with JRL CMake Modules v2 (v2)](https://github.com/Simple-Robotics/nanoeigenpy/pull/40)
+   - Created 118 days ago, updated 12 days ago, no status
+- [#54 build(deps): bump ros-industrial/industrial_ci from 0f4bd2d1b926eac95fd6bc5bd1fcb3051a6e927d to f3c2dc8b4a9e6215f9c00f83e86ca0692970f81d](https://github.com/Simple-Robotics/nanoeigenpy/pull/54)
+   - Created 3 days ago, updated 3 days ago, no status
+- [#55 Update pixi lockfile](https://github.com/Simple-Robotics/nanoeigenpy/pull/55)
+   - Created 2 days ago, updated 2 days ago, no status
+
+#### SIMPLE-ROBOTICS/CANDLEWICK
+
+- [#111 feat: base-color texture support for DAE meshes](https://github.com/Simple-Robotics/candlewick/pull/111)
+   - Created 34 days ago, updated 20 days ago, no status
+   - Discuss with Louis about the projet usefulness
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#851 build(deps): bump docker/build-push-action from 6 to 7](https://github.com/coal-library/coal/pull/851)
+   - Created 2 days ago, merged 1 days ago
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#641 build(deps): bump ros-industrial/industrial_ci from 0f4bd2d1b926eac95fd6bc5bd1fcb3051a6e927d to f3c2dc8b4a9e6215f9c00f83e86ca0692970f81d](https://github.com/stack-of-tasks/eigenpy/pull/641)
+   - Created 2 days ago, merged 1 days ago
+- [#640 build(deps): bump cachix/cachix-action from 16 to 17](https://github.com/stack-of-tasks/eigenpy/pull/640)
+   - Created 2 days ago, merged 1 days ago
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#457 build(deps): bump conda-incubator/setup-miniconda from 3 to 4](https://github.com/Simple-Robotics/proxsuite/pull/457)
+   - Created 2 days ago, merged 10 hours ago
+
+#### SIMPLE-ROBOTICS/LOIK
+
+- [#34 Update pixi lockfile](https://github.com/Simple-Robotics/LoIK/pull/34)
+   - Created 2 days ago, merged 10 hours ago
+
 ## 2026-04-27
 
 ### Technical discussions
