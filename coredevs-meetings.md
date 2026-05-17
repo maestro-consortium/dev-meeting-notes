@@ -1,6 +1,164 @@
 # MAESTRO COREDEVS MEETING - Notes
 
 
+## 2026-05-11
+
+### Technical discussions
+
+ - [name=Guilhem] boost 1.91 breaks eigenpy
+     - issue with finding boost python
+     - a solution could be to merge jrl-cmake-module-v2
+     - work on this in June
+     - make a note somewhere so that users are aware
+ - [name=Guilhem] cmake: generate pyproject.toml metadata
+     - merged external PR with script: [LINK](https://github.com/conda-forge/pinocchio-feedstock/blob/main/recipe/install_pin_dist_info.py)
+     - Reference Python: https://packaging.python.org/en/latest/specifications/recording-installed-packages/
+     - Generalize
+     - Just have the pyproject.toml with minimal info (to avoid building fron this info)
+         - authors, name, ... but not dependencies/builders
+         - need a small change in the CMake (need to update jrl-cmkae v1, then update v2)
+- [name=Antoine] Proxsuite: Refactoring de Sarah
+    - Discuter avec elle pour valider le contenu du refactoring
+
+#### stack-of-tasks/eigenpy
+
+ - Items to discuss:
+   - [#644 Package does not build on RHEL 8 on ROS buildfarm](https://github.com/stack-of-tasks/eigenpy/issues/644)
+       - Issue with eigen 3.3.4 while on our side v3.4 minimum set
+       - RHEL 8 to be maintained longer, until may 27
+       - Should the consortium maintain this ? Only if paying contributions (people pay for for RHEL 8, this should not incur maintenance work on our side by default)
+       - We maintain Ubuntu LTS 
+
+
+#### simple-robotics/proxsuite
+
+ - Items to discuss:
+   - [#459 Python 3.14 wheels](https://github.com/Simple-Robotics/proxsuite/issues/459)
+       - Fabian worked on this, CI launched, but no upload
+       - Conda/OSX issue
+       - Need to wait for a minor release, using Guilhem release script
+       - Joris to check/work on this issue 
+   - [#458 Python import error due to docstring formatting issue](https://github.com/Simple-Robotics/proxsuite/issues/458)
+       - PR by Fabian to fix the issue
+   - [#456 `proxsuite 0.7.2` macOS wheel has unresolvable `@rpath/libc++.1.dylib` — RPATH points to the GH Actions runner that built it](https://github.com/Simple-Robotics/proxsuite/issues/456)
+       - to be fixed in the new version (the bad packages will still be there)
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#794 Refactor CMake with JRL CMake Modules v2](https://github.com/coal-library/coal/pull/794)
+   - Created 150 days ago, updated 11 days ago, no status
+   - Some new tests for jrl-cmake-v2
+- [#822 Add GEOM_CUSTOM node type for user-defined shapes](https://github.com/coal-library/coal/pull/822)
+   - Created 48 days ago, updated 2 days ago, no status
+   - oris need some time to investigate (wrt performance/api changes)
+- [#839 build: enable native SIMD flags and no-interposition link for performance](https://github.com/coal-library/coal/pull/839)
+   - Created 10 days ago, updated 10 days ago, no status
+- [#840 perf: specialize RSS rectangle distance outputs](https://github.com/coal-library/coal/pull/840)
+   - Created 10 days ago, updated 10 days ago, no status
+- [#841 perf: devirtualize BVH traversal via templated collide/distance overloads](https://github.com/coal-library/coal/pull/841)
+   - Created 10 days ago, updated 10 days ago, no status
+- [#842 perf: optimize oriented BV traversal (precompute transform, early exits)](https://github.com/coal-library/coal/pull/842)
+   - Created 10 days ago, updated 10 days ago, no status
+- [#843 perf: hoist GJKSolver out of mesh leaf-collision path](https://github.com/coal-library/coal/pull/843)
+   - Created 10 days ago, updated 10 days ago, no status
+- [#845 feat: add SIMD convex support scanning with SoA cache](https://github.com/coal-library/coal/pull/845)
+   - Created 10 days ago, updated 10 days ago, no status
+- [#846 feat: add Möller 1997 boolean tri-tri fast path with test coverage](https://github.com/coal-library/coal/pull/846)
+   - Created 10 days ago, updated 10 days ago, no status
+- [#856 Collision data: fix equality operator](https://github.com/coal-library/coal/pull/856)
+   - Created 1 days ago, updated 1 days ago, no status
+   - If comparing pointers, checking inside
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#612 Refactor CMake with JRL CMake Modules v2](https://github.com/stack-of-tasks/eigenpy/pull/612)
+   - Created 150 days ago, updated 25 days ago, no status
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - Created 600 days ago, updated 250 days ago, status to review
+- [#2873 Upgrade Pinocchio Python bindings to nanobind](https://github.com/stack-of-tasks/pinocchio/pull/2873)
+   - Created 27 days ago, updated 23 days ago, no status
+   - back to wip
+- [#2878 viser: apply < mesh scale> to vertices instead of translation](https://github.com/stack-of-tasks/pinocchio/pull/2878)
+   - Created 14 days ago, updated 14 days ago, no status
+   - Issue also found by Timothee, Jeanne to review
+- [#2879 Update pixi lockfile](https://github.com/stack-of-tasks/pinocchio/pull/2879)
+   - Created 9 days ago, updated 6 days ago, no status
+   - Upgrade support for Eigen5 
+   - Contact maintainer cppad for new release 
+- [#2880 test cppad: fix scalar type](https://github.com/stack-of-tasks/pinocchio/pull/2880)
+   - Created 8 days ago, updated 6 days ago, no status
+   - Build issue with cppad using Nix
+   - Conda-forge, eigen 3.4.0 but no 3.4.1, directly eigen 5
+   - so maybe a fix needed for 3.4.1
+- [#2882 nix: switch to flakoboros](https://github.com/stack-of-tasks/pinocchio/pull/2882)
+   - Created 6 days ago, updated 3 days ago, no status
+   - Not merged due to CI (switched ot draft)
+   - Test Cpp multi-body fails only on MacOS
+   - Unblock PR (disable test) and make an issue ?
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#405 Update pixi lockfile](https://github.com/Simple-Robotics/aligator/pull/405)
+   - Created 9 days ago, updated 9 days ago, no status
+   - Downgrade of Eigen version ? Close the PR and wait for pinocchio to be available with Eigen5
+   - No urgent need to be with latest lockfile
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#437 Refactor CMake with JRL CMake Modules v2](https://github.com/Simple-Robotics/proxsuite/pull/437)
+   - Created 150 days ago, updated 23 days ago, no status
+- [#461 Fix invalid escape sequences in qplayer docstring](https://github.com/Simple-Robotics/proxsuite/pull/461)
+   - Created 1 days ago, updated 1 days ago, no status
+- [#462 Release Python 3.14 wheels](https://github.com/Simple-Robotics/proxsuite/pull/462)
+   - Created 1 days ago, updated 1 days ago, no status
+   - Should be closed (wait for fix and do new release instead)
+   - Joris to do this afternoon
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#40 Refactor CMake with JRL CMake Modules v2 (v2)](https://github.com/Simple-Robotics/nanoeigenpy/pull/40)
+   - Created 125 days ago, updated 19 days ago, no status
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#844 ci: disable industrial_ci PRERELEASE](https://github.com/coal-library/coal/pull/844)
+   - Created 10 days ago, merged 6 days ago
+- [#849 Update pixi lockfile](https://github.com/coal-library/coal/pull/849)
+   - Created 9 days ago, merged 5 days ago
+- [#852 nix: switch to flakoboros](https://github.com/coal-library/coal/pull/852)
+   - Created 6 days ago, merged 2 days ago
+- [#854 Print collision data](https://github.com/coal-library/coal/pull/854)
+   - Created 2 days ago, merged 2 days ago
+- [#855 collision-data: add remap method and use it in serialization test](https://github.com/coal-library/coal/pull/855)
+   - Created 2 days ago, merged 1 days ago
+   - Allow user to do manual remap after deserialization
+   - Need to discuss architecture/API for a more general solution
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#639 Update pixi lockfile](https://github.com/stack-of-tasks/eigenpy/pull/639)
+   - Created 9 days ago, merged 5 days ago
+- [#643 nix: switch to flakoboros](https://github.com/stack-of-tasks/eigenpy/pull/643)
+   - Created 6 days ago, merged 2 days ago
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2881 build(deps): bump ros-industrial/industrial_ci from c3c2176f065be940a8c3738362f550639cb8d2d3 to c553397753252d630e88e7e91aa69c6c8a478ee0](https://github.com/stack-of-tasks/pinocchio/pull/2881)
+   - Created 7 days ago, merged 6 days ago
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#55 Update pixi lockfile](https://github.com/Simple-Robotics/nanoeigenpy/pull/55)
+   - Created 9 days ago, merged 6 days ago
+- [#54 build(deps): bump ros-industrial/industrial_ci from 0f4bd2d1b926eac95fd6bc5bd1fcb3051a6e927d to c553397753252d630e88e7e91aa69c6c8a478ee0](https://github.com/Simple-Robotics/nanoeigenpy/pull/54)
+   - Created 9 days ago, merged 6 days ago
 
 ## 2026-05-04
 
