@@ -1,5 +1,130 @@
 # MAESTRO COREDEVS MEETING - Notes
 
+## 2026-05-18
+
+### News
+
+ - [name=Joris Vaillant] Release de proxsuite 0.7.3
+
+### Technical discussions
+
+ - [name=Pierre-Guillaume] Again, discussions on AI tools. 
+     - As an admin in Simple-Robotics, got a message telling me that the GitHub App Claude was requesting additional access to the organization. 
+     - Turns out Claude had been enabled for Aligator and Candlewick 7 months ago, and disabled by Justin back in March.
+     - An app may be installed at some point with specific permissions (that are ok at that time), but then after some time it may not be ok anymore or the app my ask for more invasive permissions that are not ok (I dont claim its the case here). 
+     - So its a nice reminder about tools/apps that have been enabled, and our policy wrt managing them.
+     - Also, how to be consistent across GitHub organizations ?
+     - Discussion
+         - Ask Wilson about the current need. Uninstall unless really needed
+             - Policy is against AI generated PR, so Claude should not be installed
+         - Need to revise admin rights on all the organizations
+             - review who has rights to install app, find a common policy for Maestro, and also have some tools to verify this policy is fine.
+             - do this summer, check if other orgs already have these policies/scripts
+             - Joris to setup a meeting on this, in July after the KO.
+ - [name=Pierre-Guillaume] Problemes de perfomance avec Viser ?
+     - pb de lab dans viser avec des mesh complexes ?
+     - est-ce que les pb de lags sont lies a la faocn de l'utiliser
+         - pb dans des scenes complexes (ex. benchmark HPP avec une cuisine complexe, tiroirs, et HRP2 etc), pb egalement avec la facon d'updater l'affichage, mais il y a eu une PR pour ameliorer, mais voir si ca ameliore vraiment.
+         - rerun est une boite privée donc pb qvec alignement des besoins/roadmap, viser est ok
+         - widget pour rejouer. actuellement widget HPP. Comment factoriser ?
+         - Stagiaire au LAAS sur viser sur GUI/widgets.
+             - retours viser et utilisation en C++ ? pas encore
+         - rerun
+             - meme si boite privee, c'est open-source. est-ce qu'il manque des choses vraiment cruciaux - feature rosbag est vraiment bien. mais besoin d'avoir des interactions en temps-reel, interfacer (rerun plutot logger ?).
+ - [name=Guilhem] boost 1.91 is fine
+     - followup from previous week discussion (false alert)
+ - [name=Guilhem] release eigenpy ?
+     - we have many releases on the other software, should we do also one for eigenpy
+     - yes, will be a minor one (3.13)
+     - Joris to do later today
+
+#### coal-library/coal
+
+ - Items to discuss:
+   - [#857 Triangle-mesh broadphase ~1.8× slower than FCL 0.6.1; precision and linkage ruled out`](https://github.com/coal-library/coal/issues/857)
+   - Recap
+       - coal has lots of features. Known issue that BVH (cloud points) are not optimized
+       - many messages recently that this part of coal is slow
+       - Indeed coal slower than fcl on this benchmark. 4 days of work to match the performance of FCL
+       - issue that the specialization was in Coal (2-3 years ago). Was difficult to have both the specialized and generic algo. This specialization (for triangle-triangle) was removed. 
+           - that was seen as a corner/specific case, but feedback from community 
+       - Now its back. Need to check the performances on all the architectures.
+           - Still it introduces complexity in the code
+       - Linked to the AI generated PR from Davide Faconde.
+           - only 2% of it really useful
+       - Should the author of a AI/Claude generated PR be acknowledged ?
+           - the problem was know, but it helped getting.
+           - have a section about AI-assisted contributors ?
+           - should not discourage contributors
+           - put a thanks/ack in the changelog "thanks for the report" but not in the authors.
+
+#### stack-of-tasks/pinocchio
+
+- Items to discuss:
+   - [#2887 [Bug]: Build fails on debian12](https://github.com/stack-of-tasks/pinocchio/issues/2887)
+       - check static alert ?
+       - Joris to check
+   - [#2885 test cpp serialization fail in macos full, but pass in macos split](https://github.com/stack-of-tasks/pinocchio/issues/2885)
+       - could be linked to compilation flags ?
+       - happens also on Linux/Mandy (Louis). check Clang 
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#794 Refactor CMake with JRL CMake Modules v2](https://github.com/coal-library/coal/pull/794)
+   - Created 157 days ago, updated 4 days ago, no status
+- [#822 Add GEOM_CUSTOM node type for user-defined shapes](https://github.com/coal-library/coal/pull/822)
+   - Created 55 days ago, updated 9 days ago, no status
+- [#858 Improve the performances of BVH-BVH collision detection](https://github.com/coal-library/coal/pull/858)
+   - Created 4 days ago, updated 19 hours ago, no status
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#612 Refactor CMake with JRL CMake Modules v2](https://github.com/stack-of-tasks/eigenpy/pull/612)
+   - Created 157 days ago, updated 6 days ago, no status
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421)
+   - Created 607 days ago, updated 257 days ago, status to review
+- [#2878 viser: apply < mesh scale> to vertices instead of translation](https://github.com/stack-of-tasks/pinocchio/pull/2878)
+   - Created 21 days ago, updated 5 days ago, no status
+- [#2880 test cppad: fix scalar type](https://github.com/stack-of-tasks/pinocchio/pull/2880)
+   - Created 15 days ago, updated 13 days ago, no status
+- [#2886 Eigen 5 support](https://github.com/stack-of-tasks/pinocchio/pull/2886)
+   - Created 5 days ago, updated 5 days ago, no status
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#437 Refactor CMake with JRL CMake Modules v2](https://github.com/Simple-Robotics/proxsuite/pull/437)
+   - Created 157 days ago, updated 6 days ago, no status
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#40 Refactor CMake with JRL CMake Modules v2 (v2)](https://github.com/Simple-Robotics/nanoeigenpy/pull/40)
+   - Created 132 days ago, updated 6 days ago, no status
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#856 Collision data: fix equality operator](https://github.com/coal-library/coal/pull/856)
+   - Created 8 days ago, merged 6 days ago
+- [#859 Enhance equal operator](https://github.com/coal-library/coal/pull/859)
+   - Created 4 days ago, merged 19 hours ago
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2882 nix: switch to flakoboros](https://github.com/stack-of-tasks/pinocchio/pull/2882)
+   - Created 13 days ago, merged 6 days ago
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#461 Fix invalid escape sequences in qplayer docstring](https://github.com/Simple-Robotics/proxsuite/pull/461)
+   - Created 8 days ago, merged 6 days ago
+- [#463 Don't release to PyPI anymore](https://github.com/Simple-Robotics/proxsuite/pull/463)
+   - Created 6 days ago, merged 6 days ago
 
 ## 2026-05-11
 
