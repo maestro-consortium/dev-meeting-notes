@@ -1,5 +1,149 @@
 # MAESTRO COREDEVS MEETING - Notes
 
+## 2026-06-08
+
+### News
+
+ - [name=JV] Eigenpy 3.13.0 Release
+ - [name=GS] example-robot-data 5.0.0
+
+### Technical discussions
+
+ - [name=JV] Présentation safe-settings
+ - [name=JM] Kanban Presentation
+ - [name=GS] URML https://github.com/stack-of-tasks/pinocchio/discussions/2902
+     - Check with Justin
+     - JV: Answear
+
+#### stack-of-tasks/eigenpy
+
+ - Items to discuss:
+   - [#651 Conan recipe](https://github.com/stack-of-tasks/eigenpy/issues/651) by @nicolasWDC
+        - ref https://github.com/coal-library/coal/issues/620
+        
+#### simple-robotics/proxsuite
+
+ - Items to discuss:
+   - [#465 Don't set KMP_DUPLICATE_LIB_OK environment variable in `__init__.py`](https://github.com/Simple-Robotics/proxsuite/issues/465) by @jorisv
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#794 Refactor CMake with JRL CMake Modules v2](https://github.com/coal-library/coal/pull/794) by @ahoarau
+   - Created 178 days ago, updated 5 days ago, no status
+   - Issue dos2unix: Use pre-commit to prevent this
+
+- [#822 Add GEOM_CUSTOM node type for user-defined shapes](https://github.com/coal-library/coal/pull/822) by @rjoomen
+   - Created 76 days ago, updated 2 days ago, no status
+
+- [#858 Improve the performances of BVH-BVH collision detection](https://github.com/coal-library/coal/pull/858) by @lmontaut
+   - Created 25 days ago, updated 21 days ago, no status
+
+#### STACK-OF-TASKS/EIGENPY
+
+
+- [#612 Refactor CMake with JRL CMake Modules v2](https://github.com/stack-of-tasks/eigenpy/pull/612) by @ahoarau
+   - Created 178 days ago, updated 5 days ago, no status
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421) by @Cfather
+   - Created 628 days ago, updated 278 days ago, status to review
+
+- [#2880 test cppad: fix scalar type](https://github.com/stack-of-tasks/pinocchio/pull/2880) by @nim65s
+   - Created 36 days ago, updated 34 days ago, no status
+
+- [#2886 Eigen 5 support](https://github.com/stack-of-tasks/pinocchio/pull/2886) by @jorisv
+   - Created 26 days ago, updated 2 days ago, no status
+
+- [#2891 Topic/aba second order derivatives](https://github.com/stack-of-tasks/pinocchio/pull/2891) by @shubhamsingh91
+   - Created 20 days ago, updated 15 days ago, no status
+
+- [#2900 fix: use portable Windows detection macro for compilation on MSVC](https://github.com/stack-of-tasks/pinocchio/pull/2900) by @onurtuncer
+   - Created 5 days ago, updated 5 days ago, no status
+   - Add a guard in C++ to prevent build issues
+
+- [#2904 build(deps): bump ros-industrial/industrial_ci from c553397753252d630e88e7e91aa69c6c8a478ee0 to 125164b9f1883cdf1858897a7146d1bebf2be5c6](https://github.com/stack-of-tasks/pinocchio/pull/2904) by @dependabot[bot]
+   - Created 5 hours ago, updated 5 hours ago, no status
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+
+- [#406 Update pixi lockfile](https://github.com/Simple-Robotics/aligator/pull/406) by @update-pixi-lockfile[bot]
+   - Created 6 days ago, updated 3 days ago, no status
+   - Declare example-robot-data-loaders coal-python dependency in nix
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#437 Refactor CMake with JRL CMake Modules v2](https://github.com/Simple-Robotics/proxsuite/pull/437) by @ahoarau
+   - Created 178 days ago, updated 5 days ago, no status
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#40 Refactor CMake with JRL CMake Modules v2 (v2)](https://github.com/Simple-Robotics/nanoeigenpy/pull/40) by @ahoarau
+   - Created 153 days ago, updated 5 days ago, no status
+
+#### SIMPLE-ROBOTICS/CANDLEWICK
+
+- [#111 feat: base-color texture support for DAE meshes](https://github.com/Simple-Robotics/candlewick/pull/111) by @vklemm
+   - Created 69 days ago, updated 55 days ago, no status
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#860 collision-data: fix disp in QueryRequest](https://github.com/coal-library/coal/pull/860) by @lmontaut
+   - Created 19 days ago, merged 19 days ago
+- [#862 Update pixi lockfile](https://github.com/coal-library/coal/pull/862) by @update-pixi-lockfile[bot]
+   - Created 6 days ago, merged 6 days ago
+- [#864 build(deps): bump prefix-dev/setup-pixi from 0.9.5 to 0.9.6](https://github.com/coal-library/coal/pull/864) by @dependabot[bot]
+   - Created 6 days ago, merged 5 days ago
+- [#863 build(deps): bump ros-industrial/industrial_ci from f3c2dc8b4a9e6215f9c00f83e86ca0692970f81d to 125164b9f1883cdf1858897a7146d1bebf2be5c6](https://github.com/coal-library/coal/pull/863) by @dependabot[bot]
+   - Created 6 days ago, merged 5 days ago
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#645 Update jrl-cmake module](https://github.com/stack-of-tasks/eigenpy/pull/645) by @jorisv
+   - Created 20 days ago, merged 20 days ago
+- [#647 Update pixi lockfile](https://github.com/stack-of-tasks/eigenpy/pull/647) by @update-pixi-lockfile[bot]
+   - Created 6 days ago, merged 6 days ago
+- [#648 generate pypa metadata](https://github.com/stack-of-tasks/eigenpy/pull/648) by @nim65s
+   - Created 6 days ago, merged 4 days ago
+- [#650 build(deps): bump prefix-dev/setup-pixi from 0.9.5 to 0.9.6](https://github.com/stack-of-tasks/eigenpy/pull/650) by @dependabot[bot]
+   - Created 4 days ago, merged 3 days ago
+- [#649 build(deps): bump ros-industrial/industrial_ci from f3c2dc8b4a9e6215f9c00f83e86ca0692970f81d to 125164b9f1883cdf1858897a7146d1bebf2be5c6](https://github.com/stack-of-tasks/eigenpy/pull/649) by @dependabot[bot]
+   - Created 4 days ago, merged 3 days ago
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2890 Fix build issue with g++ 12](https://github.com/stack-of-tasks/pinocchio/pull/2890) by @jorisv
+   - Created 20 days ago, merged 19 days ago
+- [#2894 build(deps): bump prefix-dev/setup-pixi from 0.9.5 to 0.9.6](https://github.com/stack-of-tasks/pinocchio/pull/2894) by @dependabot[bot]
+   - Created 14 days ago, merged 12 days ago
+- [#2895 Add ROS 2 Lyrical badge and update Rolling badge to point to Ubuntu Resolute](https://github.com/stack-of-tasks/pinocchio/pull/2895) by @sea-bass
+   - Created 14 days ago, merged 10 days ago
+- [#2897 Fix the useless copy of Model in Python checkers](https://github.com/stack-of-tasks/pinocchio/pull/2897) by @jcarpent
+   - Created 7 days ago, merged 6 days ago
+- [#2878 viser: apply < mesh scale> to vertices instead of translation](https://github.com/stack-of-tasks/pinocchio/pull/2878) by @tingfan
+   - Created 42 days ago, merged 2 days ago
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#56 Update pixi lockfile](https://github.com/Simple-Robotics/nanoeigenpy/pull/56) by @update-pixi-lockfile[bot]
+   - Created 6 days ago, merged 6 days ago
+- [#57 build(deps): bump prefix-dev/setup-pixi from 0.9.5 to 0.9.6](https://github.com/Simple-Robotics/nanoeigenpy/pull/57) by @dependabot[bot]
+    - Created 6 days ago, merged 5 days ago
+- [#58 build(deps): bump ros-industrial/industrial_ci from c553397753252d630e88e7e91aa69c6c8a478ee0 to 125164b9f1883cdf1858897a7146d1bebf2be5c6](https://github.com/Simple-Robotics/nanoeigenpy/pull/58) by @dependabot[bot]
+   - Created 6 days ago, merged 5 days ago
+
+#### SIMPLE-ROBOTICS/LOIK
+
+- [#35 build(deps): bump prefix-dev/setup-pixi from 0.9.5 to 0.9.6](https://github.com/Simple-Robotics/LoIK/pull/35) by @dependabot[bot]
+   - Created 13 days ago, merged 12 days ago
+- [#36 Update pixi lockfile](https://github.com/Simple-Robotics/LoIK/pull/36) by @update-pixi-lockfile[bot]
+   - Created 6 days ago, merged 6 days ago
+
 ## 2026-05-18
 
 ### News
