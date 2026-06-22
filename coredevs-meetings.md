@@ -1,5 +1,178 @@
 # MAESTRO COREDEVS MEETING - Notes
 
+
+
+## 2026-06-15
+
+### News
+
+ - [name=Hugo] QuantStack: *[Compute!](https://compute.events/)* new formula of PyData
+     - Possible event for new years
+     - ROSConFR could be a good match for Pinocchio
+
+### Technical discussions
+
+ - [name=Hugo] Module for Lie algebra: Yann de Montmarin could be a good reviewer. Transformation, quaternions, special articulations are using it in Pinocchio. SOFA module used for Cosserat beam and soon shell models
+- Saving GitHub settings
+    - reset rights on all repos to few available core-devs
+    - then, when needed and progressively/on-demand add other accesses
+    - Joris will start working on it
+
+#### coal-library/coal
+
+ - Items to discuss:
+   - [#866 Policy CMP0167 is not set](https://github.com/coal-library/coal/issues/866) by @christophfroehlich
+       - Joris replied already that JRL v2 is going to solve this
+
+#### stack-of-tasks/eigenpy
+
+ - Items to discuss:
+   - [#653 Policy CMP0167 is not set](https://github.com/stack-of-tasks/eigenpy/issues/653) by @christophfroehlich
+       - See  [#866](https://github.com/coal-library/coal/issues/866)
+
+#### stack-of-tasks/pinocchio
+
+ - Items to discuss:
+   - [#2906 Policy CMP0167 is not set](https://github.com/stack-of-tasks/pinocchio/issues/2906) by @christophfroehlich
+       - See  [#866](https://github.com/coal-library/coal/issues/866)
+
+#### simple-robotics/nanoeigenpy
+
+ - Items to discuss:
+   - [#60 Support for custom numeric types?](https://github.com/Simple-Robotics/nanoeigenpy/issues/60) by @ofloveandhate
+       - Using custom eigen types, raised a bug in eigenpy. Joris replied that swithing towards nanobind and that she could open a PR to avoid reimplementing in nanoeigenpy
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#794 Refactor CMake with JRL CMake Modules v2](https://github.com/coal-library/coal/pull/794) by @ahoarau
+   - Created 185 days ago, updated 4 days ago, no status
+   - Antoine will be working on it
+- [#822 Add GEOM_CUSTOM node type for user-defined shapes](https://github.com/coal-library/coal/pull/822) by @rjoomen
+   - Created 83 days ago, updated 9 days ago, no status
+   - Joris is going to review it (review the architecture proposal)
+- [#858 Improve the performances of BVH-BVH collision detection](https://github.com/coal-library/coal/pull/858) by @lmontaut
+   - Created 32 days ago, updated 28 days ago, no status
+   - Pending feedback from Louis (is there anything else to implement)
+
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#612 Refactor CMake with JRL CMake Modules v2](https://github.com/stack-of-tasks/eigenpy/pull/612) by @ahoarau
+   - Created 185 days ago, updated 12 days ago, no status
+- [#370 custom numeric type: Example and two bugfixes](https://github.com/stack-of-tasks/eigenpy/pull/370)
+   - See [#60](https://github.com/Simple-Robotics/nanoeigenpy/issues/60)
+   
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421) by @Cfather
+   - Created 635 days ago, updated 285 days ago, status to review
+   - In stack for review for Joris
+- [#2880 test cppad: fix scalar type](https://github.com/stack-of-tasks/pinocchio/pull/2880) by @nim65s
+   - Created 43 days ago, updated 41 days ago, no status
+   - In stack for review for Joris
+- [#2886 Eigen 5 support](https://github.com/stack-of-tasks/pinocchio/pull/2886) by @jorisv
+   - Created 33 days ago, updated 3 days ago, no status
+   - PCH under Windows not working and CI slow running
+   - MacOS-Intel case in debug show bindings disappearing
+   - [name=Guilhem] possibly notify it as a know issue, to be fixed later (not spending too much time on it)
+   - Joris proposes a CMake option to activate PCH, since we rather use ccache
+- [#2891 Topic/aba second order derivatives](https://github.com/stack-of-tasks/pinocchio/pull/2891) by @shubhamsingh91
+   - Created 27 days ago, updated 1 days ago, no status
+   - Same, in stack for review for Joris (check Eigen errors)
+- [#2900 fix: use portable Windows detection macro for compilation on MSVC](https://github.com/stack-of-tasks/pinocchio/pull/2900) by @onurtuncer
+   - Created 12 days ago, updated 5 days ago, no status
+   - Fix an unreliable macro for MSVC, PR author accepted to let core-devs do the changes
+
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#406 Update pixi lockfile](https://github.com/Simple-Robotics/aligator/pull/406) by @update-pixi-lockfile[bot]
+   - Created 13 days ago, updated 10 days ago, no status
+   - Unit tests failing (random MPC test + another on constraints)
+   - Under investigation by Jeanne
+   - To be closed in favor of [#408](https://github.com/Simple-Robotics/aligator/pull/408)
+- [#408 Topic/fix update pixi](https://github.com/Simple-Robotics/aligator/pull/408) by @j-matheron
+   - Created 3 days ago, updated 3 days ago, no status
+   - Same as previous (fork of the PR)
+
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#437 Refactor CMake with JRL CMake Modules v2](https://github.com/Simple-Robotics/proxsuite/pull/437) by @ahoarau
+   - Created 185 days ago, updated 4 days ago, no status
+   - Wait for the merge JRL v2 CMake
+
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#40 Refactor CMake with JRL CMake Modules v2 (v2)](https://github.com/Simple-Robotics/nanoeigenpy/pull/40) by @ahoarau
+   - Created 160 days ago, updated 12 days ago, no status
+   - Wait for the merge JRL v2 CMake
+
+
+
+
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#865 Use VS2022 in CI](https://github.com/coal-library/coal/pull/865) by @jorisv
+   - Created 4 days ago, merged 4 days ago
+   - For stability, it's better to use VS2022. All projects now have the specification for GitHub CI
+   - Future PR upcoming to support VS2026 on all projects
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#652 Use VS2022 in CI](https://github.com/stack-of-tasks/eigenpy/pull/652) by @jorisv
+   - Created 4 days ago, merged 4 days ago
+   - Same as [#865](https://github.com/coal-library/coal/pull/865)
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2904 build(deps): bump ros-industrial/industrial_ci from c553397753252d630e88e7e91aa69c6c8a478ee0 to 125164b9f1883cdf1858897a7146d1bebf2be5c6](https://github.com/stack-of-tasks/pinocchio/pull/2904) by @dependabot[bot]
+   - Created 7 days ago, merged 6 days ago
+   - Dependabot maintenance
+- [#2905 Use VS2022 in CI](https://github.com/stack-of-tasks/pinocchio/pull/2905) by @jorisv
+   - Created 4 days ago, merged 4 days ago
+   - Same as [#865](https://github.com/coal-library/coal/pull/865)
+- [#2907 Fix dangling-reference warning](https://github.com/stack-of-tasks/pinocchio/pull/2907) by @jorisv
+   - Created 3 days ago, merged 2 days ago
+   - Heavy model copy (dynamic allocation) fixed by Justin but generating a warning (unreference temp variable)
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#407 Update pixi.lock gitattributes](https://github.com/Simple-Robotics/aligator/pull/407) by @jorisv
+   - Created 4 days ago, merged 4 days ago
+   - Ref: [#865](https://github.com/coal-library/coal/pull/865)
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#466 Use VS2022 in CI](https://github.com/Simple-Robotics/proxsuite/pull/466) by @jorisv
+   - Created 4 days ago, merged 4 days ago
+   - Same as [#865](https://github.com/coal-library/coal/pull/865)
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#59 Use VS2022 in CI](https://github.com/Simple-Robotics/nanoeigenpy/pull/59) by @jorisv
+   - Created 4 days ago, merged 4 days ago
+   - Same as [#865](https://github.com/coal-library/coal/pull/865)
+
+#### SIMPLE-ROBOTICS/LOIK
+
+- [#37 Use VS2022 in CI](https://github.com/Simple-Robotics/LoIK/pull/37) by @jorisv
+   - Created 4 days ago, merged 4 days ago
+   - Same as [#865](https://github.com/coal-library/coal/pull/865)
+
+#### SIMPLE-ROBOTICS/PYCPPAD
+
+- [#44 Use VS2022 in CI](https://github.com/Simple-Robotics/pycppad/pull/44) by @jorisv
+   - Created 4 days ago, merged 4 days ago
+   - Same as [#865](https://github.com/coal-library/coal/pull/865)
+
 ## 2026-06-08
 
 ### News
