@@ -1,6 +1,108 @@
 # MAESTRO COREDEVS MEETING - Notes
 
 
+## 2026-06-22
+
+### News
+
+ - [name=Pierre-Guillaume] presentation technique pour le kick-off ? (presentations ou table-ronde ?)
+     - table ronde - courte presentation au debut sur differents sujets pour alncer la discussion
+     - participants : Guilhem, Hugo, Antoine, Joris
+
+### Technical discussions
+
+ - [name=Joris] JRL CMake module v2
+     - issue with pyproject.toml
+         - relatives project to check
+     - CMEEL workflow stays standard
+     - Joris to merge
+     - Order for the rest of the projects ?
+         - no specific order
+         - should be merged
+     - Should the build system be in the project itself ?
+         - need to check pros and cons 
+         - need to manage dependencies between projects, version pinning
+
+
+
+#### coal-library/coal
+
+ - Items to discuss:
+   - [#867 CMakeLists: Missing "COMPONENTS" in ADD_PROJECT_DEPENDENCY(Boost REQUIRED serializiation filesystem)](https://github.com/coal-library/coal/issues/867) by @michheusser
+       - patch for next minor release ?
+       - maintenance branch
+       - Joris to do the PR
+
+#### stack-of-tasks/pinocchio
+
+ - Items to discuss:
+- [#2911 [Bug]: test-mpc.py is deactivated until timeout is fixed](https://github.com/stack-of-tasks/pinocchio/issues/2911) by @j-matheron
+    - assert wrongly defined - fixed in devel of pinocchio - need to wait for the next release
+    - test disabled for now
+- [#2910 [Bug]: mpc-cycle test is deactivated while eigen5 support is not merged in pinocchio](https://github.com/stack-of-tasks/pinocchio/issues/2910) by @j-matheron
+- [#2908 [Feature]: Define Joint Spline behaviour outside of its bounds](https://github.com/stack-of-tasks/pinocchio/issues/2908) by @MegMll
+    - issue with b-spline only defined in fixed interval, not everywhere
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#794 Refactor CMake with JRL CMake Modules v2](https://github.com/coal-library/coal/pull/794) by @ahoarau
+   - Created 192 days ago, updated 11 days ago, no status
+- [#822 Add GEOM_CUSTOM node type for user-defined shapes](https://github.com/coal-library/coal/pull/822) by @rjoomen
+   - Created 90 days ago, updated 16 days ago, no status
+- [#858 Improve the performances of BVH-BVH collision detection](https://github.com/coal-library/coal/pull/858) by @lmontaut
+   - Created 39 days ago, updated 35 days ago, no status
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#612 Refactor CMake with JRL CMake Modules v2](https://github.com/stack-of-tasks/eigenpy/pull/612) by @ahoarau
+   - Created 192 days ago, updated 19 days ago, no status
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421) by @Cfather
+   - Created 642 days ago, updated 292 days ago, status to review
+- [#2880 test cppad: fix scalar type](https://github.com/stack-of-tasks/pinocchio/pull/2880) by @nim65s
+   - Created 50 days ago, updated 48 days ago, no status
+- [#2886 Eigen 5 support](https://github.com/stack-of-tasks/pinocchio/pull/2886) by @jorisv
+   - Created 40 days ago, updated 2 days ago, no status
+   - fixed issue with Mac Intel - related to option for smaller build
+   - Sill issue with PCH on Windows - compile time on CI is exploding (over 6hours) - breaks
+   - Need to investigate the error - maybe memory exhausted ?
+   - Joris to check with Antoine
+- [#2891 Topic/aba second order derivatives](https://github.com/stack-of-tasks/pinocchio/pull/2891) by @shubhamsingh91
+   - Created 34 days ago, updated 9 days ago, no status
+   - No update
+- [#2900 fix: use portable Windows detection macro for compilation on MSVC](https://github.com/stack-of-tasks/pinocchio/pull/2900) by @onurtuncer
+   - Created 19 days ago, updated 12 days ago, no status
+   - Joris to work on this once eigen5 merged
+- [#2909 Topic/urdf 1.2](https://github.com/stack-of-tasks/pinocchio/pull/2909) by @j-matheron
+   - Created 4 days ago, updated 2 days ago, no status
+   - Need to wait for eigen5 merge also.
+- [#2912 build(deps): bump actions/checkout from 6 to 7](https://github.com/stack-of-tasks/pinocchio/pull/2912) by @dependabot[bot]
+   - Created 6 hours ago, updated 6 hours ago, no status
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#408 Topic/fix update pixi](https://github.com/Simple-Robotics/aligator/pull/408) by @j-matheron
+   - Created 10 days ago, updated 4 days ago, no status
+   - Some tests deactiveted
+   - Can be merged
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#437 Refactor CMake with JRL CMake Modules v2](https://github.com/Simple-Robotics/proxsuite/pull/437) by @ahoarau
+   - Created 192 days ago, updated 11 days ago, no status
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#40 Refactor CMake with JRL CMake Modules v2 (v2)](https://github.com/Simple-Robotics/nanoeigenpy/pull/40) by @ahoarau
+   - Created 167 days ago, updated 19 days ago, no status
+
+### PR merged within the week
+
+NONE
 
 ## 2026-06-15
 
