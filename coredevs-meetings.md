@@ -1,6 +1,132 @@
 # MAESTRO COREDEVS MEETING - Notes
 
 
+
+## 2026-06-29
+
+### News
+
+- Candlewick project not in simple robotics anymore -> transferred to Wilson
+    
+### Technical discussions
+
+- SaveSettings : tools for synchronizing Github settings (developped by GH), discussions beween Hugo and Joris on that.
+
+#### coal-library/coal
+
+ - Items to discuss:
+   - [#870 BVH_AABB not support multi-threading](https://github.com/coal-library/coal/issues/870) by @hazidh
+       - message sent to Louis
+   - [#868 C++17 :  Remove dependency to boost::filesystem](https://github.com/coal-library/coal/issues/868) by @nicolasWDC
+       - to be considered for Coal v4 (current timeline : end of the year)
+ 
+#### stack-of-tasks/pinocchio
+
+ - Items to discuss:
+   - [#2913 [Feature]: Remove urdfdom < 6 capsule workaround](https://github.com/stack-of-tasks/pinocchio/issues/2913) by @jorisv
+       - just a note wrt urdfdom v1.2 (xml)
+           - hack v1 - cylinder + parameter => capsule
+       - may take a few years for urdfdom v1.2 (xml) becomes minimal, libversion 6
+       - end of life for Jazzy is 2029
+       - set in issue
+
+#### simple-robotics/aligator
+
+ - Items to discuss:
+   - [#410 [Bug]: mpc-cycle test is deactivated while eigen5 support is not merged in pinocchio](https://github.com/Simple-Robotics/aligator/issues/410) by @j-matheron
+       - issue of last week, but in aligator 
+       - need to wait for next release of pinocchio
+   - [#409 [Bug]: test-mpc.py is deactivated until timeout is fixed](https://github.com/Simple-Robotics/aligator/issues/409) by @j-matheron
+       - issue of last week, but in aligator 
+       - issue created, test desactivated, need to track for later
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#794 Refactor CMake with JRL CMake Modules v2](https://github.com/coal-library/coal/pull/794) by @ahoarau
+   - Created 199 days ago, updated 3 days ago, no status
+   - Wait for release of conda package of jrl v2
+- [#822 Add GEOM_CUSTOM node type for user-defined shapes](https://github.com/coal-library/coal/pull/822) by @rjoomen
+   - Created 97 days ago, updated 23 days ago, no status
+   - Standby, Joris need to discuss with Louis
+- [#858 Improve the performances of BVH-BVH collision detection](https://github.com/coal-library/coal/pull/858) by @lmontaut
+   - Created 46 days ago, updated 42 days ago, no status
+   - Standby, Joris need to discuss with Louis
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#612 Refactor CMake with JRL CMake Modules v2](https://github.com/stack-of-tasks/eigenpy/pull/612) by @ahoarau
+   - Created 199 days ago, updated 1 days ago, no status
+   - same as above
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421) by @Cfather
+   - Created 649 days ago, updated 299 days ago, status to review
+   - standby, Joris on other PRs
+- [#2880 test cppad: fix scalar type](https://github.com/stack-of-tasks/pinocchio/pull/2880) by @nim65s
+   - Created 57 days ago, updated 55 days ago, no status
+   - standby, Joris on other PRs
+- [#2886 Eigen 5 support](https://github.com/stack-of-tasks/pinocchio/pull/2886) by @jorisv
+   - Created 47 days ago, updated 5 days ago, no status
+   - No PCH, CI on Windows too slow/long
+   - Running on local VM, uncovered a problem. One file is very slow to compile. Crashes.
+   - Need to investigate, checking compilation flags on this specific file. Compile in Debug mode is fine (10seconds), not in Release mode (23minutes).
+   - Using Build Insights - failed
+- [#2891 Topic/aba second order derivatives](https://github.com/stack-of-tasks/pinocchio/pull/2891) by @shubhamsingh91
+   - Created 41 days ago, updated 16 days ago, no status
+   - standby, Joris on other PRs
+- [#2900 fix: use portable Windows detection macro for compilation on MSVC](https://github.com/stack-of-tasks/pinocchio/pull/2900) by @onurtuncer
+   - Created 26 days ago, updated 19 days ago, no status
+   - standby, Joris on other PRs => Jeanne to take care of it
+- [#2909 Topic/urdf 1.2](https://github.com/stack-of-tasks/pinocchio/pull/2909) by @j-matheron
+   - Created 11 days ago, updated 3 days ago, no status
+   - Waiting for Eigen5 merge
+   - urdfdom6 depends on eigen5 now ? to check 
+- [#2914 build(deps): bump actions/cache from 5 to 6](https://github.com/stack-of-tasks/pinocchio/pull/2914) by @dependabot[bot]
+   - Created 5 hours ago, updated 5 hours ago, no status
+   - to check before merge
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#437 Refactor CMake with JRL CMake Modules v2](https://github.com/Simple-Robotics/proxsuite/pull/437) by @ahoarau
+   - Created 199 days ago, updated 18 days ago, no status
+   - same as above
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#40 Refactor CMake with JRL CMake Modules v2 (v2)](https://github.com/Simple-Robotics/nanoeigenpy/pull/40) by @ahoarau
+   - Created 174 days ago, updated 26 days ago, no status
+   - same as above
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#869 Declare boost needed components](https://github.com/coal-library/coal/pull/869) by @jorisv
+   - Created 5 days ago, merged 5 days ago
+   - Release patch of Coal - Guilhem to do when possible
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2912 build(deps): bump actions/checkout from 6 to 7](https://github.com/stack-of-tasks/pinocchio/pull/2912) by @dependabot[bot]
+   - Created 7 days ago, merged 5 days ago
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#408 Topic/fix update pixi](https://github.com/Simple-Robotics/aligator/pull/408) by @j-matheron
+   - Created 17 days ago, merged 5 days ago
+   - Aligator moved fully to Pin4
+   - Lib updates (fmt) 
+   - Different environments between Pin4 and Pin3.9
+
+#### SIMPLE-ROBOTICS/LOIK
+
+- [#38 build(deps): bump actions/checkout from 6 to 7](https://github.com/Simple-Robotics/LoIK/pull/38) by @dependabot[bot]
+   - Created 6 days ago, merged 5 days ago
+
+
 ## 2026-06-22
 
 ### News
