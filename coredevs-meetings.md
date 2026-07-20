@@ -1,6 +1,159 @@
 # MAESTRO COREDEVS MEETING - Notes
 
 
+## 2026-07-06
+
+### News
+
+ - [name=Pierre-Guillaume] Successful kick-off. Discussions with Atos, Safran, Cetim.
+ - [name=Joris] Release de coal v3.0.4
+ - [name=Joris] Release de jrl-cmakemodules 2.1.0
+
+### Technical discussions
+
+#### stack-of-tasks/pinocchio
+
+ - Items to discuss:
+   - [#2918 [Feature]: Support static library build](https://github.com/stack-of-tasks/pinocchio/issues/2918) by @j-matheron
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#794 Refactor CMake with JRL CMake Modules v2](https://github.com/coal-library/coal/pull/794) by @ahoarau
+   - Created 206 days ago, updated 10 days ago, no status
+   - Postponed for August
+- [#822 Add GEOM_CUSTOM node type for user-defined shapes](https://github.com/coal-library/coal/pull/822) by @rjoomen
+   - Created 104 days ago, updated 6 days ago, no status
+   - To be reviewed after the spline PR
+- [#858 Improve the performances of BVH-BVH collision detection](https://github.com/coal-library/coal/pull/858) by @lmontaut
+   - Created 53 days ago, updated 49 days ago, no status
+   - To be discussed with Louis, later.
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#612 Refactor CMake with JRL CMake Modules v2](https://github.com/stack-of-tasks/eigenpy/pull/612) by @ahoarau
+   - Created 206 days ago, updated 8 days ago, no status
+   - Same as above (check in August)
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421) by @Cfather
+   - Created 656 days ago, updated 306 days ago, status to review
+- [#2784 Adding a spline joint to the joint collection](https://github.com/stack-of-tasks/pinocchio/pull/2784) by @MegMll
+   - Created 268 days ago, updated 3 days ago, status to review
+   - ongoing review
+- [#2880 test cppad: fix scalar type](https://github.com/stack-of-tasks/pinocchio/pull/2880) by @nim65s
+   - Created 64 days ago, updated 62 days ago, no status
+   - to be done later
+- [#2891 Topic/aba second order derivatives](https://github.com/stack-of-tasks/pinocchio/pull/2891) by @shubhamsingh91
+   - Created 48 days ago, updated 2 days ago, no status
+   - to be done later
+- [#2915 CMake: dont require mathjax](https://github.com/stack-of-tasks/pinocchio/pull/2915) by @nim65s
+   - Created 6 days ago, updated 3 days ago, no status
+   - cannot reproduce locally
+   - to be checked later (wait for JRLv2)
+- [#2919 build(deps): bump prefix-dev/setup-pixi from 0.9.6 to 0.10.0](https://github.com/stack-of-tasks/pinocchio/pull/2919) by @dependabot[bot]
+   - Created 5 hours ago, updated 5 hours ago, no status
+   - merged
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#437 Refactor CMake with JRL CMake Modules v2](https://github.com/Simple-Robotics/proxsuite/pull/437) by @ahoarau
+   - Created 206 days ago, updated 25 days ago, no status
+   - same as above
+- [#467 CMake: dont require mathjax](https://github.com/Simple-Robotics/proxsuite/pull/467) by @nim65s
+   - Created 6 days ago, updated 3 days ago, no status
+   - same as above
+- [#469 ROS: update](https://github.com/Simple-Robotics/proxsuite/pull/469) by @nim65s
+   - Created 3 days ago, updated 3 days ago, no status
+   - CI is red, to be checked
+- [#470 dockgen: init](https://github.com/Simple-Robotics/proxsuite/pull/470) by @nim65s
+   - Created 3 days ago, updated 2 days ago, no status
+   - can be merged
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#40 Refactor CMake with JRL CMake Modules v2 (v2)](https://github.com/Simple-Robotics/nanoeigenpy/pull/40) by @ahoarau
+   - Created 181 days ago, updated 33 days ago, no status
+   - same as above
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#871 Merge tag 'v3.0.4' into devel](https://github.com/coal-library/coal/pull/871) by @nim65s
+   - Created 6 days ago, merged 5 days ago
+- [#872 Improve pixi build version management](https://github.com/coal-library/coal/pull/872) by @jorisv
+   - Created 5 days ago, merged 5 days ago
+   - Simple does not depend of a version but directly from a commit on Pinocchio (dependency)
+   - Issue in Pixy build : how to solve use Python * and not Python with lower/upper bound
+- [#877 flake.lock: Update](https://github.com/coal-library/coal/pull/877) by @nim65s
+   - Created 4 days ago, merged 4 days ago
+- [#875 build(deps): bump prefix-dev/setup-pixi from 0.9.6 to 0.10.0](https://github.com/coal-library/coal/pull/875) by @dependabot[bot]
+   - Created 4 days ago, merged 4 days ago
+- [#873 build(deps): bump actions/checkout from 6 to 7](https://github.com/coal-library/coal/pull/873) by @dependabot[bot]
+   - Created 4 days ago, merged 4 days ago
+- [#874 build(deps): bump actions/cache from 5 to 6](https://github.com/coal-library/coal/pull/874) by @dependabot[bot]
+   - Created 4 days ago, merged 3 days ago
+- [#876 Update pixi lockfile](https://github.com/coal-library/coal/pull/876) by @update-pixi-lockfile[bot]
+   - Created 4 days ago, merged 3 days ago
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#654 flake.lock: Update](https://github.com/stack-of-tasks/eigenpy/pull/654) by @nim65s
+   - Created 5 days ago, merged 4 days ago
+- [#655 Update pixi lockfile](https://github.com/stack-of-tasks/eigenpy/pull/655) by @update-pixi-lockfile[bot]
+   - Created 4 days ago, merged 4 days ago
+- [#658 build(deps): bump actions/cache from 5 to 6](https://github.com/stack-of-tasks/eigenpy/pull/658) by @dependabot[bot]
+   - Created 4 days ago, merged 3 days ago
+- [#657 build(deps): bump prefix-dev/setup-pixi from 0.9.6 to 0.10.0](https://github.com/stack-of-tasks/eigenpy/pull/657) by @dependabot[bot]
+   - Created 4 days ago, merged 3 days ago
+- [#656 build(deps): bump actions/checkout from 6 to 7](https://github.com/stack-of-tasks/eigenpy/pull/656) by @dependabot[bot]
+   - Created 4 days ago, merged 3 days ago
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2886 Eigen 5 support](https://github.com/stack-of-tasks/pinocchio/pull/2886) by @jorisv
+   - Created 54 days ago, merged 5 days ago
+   - On Windows, specific flag needed to be set for compilation. 
+- [#2914 build(deps): bump actions/cache from 5 to 6](https://github.com/stack-of-tasks/pinocchio/pull/2914) by @dependabot[bot]
+   - Created 7 days ago, merged 5 days ago
+- [#2909 Topic/urdf 1.2](https://github.com/stack-of-tasks/pinocchio/pull/2909) by @j-matheron
+   - Created 18 days ago, merged 4 days ago
+   - Support both for 1.1 (capsules) and 1.2 (joint limits)
+- [#2900 fix: use portable Windows detection macro for compilation on MSVC](https://github.com/stack-of-tasks/pinocchio/pull/2900) by @onurtuncer
+   - Created 33 days ago, merged 2 days ago
+   - Merged part of PR, another issue wrt static build
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#411 Update pixi lockfile](https://github.com/Simple-Robotics/aligator/pull/411) by @update-pixi-lockfile[bot]
+   - Created 4 days ago, merged 4 days ago
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#468 build(deps): bump actions/checkout from 6 to 7](https://github.com/Simple-Robotics/proxsuite/pull/468) by @dependabot[bot]
+   - Created 4 days ago, merged 4 days ago
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#61 build(deps): bump actions/cache from 5 to 6](https://github.com/Simple-Robotics/nanoeigenpy/pull/61) by @dependabot[bot]
+   - Created 5 days ago, merged 4 days ago
+- [#63 build(deps): bump prefix-dev/setup-pixi from 0.9.6 to 0.10.0](https://github.com/Simple-Robotics/nanoeigenpy/pull/63) by @dependabot[bot]
+   - Created 5 days ago, merged 4 days ago
+- [#62 build(deps): bump actions/checkout from 6 to 7](https://github.com/Simple-Robotics/nanoeigenpy/pull/62) by @dependabot[bot]
+   - Created 5 days ago, merged 3 days ago
+- [#64 Update pixi lockfile](https://github.com/Simple-Robotics/nanoeigenpy/pull/64) by @update-pixi-lockfile[bot]
+   - Created 4 days ago, merged 3 days ago
+
+#### SIMPLE-ROBOTICS/LOIK
+
+- [#39 build(deps): bump actions/cache from 5 to 6](https://github.com/Simple-Robotics/LoIK/pull/39) by @dependabot[bot]
+   - Created 6 days ago, merged 6 days ago
+- [#40 Update pixi lockfile](https://github.com/Simple-Robotics/LoIK/pull/40) by @update-pixi-lockfile[bot]
+   - Created 4 days ago, merged 4 days ago
+
 
 ## 2026-06-29
 
