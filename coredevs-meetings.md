@@ -1,6 +1,134 @@
 # MAESTRO COREDEVS MEETING - Notes
 
 
+## 2026-07-20
+
+### News
+
+ - [name=JV] Pinocchio 4.1 release
+     - URDF 1.2 support
+     - Eigen5 support
+
+### Technical discussions
+
+ - [name=GS] script de release
+     - no need to create tarballs anymore with jrl-v2
+
+
+#### stack-of-tasks/pinocchio
+    
+ - Items to discuss:
+    - #2922 [Feature]: parse collision information in the MJCF by @TheotimeLH
+
+#### simple-robotics/proxsuite
+
+ - Items to discuss:
+   - [#472 New ROS release?](https://github.com/Simple-Robotics/proxsuite/issues/472) by @sea-bass
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#794 Refactor CMake with JRL CMake Modules v2](https://github.com/coal-library/coal/pull/794) by @ahoarau
+   - Created 220 days ago, updated 24 days ago, no status
+   - waiting for AH to come back 
+- [#822 Add GEOM_CUSTOM node type for user-defined shapes](https://github.com/coal-library/coal/pull/822) by @rjoomen
+   - Created 118 days ago, updated 20 days ago, no status
+   - Joris to check later
+- [#858 Improve the performances of BVH-BVH collision detection](https://github.com/coal-library/coal/pull/858) by @lmontaut
+   - Created 67 days ago, updated 63 days ago, no status
+   - Louis is still busy, Joris waitng for him to be available
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#612 Refactor CMake with JRL CMake Modules v2](https://github.com/stack-of-tasks/eigenpy/pull/612) by @ahoarau
+   - Created 220 days ago, updated 22 days ago, no status
+   - waiting for AH to come back 
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421) by @Cfather
+   - Created 670 days ago, updated 320 days ago, status to review
+- [#2784 Adding a spline joint to the joint collection](https://github.com/stack-of-tasks/pinocchio/pull/2784) by @MegMll
+   - Created 282 days ago, updated 2 days ago, status to review
+   - Major rework on the PR, optimisation/refactoring
+   - Scalar OK. Still working on the CASADI part
+- [#2880 test cppad: fix scalar type](https://github.com/stack-of-tasks/pinocchio/pull/2880) by @nim65s
+   - Created 78 days ago, updated 76 days ago, no status
+   - No work on it, for later
+- [#2891 Topic/aba second order derivatives](https://github.com/stack-of-tasks/pinocchio/pull/2891) by @shubhamsingh91
+   - Created 62 days ago, updated 11 days ago, no status
+   - No work on it, for later
+- [#2923 Port towards jrl-v2](https://github.com/stack-of-tasks/pinocchio/pull/2923) by @j-matheron
+   - Created 10 days ago, updated 10 days ago, no status
+   - Ongoing work by Jeanne. Remaining work on bindings, scalar options, cmake - another 2 weeks maybe
+- [#2925 build(deps): bump tarides/changelog-check-action from 3 to 4](https://github.com/stack-of-tasks/pinocchio/pull/2925) by @dependabot[bot]
+   - Created 6 hours ago, updated 6 hours ago, no status
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#437 Refactor CMake with JRL CMake Modules v2](https://github.com/Simple-Robotics/proxsuite/pull/437) by @ahoarau
+   - Created 220 days ago, updated 39 days ago, no status
+   - waiting for AH to come back 
+- [#469 ROS: update](https://github.com/Simple-Robotics/proxsuite/pull/469) by @nim65s
+   - Created 17 days ago, updated 17 days ago, no status
+   - Joris to check today, should be short
+- [#470 dockgen: init](https://github.com/Simple-Robotics/proxsuite/pull/470) by @nim65s
+   - Created 17 days ago, updated 11 days ago, no status
+   - Joris to check today, should be short
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#40 Refactor CMake with JRL CMake Modules v2 (v2)](https://github.com/Simple-Robotics/nanoeigenpy/pull/40) by @ahoarau
+   - Created 195 days ago, updated 47 days ago, no status
+   - waiting for AH to come back 
+
+### PR merged within the week
+
+### PR merged previous week
+
+#### COAL-LIBRARY/COAL
+
+- [#878 [pre-commit.ci] pre-commit autoupdate](https://github.com/coal-library/coal/pull/878) by @pre-commit-ci[bot]
+   - Created 6 days ago, merged 5 days ago
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#659 [pre-commit.ci] pre-commit autoupdate](https://github.com/stack-of-tasks/eigenpy/pull/659) by @pre-commit-ci[bot]
+   - Created 6 days ago, merged 5 days ago
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2919 build(deps): bump prefix-dev/setup-pixi from 0.9.6 to 0.10.0](https://github.com/stack-of-tasks/pinocchio/pull/2919) by @dependabot[bot]
+   - Created 7 days ago, merged 6 days ago
+- [#2915 CMake: dont require mathjax](https://github.com/stack-of-tasks/pinocchio/pull/2915) by @nim65s
+   - Created 13 days ago, merged 6 days ago
+   - Maybe check mathjax/doxygen offline
+- [#2920 [pre-commit.ci] pre-commit autoupdate](https://github.com/stack-of-tasks/pinocchio/pull/2920) by @pre-commit-ci[bot]
+   - Created 6 days ago, merged 5 days ago
+- [#2921 Rewrite changelog before release](https://github.com/stack-of-tasks/pinocchio/pull/2921) by @jorisv
+   - Created 5 days ago, merged 5 days ago
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#412 Update lockfile to consume pinocchio 4.1](https://github.com/Simple-Robotics/aligator/pull/412) by @j-matheron
+   - Created 4 days ago, merged 4 days ago
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#467 CMake: dont require mathjax](https://github.com/Simple-Robotics/proxsuite/pull/467) by @nim65s
+   - Created 13 days ago, merged 6 days ago
+   - Same as above
+- [#471 [pre-commit.ci] pre-commit autoupdate](https://github.com/Simple-Robotics/proxsuite/pull/471) by @pre-commit-ci[bot]
+   - Created 6 days ago, merged 5 days ago
+
+#### SIMPLE-ROBOTICS/LOIK
+
+- [#41 build(deps): bump prefix-dev/setup-pixi from 0.9.6 to 0.10.0](https://github.com/Simple-Robotics/LoIK/pull/41) by @dependabot[bot]
+   - Created 6 days ago, merged 6 days ago
+- [#42 [pre-commit.ci] pre-commit autoupdate](https://github.com/Simple-Robotics/LoIK/pull/42) by @pre-commit-ci[bot]
+   - Created 6 days ago, merged 5 days ago
+
 ## 2026-07-06
 
 ### News
