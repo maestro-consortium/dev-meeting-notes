@@ -1,5 +1,123 @@
 # MAESTRO COREDEVS MEETING - Notes
 
+## 2026-07-27
+
+### News
+
+ - [name=JV] Sortie de aligator 0.19.1
+     - Fix avec pinocchio 4
+     - Support de la dernière version de FMT
+ - [name=PG] ATOS ready to join the consortium
+ - [name=GS] candidature OPEN CNRS
+     - cmeel windows
+     - maestrOS
+
+### Technical discussions
+
+ - [name=GS] Releases
+    - Signatures from an identified member should be required
+        - Recommandation: explicit list all allowed public keys
+        - Recommandation: git tag -s
+        - Discussion: signed tarball
+            - sign the GH tarball ? need to verify it anyway, so better to generate the tarball ourselves ?
+            - is the GH tarball generation reproductible ? potentially could just do the tarball on our side and just publish the signature....to check
+            - other tools just generate and publish both the tarball and the signature
+        - Setup immutable release
+            - https://docs.github.com/en/code-security/concepts/supply-chain-security/immutable-releases
+            - prevent the release to be replaced
+            - CLI GH to verify signature
+        - Discussion: GPG vs SSH keys
+            - GPG already configured, can keep this solution
+
+    - Process:
+        1. tests:
+            - local ?
+            - ci ?
+            - extended ?
+        2. commit chore(s): jrl-release
+        3. tag: jrl-release
+        4. github release:
+            - manual ?
+                - lot of work, error prone
+            - local ?
+                - potential. update script to add the cli, useful if need to upload the signature
+            - github actions ? 
+                - better, as long as we do not have to upload a signature
+            - cost ?
+                - GS is already doing many releases, so automating this would be useful/timesaving. JV, only this so automatization is not yet beneficial
+            - attack surface, GH actions are increasing the attack surface.
+
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#794 Refactor CMake with JRL CMake Modules v2](https://github.com/coal-library/coal/pull/794) by @ahoarau
+   - Created 227 days ago, updated 31 days ago, no status
+- [#822 Add GEOM_CUSTOM node type for user-defined shapes](https://github.com/coal-library/coal/pull/822) by @rjoomen
+   - Created 125 days ago, updated 5 days ago, no status
+   - Joris to check this week
+- [#858 Improve the performances of BVH-BVH collision detection](https://github.com/coal-library/coal/pull/858) by @lmontaut
+   - Created 74 days ago, updated 70 days ago, no status
+- [#879 Fix hfield transform](https://github.com/coal-library/coal/pull/879) by @conlain-k
+   - Created 4 days ago, updated 4 days ago, no status
+   - Stand-by until Louis is back. Joris to reply, say it will be checked later 
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#612 Refactor CMake with JRL CMake Modules v2](https://github.com/stack-of-tasks/eigenpy/pull/612) by @ahoarau
+   - Created 227 days ago, updated 29 days ago, no status
+   - not yet
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421) by @Cfather
+   - Created 677 days ago, updated 327 days ago, status to review
+- [#2784 Adding a spline joint to the joint collection](https://github.com/stack-of-tasks/pinocchio/pull/2784) by @MegMll
+   - Created 289 days ago, updated 3 days ago, status ready
+   - waiting for replies from Megane, Pierre. Just 2 questions remaining but could be merged quickly.
+   - CI time for tests on Windows exploding.
+- [#2880 test cppad: fix scalar type](https://github.com/stack-of-tasks/pinocchio/pull/2880) by @nim65s
+   - Created 85 days ago, updated 83 days ago, no status
+- [#2891 Topic/aba second order derivatives](https://github.com/stack-of-tasks/pinocchio/pull/2891) by @shubhamsingh91
+   - Created 69 days ago, updated 18 days ago, no status
+- [#2923 Port towards jrl-v2](https://github.com/stack-of-tasks/pinocchio/pull/2923) by @j-matheron
+   - Created 17 days ago, updated 2 days ago, no status
+   - Advancing quite well (Jeanne) 
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#437 Refactor CMake with JRL CMake Modules v2](https://github.com/Simple-Robotics/proxsuite/pull/437) by @ahoarau
+   - Created 227 days ago, updated 3 minutes ago, no status
+   - Antoine working on it
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#40 Refactor CMake with JRL CMake Modules v2 (v2)](https://github.com/Simple-Robotics/nanoeigenpy/pull/40) by @ahoarau
+   - Created 202 days ago, updated 54 days ago, no status
+
+### PR merged within the week
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2925 build(deps): bump tarides/changelog-check-action from 3 to 4](https://github.com/stack-of-tasks/pinocchio/pull/2925) by @dependabot[bot]
+   - Created 7 days ago, merged 5 days ago
+- [#2927 Improve v3 to v4 deprecation documation](https://github.com/stack-of-tasks/pinocchio/pull/2927) by @jorisv
+   - Created 5 days ago, merged 4 days ago
+   - Documentation about a member that was deprecated since v1 but never stated. 
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#470 dockgen: init](https://github.com/Simple-Robotics/proxsuite/pull/470) by @nim65s
+   - Created 24 days ago, merged 6 days ago
+- [#469 ROS: update](https://github.com/Simple-Robotics/proxsuite/pull/469) by @nim65s
+   - Created 24 days ago, merged 6 days ago
+   - Guilhem as the rights now to update proxsuite on ROS. Was not updated to more than a year.
+
+#### SIMPLE-ROBOTICS/LOIK
+
+- [#43 build(deps): bump tarides/changelog-check-action from 3 to 4](https://github.com/Simple-Robotics/LoIK/pull/43) by @dependabot[bot]
+   - Created 6 days ago, merged 5 days ago
 
 ## 2026-07-20
 
