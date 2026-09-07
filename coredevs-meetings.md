@@ -1,5 +1,235 @@
 # MAESTRO COREDEVS MEETING - Notes
 
+
+## 2026-08-31
+
+### News
+
+ - [name=Pierre-Guillaume] Ongoing discussions with CNRS on the consortium agreement. ATOS and Equans interrested in joining. 
+
+### Technical discussions
+
+ - [name=Pierre-Guillaume] check rights/access/membership for repos, mailing lists
+     - github repos: do a reset/cleanup
+         - use safesettings to synch for all repos
+
+#### stack-of-tasks/pinocchio
+
+ - Items to discuss:
+   - [#2941 [Typo]: french spelling biais has spread instead of bias.](https://github.com/stack-of-tasks/pinocchio/issues/2941) by @Ipuch
+       - part of the creation of the backlog
+       - long-term issue, will not be solved soon
+       - requires alias on new attributes, deprecated the old one, lots of warnings for just a typo
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#794 Refactor CMake with JRL CMake Modules v2](https://github.com/coal-library/coal/pull/794) by @ahoarau
+   - Created 262 days ago, updated 23 days ago, no status
+   - all is green, ok for Joris, waiting for Guilhem feedback
+- [#822 Add GEOM_CUSTOM node type for user-defined shapes](https://github.com/coal-library/coal/pull/822) by @rjoomen
+   - Created 160 days ago, updated 2 days ago, no status
+   - Joris will check this later
+- [#858 Improve the performances of BVH-BVH collision detection](https://github.com/coal-library/coal/pull/858) by @lmontaut
+   - Created 109 days ago, updated 105 days ago, no status
+- [#879 Fix hfield transform](https://github.com/coal-library/coal/pull/879) by @conlain-k
+   - Created 39 days ago, updated 34 days ago, no status
+   - Joris will check with Louis when he is available
+- [#880 build(deps): bump actions/setup-python from 6 to 7](https://github.com/coal-library/coal/pull/880) by @dependabot[bot]
+   - Created 29 days ago, updated 2 days ago, no status
+- [#884 Fix ContactPatchResult::swapObjects normal and point indexing](https://github.com/coal-library/coal/pull/884) by @rjoomen
+   - Created 12 days ago, updated 2 days ago, no status
+   - Joris will check with Louis when he is available
+- [#885 Fix specialized shape to shape min distance update and enable_signed_distance flag ](https://github.com/coal-library/coal/pull/885) by @mjd3
+   - Created 6 days ago, updated 2 days ago, no status
+   - Joris will check with Louis when he is available
+- [#886 Replace undefined pointer arithmetic in octree b1/b2 with a node handle](https://github.com/coal-library/coal/pull/886) by @rjoomen
+   - Created 5 days ago, updated 2 days ago, no status
+   - Joris will check with Louis when he is available (seems overkill - to discuss)
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#612 Refactor CMake with JRL CMake Modules v2](https://github.com/stack-of-tasks/eigenpy/pull/612) by @ahoarau
+   - Created 262 days ago, updated 23 days ago, no status
+   - all is green, some comments from Guilhem, to check is mergeable
+- [#661 build(deps): bump tarides/changelog-check-action from 3 to 4](https://github.com/stack-of-tasks/eigenpy/pull/661) by @dependabot[bot]
+   - Created 29 days ago, updated 2 days ago, no status
+   - merging
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421) by @Cfather
+   - Created 712 days ago, updated 362 days ago, status to review
+- [#2784 Adding a spline joint to the joint collection](https://github.com/stack-of-tasks/pinocchio/pull/2784) by @MegMll
+   - Created 324 days ago, updated 3 days ago, status ready
+   - Green, can be merged (but CI is overwhelmed currently because too many PRs0)
+- [#2880 test cppad: fix scalar type](https://github.com/stack-of-tasks/pinocchio/pull/2880) by @nim65s
+   - Created 120 days ago, updated 118 days ago, no status
+   - No update, no need ?
+- [#2891 Topic/aba second order derivatives](https://github.com/stack-of-tasks/pinocchio/pull/2891) by @shubhamsingh91
+   - Created 104 days ago, updated 27 days ago, no status
+   - No update
+- [#2923 Port towards jrl-v2](https://github.com/stack-of-tasks/pinocchio/pull/2923) by @j-matheron
+   - Created 52 days ago, updated 4 days ago, no status
+   - Almost 90% complete, added benchmarking, examples, ...
+   - Finder cmake modules added (mpfr, cppad, ..)
+- [#2932 bindings/python: add float32 bindings](https://github.com/stack-of-tasks/pinocchio/pull/2932) by @Sergim96
+   - Created 19 days ago, updated 6 days ago, no status
+   - Can be closed (PR splitted in 2)
+- [#2934 fix(mjcf): propagate fixed-base root body pos/quat and inertia](https://github.com/stack-of-tasks/pinocchio/pull/2934) by @isaka1022
+   - Created 14 days ago, updated 2 days ago, no status
+   - AI-generated PR / fix from an issue opened by Megane
+   - Should be added in AI contributors ?
+- [#2937 Fix GeometryModel::collisionPairMapping not updated on removeGeometryObject](https://github.com/stack-of-tasks/pinocchio/pull/2937) by @benjiiDELPECH
+   - Created 9 days ago, updated 2 days ago, no status
+   - 
+- [#2940 Fix aligned map comparison with GCC 10](https://github.com/stack-of-tasks/pinocchio/pull/2940) by @tandede
+   - Created 6 days ago, updated 2 days ago, no status
+   - Another minimalistic AI agent PR
+   - Need to create the section for AI contributors 
+- [#2942 bindings/python: add float32 bindings](https://github.com/stack-of-tasks/pinocchio/pull/2942) by @Sergim96
+   - Created 2 days ago, updated 2 days ago, no status
+- [#2943 Adding a constant length constraint to the constraint collection](https://github.com/stack-of-tasks/pinocchio/pull/2943) by @Ipuch
+   - Created 2 days ago, updated 2 days ago, no status
+   - Another AI agent, this one with more content, impact constraints so need review also by Louis/Yann
+- [#2944 build(deps): bump prefix-dev/setup-pixi from 0.10.1 to 0.10.2](https://github.com/stack-of-tasks/pinocchio/pull/2944) by @dependabot[bot]
+   - Created 5 hours ago, updated 5 hours ago, no status
+   - To be checked/merged later
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#437 Refactor CMake with JRL CMake Modules v2](https://github.com/Simple-Robotics/proxsuite/pull/437) by @ahoarau
+   - Created 262 days ago, updated 19 days ago, no status
+   - Also green, check with Guilhem if can be merged
+- [#477 Fix/dense box i scaled not reset on keep](https://github.com/Simple-Robotics/proxsuite/pull/477) by @FranekStark
+   - Created 6 days ago, updated 6 days ago, no status
+   - To br discussed with Lucas
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#40 Refactor CMake with JRL CMake Modules v2 (v2)](https://github.com/Simple-Robotics/nanoeigenpy/pull/40) by @ahoarau
+   - Created 237 days ago, updated 22 days ago, no status
+   - Also green, check with Guilhem if can be merged
+- [#65 build(deps): bump tarides/changelog-check-action from 3 to 4](https://github.com/Simple-Robotics/nanoeigenpy/pull/65) by @dependabot[bot]
+   - Created 30 days ago, updated 2 days ago, no status
+   - Process ongoing 
+
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#887 nix: update eigenpy cache](https://github.com/coal-library/coal/pull/887) by @nim65s
+   - Created 4 days ago, merged 3 days ago
+   - Nix maintenance
+- [#882 Update pixi lockfile](https://github.com/coal-library/coal/pull/882) by @update-pixi-lockfile[bot]
+   - Created 29 days ago, merged 2 days ago
+   - maintenance
+- [#881 build(deps): bump tarides/changelog-check-action from 3 to 4](https://github.com/coal-library/coal/pull/881) by @dependabot[bot]
+   - Created 29 days ago, merged 2 days ago
+   - maintenance
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#662 Revert "nix: sync submodule"](https://github.com/stack-of-tasks/eigenpy/pull/662) by @nim65s
+   - Created 4 days ago, merged 4 days ago
+   - maintenance
+- [#660 Update pixi lockfile](https://github.com/stack-of-tasks/eigenpy/pull/660) by @update-pixi-lockfile[bot]
+   - Created 29 days ago, merged 2 days ago
+   - maintenance
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2928 Update pixi lockfile](https://github.com/stack-of-tasks/pinocchio/pull/2928) by @update-pixi-lockfile[bot]
+   - Created 29 days ago, merged 6 days ago
+   - maintenance
+- [#2933 doc: update "How to install Pinocchio"](https://github.com/stack-of-tasks/pinocchio/pull/2933) by @nim65s
+   - Created 17 days ago, merged 5 days ago
+   - Doxygen documentation update
+- [#2938 Introduced Scalar in Hlog3 to enable codegen](https://github.com/stack-of-tasks/pinocchio/pull/2938) by @cmastalli
+   - Created 7 days ago, merged 5 days ago
+   - Fix on bindings
+- [#2935 example: fixing ellipsoid-joint python example](https://github.com/stack-of-tasks/pinocchio/pull/2935) by @Ipuch
+   - Created 10 days ago, merged 4 days ago
+   - Fixed an example (try/except in a test that hid the bug)
+- [#2939 bindings/python: make bindings scalar-generic](https://github.com/stack-of-tasks/pinocchio/pull/2939) by @Sergim96
+   - Created 6 days ago, merged 3 days ago
+   - First part of the PR that was split in 2
+- [#2936 typo: biais is bias in english](https://github.com/stack-of-tasks/pinocchio/pull/2936) by @Ipuch
+   - Created 10 days ago, merged 2 days ago
+   - Fixed the typo in doc/readme only 
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#415 Update pixi lockfile](https://github.com/Simple-Robotics/aligator/pull/415) by @update-pixi-lockfile[bot]
+   - Created 29 days ago, merged 2 days ago
+   - maintenance
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#476 Fix: initialize active_set_up/low in Workspace](https://github.com/Simple-Robotics/proxsuite/pull/476) by @Lucas-Haubert
+   - Created 21 days ago, merged 6 days ago
+   - Bug due to undefined on first run
+- [#475 build(deps): bump tarides/changelog-check-action from 3 to 4](https://github.com/Simple-Robotics/proxsuite/pull/475) by @dependabot[bot]
+   - Created 29 days ago, merged 2 days ago
+   - maintenance
+- [#474 build(deps): bump actions/checkout from 6 to 7](https://github.com/Simple-Robotics/proxsuite/pull/474) by @dependabot[bot]
+   - Created 29 days ago, merged 2 days ago
+   - maintenance
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#66 Update pixi lockfile](https://github.com/Simple-Robotics/nanoeigenpy/pull/66) by @update-pixi-lockfile[bot]
+   - Created 29 days ago, merged 2 days ago
+   - maintenance
+
+#### SIMPLE-ROBOTICS/LOIK
+
+- [#44 Update pixi lockfile](https://github.com/Simple-Robotics/LoIK/pull/44) by @update-pixi-lockfile[bot]
+   - Created 29 days ago, merged 2 days ago
+   - maintenance
+- [#45 build(deps): bump prefix-dev/setup-pixi from 0.10.0 to 0.10.1](https://github.com/Simple-Robotics/LoIK/pull/45) by @dependabot[bot]
+   - Created 20 days ago, merged 2 days ago
+   - maintenance
+
+### PR merged within the week 24-08-2026
+
+nothing
+
+### PR merged within the week 17-08-2026
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2931 build(deps): bump prefix-dev/setup-pixi from 0.10.0 to 0.10.1](https://github.com/stack-of-tasks/pinocchio/pull/2931) by @dependabot[bot]
+   - Created 7 days ago, merged 5 days ago
+   - maintenance
+
+### PR merged within the week 10-08-2026
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2929 Attaching a massless link with a fixed joint changes the parent body's center of mass](https://github.com/stack-of-tasks/pinocchio/pull/2929) by @sugikazu75
+   - Created 7 days ago, merged 3 days ago
+   - Problem of precision
+
+
+### PR merged within the week 3-08-2026
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#413 Don't test crocoddyl support in release environment](https://github.com/Simple-Robotics/aligator/pull/413) by @jorisv
+   - Created 6 days ago, merged 6 days ago
+   - Set of fixes so that same version of pinocchio when using both crocodyl and aligator
+- [#414 Update crocoddyl version](https://github.com/Simple-Robotics/aligator/pull/414) by @jorisv
+   - Created 5 days ago, merged 4 days ago
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#473 pyproject: remove [build-system]](https://github.com/Simple-Robotics/proxsuite/pull/473) by @nim65s
+   - Created 6 days ago, merged 6 days ago
+   - pip release via Cmeel
+
 ## 2026-07-27
 
 ### News
