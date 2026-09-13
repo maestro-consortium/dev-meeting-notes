@@ -1,5 +1,169 @@
 # MAESTRO COREDEVS MEETING - Notes
 
+#
+## 2026-09-07
+
+### News
+
+ - [name=PG] Avancées sur le consortium
+ - [name=Guilhem] OPEN 1ère phase OK
+     - mettre dans la roadmap technique maestro
+
+### Technical discussions
+
+ - [name=Joris] Merge PR jrl-v2 (eigenpy, nanoeigenpy, coal, proxsuite) ?
+     - mettre dans la roadmap technique maestro
+     - il y aura ensuite pinocchio
+     - TODO Guilhem: valider tout ça dans nixpkgs
+ - [name=Joris] New contributing.md discussion
+ - [name=Joris] Nanobind bindings distribution
+     - Pb: besoin de pouvoir diffuser les paquets binaires des bindings python soit avec boost (default) soit nanobind. 
+         - besoin que ca soit exclusif (possible d'installer un des deux mais pas les deux)
+         - c'est deja gere dans Nix, pas possible encore dans cmeel
+     - Joris need to work on Coal 4 release
+     - TODO Guilhem: nix + cmeel: paquets -bp / -nb, et le paquet non suffixé est un alias qu’on switchera plus tard
+ - [name=Joris] Testing automation tools
+     - github queues : no merge commit, no rebase
+         - not considered
+     - testing mergify
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#794 Refactor CMake with JRL CMake Modules v2](https://github.com/coal-library/coal/pull/794) by @ahoarau
+   - Created 266 days ago, updated 27 days ago, no status
+- [#822 Add GEOM_CUSTOM node type for user-defined shapes](https://github.com/coal-library/coal/pull/822) by @rjoomen
+   - Created 164 days ago, updated 1 days ago, no status
+- [#858 Improve the performances of BVH-BVH collision detection](https://github.com/coal-library/coal/pull/858) by @lmontaut
+   - Created 113 days ago, updated 109 days ago, no status
+- [#879 Fix hfield transform](https://github.com/coal-library/coal/pull/879) by @conlain-k
+   - Created 43 days ago, updated 38 days ago, no status
+- [#880 build(deps): bump actions/setup-python from 6 to 7](https://github.com/coal-library/coal/pull/880) by @dependabot[bot]
+   - Created 34 days ago, updated 2 days ago, no status
+- [#884 Fix ContactPatchResult::swapObjects normal and point indexing](https://github.com/coal-library/coal/pull/884) by @rjoomen
+   - Created 16 days ago, updated 1 days ago, no status
+- [#885 Fix specialized shape to shape min distance update and enable_signed_distance flag ](https://github.com/coal-library/coal/pull/885) by @mjd3
+   - Created 10 days ago, updated 3 days ago, no status
+- [#886 Replace undefined pointer arithmetic in octree b1/b2 with a node handle](https://github.com/coal-library/coal/pull/886) by @rjoomen
+   - Created 10 days ago, updated 1 days ago, no status
+- [#889 Update pixi lockfile](https://github.com/coal-library/coal/pull/889) by @update-pixi-lockfile[bot]
+   - Created 2 days ago, updated 2 days ago, no status
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#612 Refactor CMake with JRL CMake Modules v2](https://github.com/stack-of-tasks/eigenpy/pull/612) by @ahoarau
+   - Created 266 days ago, updated 27 days ago, no status
+- [#664 build(deps): bump prefix-dev/setup-pixi from 0.10.0 to 0.10.2](https://github.com/stack-of-tasks/eigenpy/pull/664) by @dependabot[bot]
+   - Created 2 days ago, updated 1 days ago, no status
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421) by @Cfather
+   - Created 716 days ago, updated 366 days ago, status to review
+- [#2880 test cppad: fix scalar type](https://github.com/stack-of-tasks/pinocchio/pull/2880) by @nim65s
+   - Created 125 days ago, updated 122 days ago, no status
+- [#2891 Topic/aba second order derivatives](https://github.com/stack-of-tasks/pinocchio/pull/2891) by @shubhamsingh91
+   - Created 108 days ago, updated 32 days ago, no status
+- [#2923 Port towards jrl-v2](https://github.com/stack-of-tasks/pinocchio/pull/2923) by @j-matheron
+   - Created 56 days ago, updated 8 days ago, no status
+- [#2943 Adding a constant length constraint to the constraint collection](https://github.com/stack-of-tasks/pinocchio/pull/2943) by @Ipuch
+   - Created 6 days ago, updated 6 days ago, no status
+   - AI-generated, did follow the rules
+   - Joris checking papers on contraints, ongoing review
+- [#2947 Improve contributing guide, add an AI-assisted policy and a code of conduct](https://github.com/stack-of-tasks/pinocchio/pull/2947) by @jorisv
+   - Created 18 hours ago, updated 20 minutes ago, no status
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#437 Refactor CMake with JRL CMake Modules v2](https://github.com/Simple-Robotics/proxsuite/pull/437) by @ahoarau
+   - Created 266 days ago, updated 23 days ago, no status
+- [#477 Fix/dense box i scaled not reset on keep](https://github.com/Simple-Robotics/proxsuite/pull/477) by @FranekStark
+   - Created 10 days ago, updated 10 days ago, no status
+   - Waiting for Lucas to check this
+- [#478 build(deps): bump JamesIves/github-pages-deploy-action from 4.8.0 to 4.9.0](https://github.com/Simple-Robotics/proxsuite/pull/478) by @dependabot[bot]
+   - Created 2 days ago, updated 1 days ago, no status
+- [#479 Fix `update()` API for box-constrained dense QPs](https://github.com/Simple-Robotics/proxsuite/pull/479) by @pierfabre
+   - Created 1 days ago, updated 1 days ago, no status
+   - Joris to check with Pierre today
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#40 Refactor CMake with JRL CMake Modules v2 (v2)](https://github.com/Simple-Robotics/nanoeigenpy/pull/40) by @ahoarau
+   - Created 241 days ago, updated 26 days ago, no status
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#882 Update pixi lockfile](https://github.com/coal-library/coal/pull/882) by @update-pixi-lockfile[bot]
+   - Created 34 days ago, merged 6 days ago
+- [#881 build(deps): bump tarides/changelog-check-action from 3 to 4](https://github.com/coal-library/coal/pull/881) by @dependabot[bot]
+   - Created 34 days ago, merged 6 days ago
+- [#888 build(deps): bump prefix-dev/setup-pixi from 0.10.0 to 0.10.2](https://github.com/coal-library/coal/pull/888) by @dependabot[bot]
+   - Created 3 days ago, merged 2 days ago
+- [#890 Close the unbalanced diagnostic push in narrowphase.h](https://github.com/coal-library/coal/pull/890) by @rjoomen
+   - Created 2 days ago, merged 2 days ago
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#660 Update pixi lockfile](https://github.com/stack-of-tasks/eigenpy/pull/660) by @update-pixi-lockfile[bot]
+   - Created 34 days ago, merged 6 days ago
+- [#661 build(deps): bump tarides/changelog-check-action from 3 to 4](https://github.com/stack-of-tasks/eigenpy/pull/661) by @dependabot[bot]
+   - Created 33 days ago, merged 3 days ago
+- [#663 Update pixi lockfile](https://github.com/stack-of-tasks/eigenpy/pull/663) by @update-pixi-lockfile[bot]
+   - Created 2 days ago, merged 1 days ago
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2940 Fix aligned map comparison with GCC 10](https://github.com/stack-of-tasks/pinocchio/pull/2940) by @tandede
+   - Created 10 days ago, merged 3 days ago
+- [#2784 Adding a spline joint to the joint collection](https://github.com/stack-of-tasks/pinocchio/pull/2784) by @MegMll
+   - Created 328 days ago, merged 3 days ago
+- [#2934 fix(mjcf): propagate fixed-base root body pos/quat and inertia](https://github.com/stack-of-tasks/pinocchio/pull/2934) by @isaka1022
+   - Created 18 days ago, merged 2 days ago
+- [#2945 Update pixi lockfile](https://github.com/stack-of-tasks/pinocchio/pull/2945) by @update-pixi-lockfile[bot]
+   - Created 3 days ago, merged 2 days ago
+- [#2942 bindings/python: add float32 bindings](https://github.com/stack-of-tasks/pinocchio/pull/2942) by @Sergim96
+   - Created 6 days ago, merged 1 days ago
+- [#2937 Fix GeometryModel::collisionPairMapping not updated on removeGeometryObject](https://github.com/stack-of-tasks/pinocchio/pull/2937) by @benjiiDELPECH
+   - Created 13 days ago, merged 17 hours ago
+- [#2944 build(deps): bump prefix-dev/setup-pixi from 0.10.1 to 0.10.2](https://github.com/stack-of-tasks/pinocchio/pull/2944) by @dependabot[bot]
+   - Created 4 days ago, merged 9 hours ago
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#415 Update pixi lockfile](https://github.com/Simple-Robotics/aligator/pull/415) by @update-pixi-lockfile[bot]
+   - Created 34 days ago, merged 6 days ago
+- [#416 Update pixi lockfile](https://github.com/Simple-Robotics/aligator/pull/416) by @update-pixi-lockfile[bot]
+   - Created 2 days ago, merged 2 days ago
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#474 build(deps): bump actions/checkout from 6 to 7](https://github.com/Simple-Robotics/proxsuite/pull/474) by @dependabot[bot]
+   - Created 33 days ago, merged 6 days ago
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#66 Update pixi lockfile](https://github.com/Simple-Robotics/nanoeigenpy/pull/66) by @update-pixi-lockfile[bot]
+   - Created 34 days ago, merged 6 days ago
+- [#65 build(deps): bump tarides/changelog-check-action from 3 to 4](https://github.com/Simple-Robotics/nanoeigenpy/pull/65) by @dependabot[bot]
+   - Created 34 days ago, merged 4 days ago
+- [#67 build(deps): bump prefix-dev/setup-pixi from 0.10.0 to 0.10.2](https://github.com/Simple-Robotics/nanoeigenpy/pull/67) by @dependabot[bot]
+   - Created 3 days ago, merged 3 days ago
+- [#68 Update pixi lockfile](https://github.com/Simple-Robotics/nanoeigenpy/pull/68) by @update-pixi-lockfile[bot]
+   - Created 2 days ago, merged 2 days ago
+
+#### SIMPLE-ROBOTICS/LOIK
+
+- [#44 Update pixi lockfile](https://github.com/Simple-Robotics/LoIK/pull/44) by @update-pixi-lockfile[bot]
+   - Created 34 days ago, merged 6 days ago
+- [#45 build(deps): bump prefix-dev/setup-pixi from 0.10.0 to 0.10.1](https://github.com/Simple-Robotics/LoIK/pull/45) by @dependabot[bot]
+   - Created 25 days ago, merged 6 days ago
+- [#46 build(deps): bump prefix-dev/setup-pixi from 0.10.1 to 0.10.2](https://github.com/Simple-Robotics/LoIK/pull/46) by @dependabot[bot]
+   - Created 4 days ago, merged 4 days ago
+- [#47 Update pixi lockfile](https://github.com/Simple-Robotics/LoIK/pull/47) by @update-pixi-lockfile[bot]
+   - Created 2 days ago, merged 2 days ago
 
 ## 2026-08-31
 
