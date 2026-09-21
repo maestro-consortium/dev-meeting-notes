@@ -1,6 +1,137 @@
 # MAESTRO COREDEVS MEETING - Notes
 
-#
+
+## 2026-09-14
+
+### News
+
+ - [name=Pierre-Guillaume] Finalizing the consortium contract is slow. Preparing a "pre-STC" in order to not let the industrial partners waiting. Planning for end of october (unlikely)  to mid-november(hopefully) 
+ - [name=Pierre-Guillaume] Ongoing work on the MAESTRO roadmaps (technical, research, ...). Need to conssolidate for the pre-STC, present a v1 to the partners.
+ - [name=JV] Mise en place d'un code_of_conduct et de règles de contributions communes sur tous les repos maestro
+
+### Technical discussions
+
+ - [name=Pierre-Guillaume] Need to discuss the technical roadmap priorities, how to identify what are the constraints of the people working on different parts of the stack, and how to synch the developments. Discussion on nanobind (can be a blueprint for other pending devs like integrating jrl-v2)
+  
+#### stack-of-tasks/pinocchio
+
+ - Items to discuss:
+   - [#2949 Memory allocation issues for large number of DOFs (~1000)](https://github.com/stack-of-tasks/pinocchio/issues/2949) by @RubendeBruin
+   - [#2948 [Bug] Possible sign error in beta_alt Taylor expansion for Quaternion overload of log6](https://github.com/stack-of-tasks/pinocchio/issues/2948) by @BeichenZhuo
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#794 Refactor CMake with JRL CMake Modules v2](https://github.com/coal-library/coal/pull/794) by @ahoarau
+   - Created 276 days ago, updated 3 days ago, no status
+   - Discussed, current priority
+- [#822 Add GEOM_CUSTOM node type for user-defined shapes](https://github.com/coal-library/coal/pull/822) by @rjoomen
+   - Created 174 days ago, updated 4 days ago, no status
+   - Joris looking into this. Need to investigate.
+- [#858 Improve the performances of BVH-BVH collision detection](https://github.com/coal-library/coal/pull/858) by @lmontaut
+   - Created 123 days ago, updated 3 days ago, no status
+   - Louis to rebase, Joris to check, merge if ok
+- [#879 Fix hfield transform](https://github.com/coal-library/coal/pull/879) by @conlain-k
+   - Created 53 days ago, updated 48 days ago, no status
+   - Louis to review
+- [#884 Fix ContactPatchResult::swapObjects normal and point indexing](https://github.com/coal-library/coal/pull/884) by @rjoomen
+   - Created 26 days ago, updated 4 days ago, no status
+   - Louis to review, Guilhem update Nix CI
+- [#885 Fix specialized shape to shape min distance update and enable_signed_distance flag ](https://github.com/coal-library/coal/pull/885) by @mjd3
+   - Created 20 days ago, updated 13 days ago, no status
+   - Louis to review when time allows
+- [#886 Replace undefined pointer arithmetic in octree b1/b2 with a node handle](https://github.com/coal-library/coal/pull/886) by @rjoomen
+   - Created 19 days ago, updated 4 days ago, no status
+   - Architectural changes, need to investigate (when time allows)
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#612 Refactor CMake with JRL CMake Modules v2](https://github.com/stack-of-tasks/eigenpy/pull/612) by @ahoarau
+   - Created 276 days ago, updated 37 days ago, no status
+- [#664 build(deps): bump prefix-dev/setup-pixi from 0.10.0 to 0.10.2](https://github.com/stack-of-tasks/eigenpy/pull/664) by @dependabot[bot]
+   - Created 11 days ago, updated 11 days ago, no status
+   - Joris to launch
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421) by @Cfather
+   - Created 726 days ago, updated 375 days ago, status to review
+- [#2880 test cppad: fix scalar type](https://github.com/stack-of-tasks/pinocchio/pull/2880) by @nim65s
+   - Created 134 days ago, updated 132 days ago, no status
+   - Jeanne checks it this week
+- [#2891 Topic/aba second order derivatives](https://github.com/stack-of-tasks/pinocchio/pull/2891) by @shubhamsingh91
+   - Created 117 days ago, updated 2 days ago, no status
+   - Joris is investigating, need some checks on memory allocation
+- [#2923 Port towards jrl-v2](https://github.com/stack-of-tasks/pinocchio/pull/2923) by @j-matheron
+   - Created 66 days ago, updated 3 days ago, no status
+- [#2943 Adding a constant length constraint to the constraint collection](https://github.com/stack-of-tasks/pinocchio/pull/2943) by @Ipuch
+   - Created 16 days ago, updated 2 days ago, no status
+   - Joris completed the review, few more checks and should be mergeable
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#437 Refactor CMake with JRL CMake Modules v2](https://github.com/Simple-Robotics/proxsuite/pull/437) by @ahoarau
+   - Created 276 days ago, updated 33 days ago, no status
+- [#477 Fix/dense box i scaled not reset on keep](https://github.com/Simple-Robotics/proxsuite/pull/477) by @FranekStark
+   - Created 20 days ago, updated 20 days ago, no status
+   - Lucas to review
+- [#478 build(deps): bump JamesIves/github-pages-deploy-action from 4.8.0 to 4.9.0](https://github.com/Simple-Robotics/proxsuite/pull/478) by @dependabot[bot]
+   - Created 12 days ago, updated 11 days ago, no status
+   - Joris is merging
+- [#479 Fix `update()` API for box-constrained dense QPs](https://github.com/Simple-Robotics/proxsuite/pull/479) by @pierfabre
+   - Created 11 days ago, updated 11 days ago, no status
+   - Lucas to review
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#40 Refactor CMake with JRL CMake Modules v2 (v2)](https://github.com/Simple-Robotics/nanoeigenpy/pull/40) by @ahoarau
+   - Created 251 days ago, updated 36 days ago, no status
+   - Pending
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#889 Update pixi lockfile](https://github.com/coal-library/coal/pull/889) by @update-pixi-lockfile[bot]
+   - Created 12 days ago, merged 5 days ago
+- [#880 build(deps): bump actions/setup-python from 6 to 7](https://github.com/coal-library/coal/pull/880) by @dependabot[bot]
+   - Created 43 days ago, merged 5 days ago
+- [#891 Improve contributing guide, add an AI-assisted policy and a code of conduct](https://github.com/coal-library/coal/pull/891) by @jorisv
+   - Created 5 days ago, merged 4 days ago
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#666 Improve contributing guide, add an AI-assisted policy and a code of conduct](https://github.com/stack-of-tasks/eigenpy/pull/666) by @j-matheron
+   - Created 5 days ago, merged 5 days ago
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2947 Improve contributing guide, add an AI-assisted policy and a code of conduct](https://github.com/stack-of-tasks/pinocchio/pull/2947) by @jorisv
+   - Created 10 days ago, merged 6 days ago
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#417 Improve contributing guide, add an AI-assisted policy and a code of conduct](https://github.com/Simple-Robotics/aligator/pull/417) by @jorisv
+   - Created 5 days ago, merged 4 days ago
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#480 Improve contributing guide, add an AI-assisted policy and a code of conduct](https://github.com/Simple-Robotics/proxsuite/pull/480) by @j-matheron
+   - Created 5 days ago, merged 4 days ago
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#69 Improve contributing guide, add an AI-assisted policy and a code of conduct](https://github.com/Simple-Robotics/nanoeigenpy/pull/69) by @j-matheron
+   - Created 5 days ago, merged 5 days ago
+
+#### SIMPLE-ROBOTICS/LOIK
+
+- [#48 Improve contributing guide, add an AI-assisted policy and a code of conduct](https://github.com/Simple-Robotics/LoIK/pull/48) by @jorisv
+   - Created 5 days ago, merged 4 days ago
+
+
+
 ## 2026-09-07
 
 ### News
