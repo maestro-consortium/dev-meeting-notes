@@ -1,5 +1,121 @@
 # MAESTRO COREDEVS MEETING - Notes
 
+
+## 2026-09-28
+
+### News
+
+ - [name=GS] example-robot-data -> example-robot-descriptions
+     - request by ros distro
+     - should we change everywhere the name ? lots of work
+     - almost the same name as the one of Stephane (robot-description) - loaded at runtime
+     - why change for no gain - does not improve anything - keep the change only for ROS for now
+     - future of the repo, may become too large at some point
+
+### Technical discussions
+
+ - [name=JV] canal matrix for coredevs, maestro support ?
+     - open to industrial partners also
+ - [name=GS] CONTRIBUTING.md not in the root of the project ?
+     - also check the link in the template, add checkbox
+
+#### coal-library/coal
+
+ - Items to discuss:
+   - [#894 [Bug]: Box support function uses an erroneous conditional function-local static variable](https://github.com/coal-library/coal/issues/894) by @SeanCurtis-TRI
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+- [#794 Refactor CMake with JRL CMake Modules v2](https://github.com/coal-library/coal/pull/794) by @ahoarau
+   - Created 287 days ago, updated 15 days ago, no status
+       - no update
+- [#822 Add GEOM_CUSTOM node type for user-defined shapes](https://github.com/coal-library/coal/pull/822) by @rjoomen
+   - Created 185 days ago, updated 6 days ago, no status
+       - no update, no time to discuss with Louis
+- [#858 Improve the performances of BVH-BVH collision detection](https://github.com/coal-library/coal/pull/858) by @lmontaut
+   - Created 134 days ago, updated 3 days ago, no status
+       - Joris started the review, need to discuss with Louis
+- [#879 Fix hfield transform](https://github.com/coal-library/coal/pull/879) by @conlain-k
+   - Created 64 days ago, updated 10 days ago, no status
+   - Assigned to Louis, waiting
+- [#885 Fix specialized shape to shape min distance update and enable_signed_distance flag ](https://github.com/coal-library/coal/pull/885) by @mjd3
+   - Created 31 days ago, updated 10 days ago, no status
+   - Joris to check if he or Louis do the review
+- [#886 Replace undefined pointer arithmetic in octree b1/b2 with a node handle](https://github.com/coal-library/coal/pull/886) by @rjoomen
+   - Created 31 days ago, updated 10 days ago, no status
+   - Pending
+- [#895 Fix misuse of `static` in the getShapeSupport(Box) method](https://github.com/coal-library/coal/pull/895) by @SeanCurtis-TRI
+   - Created 2 days ago, updated 20 hours ago, no status
+   - Merged now
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#612 Refactor CMake with JRL CMake Modules v2](https://github.com/stack-of-tasks/eigenpy/pull/612) by @ahoarau
+   - Created 287 days ago, updated 48 days ago, no status
+   - No news
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421) by @Cfather
+   - Created 737 days ago, updated 387 days ago, status to review
+- [#2880 test cppad: fix scalar type](https://github.com/stack-of-tasks/pinocchio/pull/2880) by @nim65s
+   - Created 146 days ago, updated 3 days ago, no status
+   - Jeanne to check, redo the docker containers to check the different versions of the compilers used.
+- [#2891 Topic/aba second order derivatives](https://github.com/stack-of-tasks/pinocchio/pull/2891) by @shubhamsingh91
+   - Created 129 days ago, updated 13 days ago, no status
+   - No news, cannot push on the repo/branch, stopped for now
+- [#2923 Port towards jrl-v2](https://github.com/stack-of-tasks/pinocchio/pull/2923) by @j-matheron
+   - Created 77 days ago, updated 15 days ago, no status
+   - Waiting for other jrl-v2 to be merged
+- [#2953 Topic/data struct allocation](https://github.com/stack-of-tasks/pinocchio/pull/2953) by @j-matheron
+   - Created 6 days ago, updated 8 minutes ago, no status
+   - Merged. Structure to switch strategy for tensor allocation (to prevent large allocations)
+- [#2956 Adding an ellipsoid constraint to the constraint collection](https://github.com/stack-of-tasks/pinocchio/pull/2956) by @Ipuch
+   - Created 21 hours ago, updated 21 hours ago, no status
+   - Joris to review
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#437 Refactor CMake with JRL CMake Modules v2](https://github.com/Simple-Robotics/proxsuite/pull/437) by @ahoarau
+   - Created 287 days ago, updated 1 hours ago, no status
+   - Antoine proposed to rewrite history
+   - Mandatory if passwords or large data, but not blocking
+   - Need to check if pixi lock file changeda lot ?
+   - waiting for a week, merged if no update
+- [#477 Fix/dense box i scaled not reset on keep](https://github.com/Simple-Robotics/proxsuite/pull/477) by @FranekStark
+   - Created 31 days ago, updated 10 days ago, no status
+   - Lucas will check next week
+- [#479 Fix `update()` API for box-constrained dense QPs](https://github.com/Simple-Robotics/proxsuite/pull/479) by @pierfabre
+   - Created 22 days ago, updated 6 days ago, no status
+   - Waiting feedback from Lucas. Also do this in init() ?
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#40 Refactor CMake with JRL CMake Modules v2 (v2)](https://github.com/Simple-Robotics/nanoeigenpy/pull/40) by @ahoarau
+   - Created 262 days ago, updated 47 days ago, no status
+   - Nothing new
+
+
+### PR merged within the week
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2954 Add cancel-in-progress to CI workflows that are missing it](https://github.com/stack-of-tasks/pinocchio/pull/2954) by @sea-bass
+   - Created 6 days ago, merged 3 days ago
+   - Prevent CI jobs to accumulate, saves time
+- [#2943 Adding a constant length constraint to the constraint collection](https://github.com/stack-of-tasks/pinocchio/pull/2943) by @Ipuch
+   - Created 27 days ago, merged 1 days ago
+- [#2952 Add functions to load MJCF from XML content](https://github.com/stack-of-tasks/pinocchio/pull/2952) by @sea-bass
+   - Created 6 days ago, merged 18 hours ago
+   - Will need to change the APIs for loading models with builder pattern, not function ovrlaods
+- [#2955 fix: sign error in beta_alt calculation](https://github.com/stack-of-tasks/pinocchio/pull/2955) by @BeichenZhuo
+   - Created 1 days ago, merged 10 hours ago
+   - sign in Taylor expansion
+   - AI agent
+
 ## 2026-09-21
 
 ### News
