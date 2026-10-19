@@ -1,6 +1,164 @@
 # MAESTRO COREDEVS MEETING - Notes
 
 
+## 2026-10-05
+
+### News
+
+ - [name=Pierre-Guillaume] Matrix space created for the consortium. working on a note that describes organization/rules for this space.
+     - pour coredevs, annomce weekly par email
+     - 1 room par logiciel ? quid des rooms publiques ailleurs
+     - le space Maestro seulement pour le consortium, prive.
+ - [name=Pierre-Guillaume] Ongoing discussions with CNRS on the consortium agreement, updated the voting rules in the STC to suit cnrs, waiting for feedback.
+
+### Technical discussions
+
+#### stack-of-tasks/pinocchio
+
+ - Items to discuss:
+   - [#2962 [Bug]: MJCF connect anchors ignore the body-to-joint placement](https://github.com/stack-of-tasks/pinocchio/issues/2962) by @INo-xious
+       - AI contribs generated and connected to issues afterward, was not "ready", impacts the code that will be modified with other ongoing work
+       - not responding for now, not following the spirit of the contributing md 
+   - [#2958 Array isapprox treats epsilon as a relative tolerance](https://github.com/stack-of-tasks/pinocchio/issues/2958) by @SashaMIT
+       - same thing, AI contribution with no real use
+       - to think about automatic code to close issues or PRs so that bot closes such contribs after some time
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+
+- [#794 Refactor CMake with JRL CMake Modules v2](https://github.com/coal-library/coal/pull/794) by @ahoarau
+   - Created 297 days ago, updated 24 days ago, no status
+   - not priority, to be done after other projects
+- [#822 Add GEOM_CUSTOM node type for user-defined shapes](https://github.com/coal-library/coal/pull/822) by @rjoomen
+   - Created 195 days ago, updated 2 days ago, no status
+   - PR is accepted, could be merged however, following discussions with Louis, a few things to add (missed)
+   - also UT to be simplified
+- [#858 Improve the performances of BVH-BVH collision detection](https://github.com/coal-library/coal/pull/858) by @lmontaut
+   - Created 144 days ago, updated 2 days ago, no status
+   - discussions joris and louis on that
+   - discussion on performance (copy of bvh fields), will impact roadmap, future work
+- [#879 Fix hfield transform](https://github.com/coal-library/coal/pull/879) by @conlain-k
+   - Created 74 days ago, updated 20 days ago, no status
+   - Need to study hfield first, todo
+- [#885 Fix specialized shape to shape min distance update and enable_signed_distance flag ](https://github.com/coal-library/coal/pull/885) by @mjd3
+   - Created 41 days ago, updated 20 days ago, no status
+   - another very specific/narrow topic, to be investigated later
+- [#886 Replace undefined pointer arithmetic in octree b1/b2 with a node handle](https://github.com/coal-library/coal/pull/886) by @rjoomen
+   - Created 40 days ago, updated 20 days ago, no status
+   - octree PR, cannot be reviewed quickly (need work to better understand), to be done later
+
+#### STACK-OF-TASKS/EIGENPY
+
+
+- [#612 Refactor CMake with JRL CMake Modules v2](https://github.com/stack-of-tasks/eigenpy/pull/612) by @ahoarau
+   - Created 297 days ago, updated 58 days ago, no status
+   - Guilhem to check this week
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421) by @Cfather
+   - Created 747 days ago, updated 396 days ago, status to review
+- [#2891 Topic/aba second order derivatives](https://github.com/stack-of-tasks/pinocchio/pull/2891) by @shubhamsingh91
+   - Created 138 days ago, updated 23 days ago, no status
+   - No response for a few weeks, waiting
+- [#2923 Port towards jrl-v2](https://github.com/stack-of-tasks/pinocchio/pull/2923) by @j-matheron
+   - Created 87 days ago, updated 5 days ago, no status
+   - Waiting for other integration to be done first
+- [#2956 Adding an ellipsoid constraint to the constraint collection](https://github.com/stack-of-tasks/pinocchio/pull/2956) by @Ipuch
+   - Created 10 days ago, updated 10 days ago, no status
+   - Pending, not work on this yet
+   - Meeting this week to discuss with lpuch
+    
+- [#2959 Preserve frame types when resolving frames in buildReducedModel](https://github.com/stack-of-tasks/pinocchio/pull/2959) by @INo-xious
+   - Created 5 days ago, updated 3 days ago, no status
+   - algo deprecated later, not a priority to do this
+   - AI PR, issue later/not ready
+- [#2960 Guard model reduction when a locked joint frame cannot be found](https://github.com/stack-of-tasks/pinocchio/pull/2960) by @INo-xious
+   - Created 5 days ago, updated 3 days ago, no status
+   - algo deprecated late, not a priority to do this
+   - AI PR, issue later/not ready
+- [#2961 Fix MJCF body-based connect anchor coordinates](https://github.com/stack-of-tasks/pinocchio/pull/2961) by @INo-xious
+   - Created 5 days ago, updated 3 days ago, no status
+   - model graphs later, not a priority to do this
+   - AI PR, issue later/not ready
+- [#2964 Update pixi lockfile](https://github.com/stack-of-tasks/pinocchio/pull/2964) by @update-pixi-lockfile[bot]
+   - Created 3 days ago, updated 2 days ago, no status
+   - Merged
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#437 Refactor CMake with JRL CMake Modules v2](https://github.com/Simple-Robotics/proxsuite/pull/437) by @ahoarau
+   - Created 297 days ago, updated 3 days ago, no status
+   - Can be merged this week, new release 
+- [#477 Fix/dense box i scaled not reset on keep](https://github.com/Simple-Robotics/proxsuite/pull/477) by @FranekStark
+   - Created 41 days ago, updated 20 days ago, no status
+   - Lucas on this, single line change
+   - Need to follow new contributing.md (rebase, contributor, ...)
+- [#479 Fix `update()` API for box-constrained dense QPs](https://github.com/Simple-Robotics/proxsuite/pull/479) by @pierfabre
+   - Created 32 days ago, updated 16 days ago, no status
+   - update() and init() ?
+   - Lucas to check
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#40 Refactor CMake with JRL CMake Modules v2 (v2)](https://github.com/Simple-Robotics/nanoeigenpy/pull/40) by @ahoarau
+   - Created 272 days ago, updated 56 days ago, no status
+   - Pending (waiting for other integration)
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#897 Fix compiler > 2 migration and move contributing.md](https://github.com/coal-library/coal/pull/897) by @jorisv
+   - Created 4 days ago, merged 4 days ago
+- [#898 Update pixi lockfile](https://github.com/coal-library/coal/pull/898) by @update-pixi-lockfile[bot]
+   - Created 3 days ago, merged 2 days ago
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#667 Fix compiler > 2 migration and move contributing.md](https://github.com/stack-of-tasks/eigenpy/pull/667) by @jorisv
+   - Created 4 days ago, merged 3 days ago
+   - PR on all projects, contributing and other stuff (removed cpp flags not needed anymore)
+- [#668 Update pixi lockfile](https://github.com/stack-of-tasks/eigenpy/pull/668) by @update-pixi-lockfile[bot]
+   - Created 3 days ago, merged 2 days ago
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2880 test cppad: fix scalar type](https://github.com/stack-of-tasks/pinocchio/pull/2880) by @nim65s
+   - Created 155 days ago, merged 4 days ago
+   - Nix / autodiff option
+   - Nixpackages change done but not merged (forgot)
+- [#2963 Fix compiler > 2 migration and move contributing.md](https://github.com/stack-of-tasks/pinocchio/pull/2963) by @jorisv
+   - Created 4 days ago, merged 4 days ago
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#418 Fix compiler > 2 migration and move contributing.md](https://github.com/Simple-Robotics/aligator/pull/418) by @jorisv
+   - Created 4 days ago, merged 4 days ago
+- [#419 Update pixi lockfile](https://github.com/Simple-Robotics/aligator/pull/419) by @update-pixi-lockfile[bot]
+   - Created 3 days ago, merged 2 days ago
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#481 Move contributing.md](https://github.com/Simple-Robotics/proxsuite/pull/481) by @jorisv
+   - Created 4 days ago, merged 3 days ago
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#70 Fix compiler > 2 migration and move contributing.md](https://github.com/Simple-Robotics/nanoeigenpy/pull/70) by @jorisv
+   - Created 4 days ago, merged 4 days ago
+- [#71 Update pixi lockfile](https://github.com/Simple-Robotics/nanoeigenpy/pull/71) by @update-pixi-lockfile[bot]
+   - Created 3 days ago, merged 2 days ago
+
+#### SIMPLE-ROBOTICS/LOIK
+
+- [#49 Fix compiler > 2 migration and move contributing.md](https://github.com/Simple-Robotics/LoIK/pull/49) by @jorisv
+   - Created 4 days ago, merged 4 days ago
+- [#50 Update pixi lockfile](https://github.com/Simple-Robotics/LoIK/pull/50) by @update-pixi-lockfile[bot]
+   - Created 3 days ago, merged 2 days ago
+
 ## 2026-09-28
 
 ### News
