@@ -1,5 +1,206 @@
 # MAESTRO COREDEVS MEETING - Notes
 
+
+
+## 2026-11-02
+
+### News
+
+ - [name=Pierre-Guillaume] Preparation premier STC (pas encore officiel).
+ - [name=Joris] Release de Proxsuite 0.8.1 et 0.8.2 :tada: :fireworks: 
+
+### Technical discussions
+
+ - [name=Guilhem] config github: terraform/opentofu
+     - ref [ros2-gbp-github-org](https://github.com/ros2-gbp/ros2-gbp-github-org)
+     - thanks [NixCon 2026 - The State NixOS Won't Manage](https://www.youtube.com/watch?v=-pKTCe5vv08&list=PLXJbTNDiORME&index=19) 
+     - alternative, tool from Github (presented by Joris earlier)
+         - safe-settings
+         - 2 ways to install/use
+         - best requires a server online
+         - [POC](https://github.com/test-safe-settings-jorisv/admin/blob/main/.github/settings.yml)
+    - terraform: https://developer.hashicorp.com/terraform
+
+#### stack-of-tasks/pinocchio
+
+ - Items to discuss:
+   - [#2971 [Bug]: MJCF weld anchors ignore the body-to-joint placement](https://github.com/stack-of-tasks/pinocchio/issues/2971) by @j-matheron
+
+
+#### simple-robotics/proxsuite
+
+ - Items to discuss:
+   - [#490 [Bug]: Proxsuite build with MSVC and AVX512 support doesn't work](https://github.com/Simple-Robotics/proxsuite/issues/490) by @jorisv
+       - additonal issue wrt code in windows (same as the one found by antoine)
+   - [#488 Sparse ProxQP on QPLIB_8559, and a time limit in the settings](https://github.com/Simple-Robotics/proxsuite/issues/488) by @dmeoli
+       - can be solve by pyqp. problem here
+       - proposed idea to use a time lime (other solvers have this)
+   - [#487 Dense ProxQP does not detect an unbounded QP and reaches max_iter](https://github.com/Simple-Robotics/proxsuite/issues/487) by @dmeoli
+       - issue wrt bounds that were checked after scaling, should be checked before scaling
+
+### PR to review
+
+#### COAL-LIBRARY/COAL
+
+
+- [#794 Refactor CMake with JRL CMake Modules v2](https://github.com/coal-library/coal/pull/794) by @ahoarau
+   - Created 325 days ago, updated 52 days ago, no status
+   - no update
+- [#822 Add GEOM_CUSTOM node type for user-defined shapes](https://github.com/coal-library/coal/pull/822) by @rjoomen
+   - Created 223 days ago, updated 6 days ago, no status
+   - rebasing, but no update
+- [#858 Improve the performances of BVH-BVH collision detection](https://github.com/coal-library/coal/pull/858) by @lmontaut
+   - Created 172 days ago, updated 30 days ago, no status
+   - Joris has done the review, should ping Louis (do this week)
+- [#879 Fix hfield transform](https://github.com/coal-library/coal/pull/879) by @conlain-k
+   - Created 102 days ago, updated 16 days ago, no status
+   - Review done by Joris, waiting for update by contributor
+   - Would help to have better comments in the code (which transform/frame should be used)
+- [#885 Fix specialized shape to shape min distance update and enable_signed_distance flag ](https://github.com/coal-library/coal/pull/885) by @mjd3
+   - Created 69 days ago, updated 2 days ago, no status
+   - consistency issue in the API, possibly causing a bug in the broadphase
+   - changes applied, will be merged by next week
+- [#886 Replace undefined pointer arithmetic in octree b1/b2 with a node handle](https://github.com/coal-library/coal/pull/886) by @rjoomen
+   - Created 68 days ago, updated 4 days ago, no status
+   - Joris has done the review, bug due to difference between 2 pointers that were not related
+   - waiting from feedback by Louis wrt the proposed solution
+- [#914 Reduce leafCollide() cost by eliminating virtual dispatch](https://github.com/coal-library/coal/pull/914) by @SeanCurtis-TRI
+   - Created 10 days ago, updated 2 days ago, no status
+   - Improves the broadphase when no collision, 2x performance in benchmarks (when scene is not too large - this benchmark would help find other bottlenecks)
+- [#915 GJK never early-stops below the contact threshold (no placeholder contacts)](https://github.com/coal-library/coal/pull/915) by @quentinll
+   - Created 2 days ago, updated 2 days ago, no status
+   - Bug in GJK, inconsistency depending on how coal is called
+- [#916 build(deps): bump prefix-dev/setup-pixi from 0.10.2 to 0.11.2](https://github.com/coal-library/coal/pull/916) by @dependabot[bot]
+   - Created 23 hours ago, updated 23 hours ago, no status
+   - maintenance
+- [#917 Update pixi lockfile](https://github.com/coal-library/coal/pull/917) by @update-pixi-lockfile[bot]
+   - Created 19 hours ago, updated 19 hours ago, no status
+   - maintenance
+
+#### STACK-OF-TASKS/EIGENPY
+
+- [#612 Refactor CMake with JRL CMake Modules v2](https://github.com/stack-of-tasks/eigenpy/pull/612) by @ahoarau
+   - Created 325 days ago, updated 86 days ago, no status
+   - is PR rebased ? would be better to do periodically
+   - Jeanne to do the rebase with all the maintenance
+- [#671 Update pixi lockfile](https://github.com/stack-of-tasks/eigenpy/pull/671) by @update-pixi-lockfile[bot]
+   - Created 19 hours ago, updated 19 hours ago, no status
+   - maintenance
+- [#672 build(deps): bump prefix-dev/setup-pixi from 0.10.2 to 0.11.2](https://github.com/stack-of-tasks/eigenpy/pull/672) by @dependabot[bot]
+   - Created 7 hours ago, updated 7 hours ago, no status
+   - maintenance
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2421 Passivity-based RNEA Algorithms](https://github.com/stack-of-tasks/pinocchio/pull/2421) by @Cfather
+   - Created 775 days ago, updated 425 days ago, status to review
+   - no update
+- [#2891 Topic/aba second order derivatives](https://github.com/stack-of-tasks/pinocchio/pull/2891) by @shubhamsingh91
+   - Created 167 days ago, updated 51 days ago, no status
+   - no news from contributor, Joris to ping
+- [#2923 Port towards jrl-v2](https://github.com/stack-of-tasks/pinocchio/pull/2923) by @j-matheron
+   - Created 115 days ago, updated 33 days ago, no status
+   - waiting for the other v2 to be merged
+- [#2956 Adding an ellipsoid constraint to the constraint collection](https://github.com/stack-of-tasks/pinocchio/pull/2956) by @Ipuch
+   - Created 38 days ago, updated 38 days ago, no status
+   - No update
+- [#2959 Preserve frame types when resolving frames in buildReducedModel](https://github.com/stack-of-tasks/pinocchio/pull/2959) by @INo-xious
+   - Created 33 days ago, updated 10 days ago, no status
+   - Jeanne did the review, some comments, waiting for update by contributor
+- [#2961 Fix MJCF body-based connect anchor coordinates](https://github.com/stack-of-tasks/pinocchio/pull/2961) by @INo-xious
+   - Created 33 days ago, updated 10 days ago, no status
+   - Jeanne did the review, some comments, waiting for update by contributor
+- [#2972 Update pixi lockfile](https://github.com/stack-of-tasks/pinocchio/pull/2972) by @update-pixi-lockfile[bot]
+   - Created 1 days ago, updated 1 days ago, no status
+   - maintenance
+
+#### SIMPLE-ROBOTICS/ALIGATOR
+
+- [#420 Update pixi lockfile](https://github.com/Simple-Robotics/aligator/pull/420) by @update-pixi-lockfile[bot]
+   - Created 19 hours ago, updated 19 hours ago, no status
+   - maintenance
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#494 build(deps): bump actions/cache from 5 to 6](https://github.com/Simple-Robotics/proxsuite/pull/494) by @dependabot[bot]
+   - Created 13 hours ago, updated 13 hours ago, no status
+   - maintenance
+   - old version of github actions (was not updated due to config)
+- [#495 build(deps): bump prefix-dev/setup-pixi from 0.9.3 to 0.11.2](https://github.com/Simple-Robotics/proxsuite/pull/495) by @dependabot[bot]
+   - Created 13 hours ago, updated 13 hours ago, no status
+   - maintenance
+- [#496 build(deps): bump actions/checkout from 6 to 7](https://github.com/Simple-Robotics/proxsuite/pull/496) by @dependabot[bot]
+   - Created 13 hours ago, updated 13 hours ago, no status
+   - maintenance
+
+#### SIMPLE-ROBOTICS/NANOEIGENPY
+
+- [#40 Refactor CMake with JRL CMake Modules v2 (v2)](https://github.com/Simple-Robotics/nanoeigenpy/pull/40) by @ahoarau
+   - Created 300 days ago, updated 85 days ago, no status
+   - no update
+- [#72 build(deps): bump prefix-dev/setup-pixi from 0.10.2 to 0.11.2](https://github.com/Simple-Robotics/nanoeigenpy/pull/72) by @dependabot[bot]
+   - Created 1 days ago, updated 1 days ago, no status
+   - maintenance
+- [#73 Update pixi lockfile](https://github.com/Simple-Robotics/nanoeigenpy/pull/73) by @update-pixi-lockfile[bot]
+   - Created 19 hours ago, updated 19 hours ago, no status
+   - maintenance
+
+#### SIMPLE-ROBOTICS/LOIK
+
+- [#54 Update pixi lockfile](https://github.com/Simple-Robotics/LoIK/pull/54) by @update-pixi-lockfile[bot]
+   - Created 19 hours ago, updated 19 hours ago, no status
+   - maintenance
+
+### PR merged within the week
+
+#### COAL-LIBRARY/COAL
+
+- [#911 Topic/nanobind copy](https://github.com/coal-library/coal/pull/911) by @lmontaut
+   - Created 17 days ago, merged 13 days ago
+   - Discussion about shallow/deep copy
+   - Coal4 : removing shallow copies (not proper usage)
+- [#905 Add a dedicated capsule-box distance routine](https://github.com/coal-library/coal/pull/905) by @quentinll
+   - Created 20 days ago, merged 12 days ago
+   - Added a specialization for capsule-box
+- [#910 fix(mesh_loader): offset triangle indices for nodes with multiple meshes](https://github.com/coal-library/coal/pull/910) by @Megaa177
+   - Created 17 days ago, merged 6 days ago
+   - Issue by one contributor, fix by another
+
+#### STACK-OF-TASKS/PINOCCHIO
+
+- [#2969 build(deps): bump prefix-dev/setup-pixi from 0.11.0 to 0.11.2](https://github.com/stack-of-tasks/pinocchio/pull/2969) by @dependabot[bot]
+   - Created 14 days ago, merged 13 days ago
+- [#2960 Guard model reduction when a locked joint frame cannot be found](https://github.com/stack-of-tasks/pinocchio/pull/2960) by @INo-xious
+   - Created 33 days ago, merged 11 days ago
+- [#2970 Fix doxygen generation](https://github.com/stack-of-tasks/pinocchio/pull/2970) by @jorisv
+   - Created 4 days ago, merged 2 days ago
+   - Fix of hxx not being used for doxygen
+
+#### SIMPLE-ROBOTICS/PROXSUITE
+
+- [#486 Fix citation.cff linting](https://github.com/Simple-Robotics/proxsuite/pull/486) by @jorisv
+   - Created 13 days ago, merged 13 days ago
+   - Issue with jrl release, linting/formating issue
+   - Extra spaces (create issue)
+- [#485 Fix python bindings crash on Windows with AVX512 support](https://github.com/Simple-Robotics/proxsuite/pull/485) by @jorisv
+   - Created 24 days ago, merged 11 days ago
+- [#489 ROS: add nanobind-dev and drop python on humble, fix #472](https://github.com/Simple-Robotics/proxsuite/pull/489) by @nim65s
+   - Created 12 days ago, merged 5 days ago
+- [#491 Fix dockgen build ](https://github.com/Simple-Robotics/proxsuite/pull/491) by @jorisv
+   - Created 11 days ago, merged 5 days ago
+   - Fix docgen
+- [#492 Change libcereal-dev from build_depend to depend](https://github.com/Simple-Robotics/proxsuite/pull/492) by @sea-bass
+   - Created 5 days ago, merged 4 days ago
+   - build-dep vs run-dep
+- [#493 Fix documentation upload](https://github.com/Simple-Robotics/proxsuite/pull/493) by @jorisv
+   - Created 4 days ago, merged 2 days ago
+   - upload for doc, path was wrong
+
+#### SIMPLE-ROBOTICS/LOIK
+
+- [#53 build(deps): bump prefix-dev/setup-pixi from 0.11.0 to 0.11.2](https://github.com/Simple-Robotics/LoIK/pull/53) by @dependabot[bot]
+   - Created 14 days ago, merged 13 days ago
+
 ## 2026-10-26
 
 ### News
